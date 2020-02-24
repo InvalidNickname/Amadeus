@@ -1,0 +1,27 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '26.0.2'
+    defaultConfig {
+        applicationId "com.example.yink.amadeus.kurisutina"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "0.9.6-alpha.5"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta4'
+}

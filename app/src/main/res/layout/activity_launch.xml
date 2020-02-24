@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_launch"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/gradient_background">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/logo39"
+        app:layout_constraintBottom_toTopOf="@id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/connect"
+        android:layout_width="180.0dip"
+        android:layout_height="40.0dip"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="false"
+        android:src="@drawable/connect_unselect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
+
+    <ImageView
+        android:id="@+id/cancel"
+        android:layout_width="180.0dip"
+        android:layout_height="40.0dip"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:adjustViewBounds="false"
+        android:src="@drawable/cancel_unselect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/connect" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/divider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

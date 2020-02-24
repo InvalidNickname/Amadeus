@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="languagesArray">
+        <item>English</item>
+        <item>Русский</item>
+        <item>日本語</item>
+    </string-array>
+    
+    <string-array name="languagesValues">
+        <item>en</item>
+        <item>ru</item>
+        <item>ja</item>
+    </string-array>
+
+    <string-array name="languagesRecogArray">
+        <item>English</item>
+        <item>日本語</item>
+        <item>Русский</item>
+    </string-array>
+
+    <string-array name="languagesRecogValues">
+        <item>en-US</item>
+        <item>ja-JP</item>
+        <item>ru-RU</item>
+    </string-array>
+
+    <string-array name="ringtonesArray">
+        <item>Gate Of Steiner</item>
+        <item>Village</item>
+        <item>Beginning Of Fight</item>
+        <item>Easygoingness</item>
+        <item>Reunion</item>
+        <item>Precaution</item>
+        <item>Over The Sky</item>
+    </string-array>
+
+    <string-array name="ringtonesValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+</resources>

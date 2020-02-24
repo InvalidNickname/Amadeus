@@ -1,0 +1,121 @@
+package com.example.yink.amadeus;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class LaunchActivity extends AppCompatActivity {
+
+    private ImageView connect, cancel, logo;
+    private Boolean isPressed = false;
+    private MediaPlayer m;
+    private Handler aniHandle = new Handler();
+    private int i = 0;
+    Runnable aniRunnable = new Runnable() {
+        public void run() {
+            if (i < 39) {
+                i++;
+                int id = getResources().getIdentifier("logo" + i, "drawable", getPackageName());
+                logo.setImageDrawable(getDrawable(id));
+                aniHandle.postDelayed(this, 20);
+            }
+        }
+    };
+
+    private boolean isGQSBInstalled() {
+        try {
+            getApplicationContext().getPackageManager().getApplicationInfo("com.google.android.googlequicksearchbox", 0);
+            return true;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_launch);
+        connect = findViewById(R.id.connect);
+        cancel = findViewById(R.id.cancel);
+        logo = findViewById(R.id.logo);
+
+        aniHandle.post(aniRunnable);
+
+        connect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!isPressed && isGQSBInstalled()) {
+                    isPressed = true;
+
+                    connect.setImageResource(R.drawable.connect_select);
+
+                    m = MediaPlayer.create(LaunchActivity.this, R.raw.tone);
+
+                    m.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                        @Override
+                        public void onPrepared(MediaPlayer mp) {
+                            mp.start();
+                        }
+                    });
+
+                    m.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mp) {
+                            mp.release();
+                            Intent intent = new Intent(LaunchActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                }
+            }
+        });
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cancel.setImageResource(R.drawable.cancel_select);
+                onBackPressed();
+            }
+        });
+
+        logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent settingIntent = new Intent(LaunchActivity.this, SettingsActivity.class);
+                startActivity(settingIntent);
+            }
+        });
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LangContext.wrap(newBase));
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        if (m != null) {
+            m.release();
+        }
+
+        aniHandle.removeCallbacks(aniRunnable);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        isPressed = false;
+        connect.setImageResource(R.drawable.connect_unselect);
+        cancel.setImageResource(R.drawable.cancel_unselect);
+    }
+}

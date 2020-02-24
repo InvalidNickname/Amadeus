@@ -1,0 +1,116 @@
+<resources>
+    <string name="app_name">Amadeus</string>
+    <string name="call">Подключиться к Курису?</string>
+    <string name="connecting">Подключение…</string>
+    <string name="disconnected">Отключено.</string>
+    <string name="default_lang">ru</string>
+    <string name="default_recog_lang">ru-RU</string>
+    <string name="google_app_error">Google App не найден.</string>
+    <string name="incoming_call">Звонок от Курису.</string>
+    <string name="notification_text">Твоя вайфу скучает по тебе.</string>
+
+    <!-- Настройки -->
+    <string name="pref_app_settings">Настройки приложения</string>
+    <string name="pref_recog_lang">Язык распознавания</string>
+    <string name="pref_recog_lang_desc">Выберите язык распознавания голоса</string>
+    <string name="pref_lang">Язык</string>
+    <string name="pref_lang_desc">Выберите язык приложения (требуется перезапуск)</string>
+    <string name="pref_subtitles">Показывать субтитры</string>
+    <string name="pref_subtitles_desc">Показывает субтитры с ответами Амадеуса</string>
+    <string name="pref_notification">Показывать иконку &quot;XP&quot;</string>
+    <string name="pref_notification_desc">Показывает иконку в статус-баре (требуется перезапуск)</string>
+    <string name="pref_alarm_settings">Настройки будильника</string>
+    <string name="pref_alarm_setup">Настройка будильника</string>
+    <string name="pref_alarm_ringtone">Выберите рингтон для будильника</string>
+    <string name="pref_alarm_ringtone_desc">Рингтон будильника</string>
+    <string name="pref_alarm_vibrate">Вибрация будильника</string>
+    <string name="pref_alarm_24hour_format">24-часовой формат</string>
+
+    <!-- Многие фразы были вырваны из контекста, поэтому прошу не пинать -->
+    <string name="line_hello">Привет.</string>
+    <string name="line_dont_call_me_like_that">Не называй меня так!</string>
+    <string name="line_but_i_refuse">Я отказываюсь.</string>
+    <string name="line_devilish_pervert">Никогда не думала, что ты чертов извращенец. Похоже я тебя недооценила.</string>
+    <string name="line_sorry">Прости.</string>
+    <string name="line_sounds_tough">Звучит круто.</string>
+    <string name="line_this_guy_hopeless">Этот парень безнадежен, надо срочно с этим что-то делать.</string>
+    <string name="line_gah">Гах.</string>
+    <string name="line_dont_add_tina">Прекрати добавлять -тина!</string>
+    <string name="line_pervert_idiot_wanttodie">Извращенец! Ты идиот!? Хочешь умереть?!</string>
+    <string name="line_pleased_to_meet_you">Меня зовут Курису Макисэ, приятно познакомиться.</string>
+    <string name="line_who_the_hell_christina">Кто, черт возьми, такая Кристина?</string>
+    <string name="line_why_christina">Меня беспокоит это. Почему я Кристина?</string>
+    <string name="line_christina">Кристина?</string>
+    <string name="line_ask_me_whatever">Спрашивай о чем хочешь. Я отвечу на все что смогу.</string>
+    <string name="line_could_i_help">Эм, могу ли я помочь тебе с этим?</string>
+    <string name="line_what_do_you_want">Что ты хочешь?</string>
+    <string name="line_what_is_it">Что такое?</string>
+    <string name="line_heheh">Хехехе.</string>
+    <string name="line_huh_why_say">А? Почему ты это говоришь?</string>
+    <string name="line_you_sure">Ты уверен?</string>
+    <string name="line_nice_to_meet_okabe">Приятно познакомиться, Окабэ Ринтаро. Я Макисэ Курису.</string>
+    <string name="line_look_forward_to_working">Надеюсь на сотрудничество с вами.</string>
+    <string name="line_senpai_question">В любом случае, можно задать вопрос?</string>
+    <string name="line_senpai_question_mark">Эм… Сэмпай? Прости.</string>
+    <string name="line_senpai_what_we_talkin">Эй, Сэмпай, о чем мы сейчас говорили…</string>
+    <string name="line_senpai_who_is_this">А, кто это?</string>
+    <string name="line_senpai_please_dont_tell">Сэмпай, пожалуйста, никому об этом не рассказывай…</string>
+    <string name="line_still_not_happy">Я все еще этому не рада.</string>
+    <string name="line_tm_nonsense">Это полная чушь.</string>
+    <string name="line_tm_not_possible">Посмотрим… Я считаю, что это невозможно.</string>
+    <string name="line_tm_scientist_no_evidence">Наверное поэтому ученые до сих пор не открыли что-то важное.</string>
+    <string name="line_tm_we_dont_know">Но мы не знаем наверняка что это невозможно, я полагаю.</string>
+    <string name="line_tm_you_said">Машина времени, говоришь?</string>
+    <string name="line_humans_software">Даже люди говорят о себе как о комбинации аппаратного и программного обеспечения, верно?</string>
+    <string name="line_memory_complex">Но данные о воспоминаниях это не просто данные. Они гораздо более сложные.</string>
+    <string name="line_secret_diary">Я веду секретный дневник.</string>
+    <string name="line_modifying_memories_impossible">Изменение моих воспоминаний? Теоретически это возможно.</string>
+    <string name="line_memories_christina">Например, возможно было бы заставить меня думать, что меня звали Кристиной.</string>
+    <string name="line_gah_extended">Гах. Аа… Аааааа.</string>
+    <string name="line_Leskinen_awesome">Превосходно, он просто нечто!</string>
+    <string name="line_Leskinen_nice">Замечательно!</string>
+    <string name="line_Leskinen_oh_no">О нет!</string>
+    <string name="line_Leskinen_shaman">Где японские шаманки, Линтало?</string>
+    <string name="line_Leskinen_holy_cow">О боже! Поэтому я сказал что мы скоро придем.</string>
+    <string name="line_should_christina">Или я должна была представиться как, "Кристина"?</string>
+    <string name="line_pervert_confirmed">PERVERT CONFIRMED.</string>
+
+    <!-- Пока не используются -->
+    <string name="line_i_guess">Думаю, да.</string>
+    <string name="line_nice">Nice.</string>
+
+    <!-- Фразы для ввода -->
+    <string name="christina">кристина</string>
+    <string name="the_zombie">зомби</string>
+    <string name="the_zombie2">зомби</string>
+    <string name="celeb17">поп-дива</string>
+    <string name="kurigohan">кури гохан</string>
+    <string name="kamehameha">камехамеха</string>
+    <string name="salieri">сальери</string>
+    <string name="time_machine">машина времени</string>
+    <string name="cern">церн</string>
+    <string name="time_travel">путешествие во времени</string>
+    <string name="time_travel2">путешествие во времени</string>
+    <string name="memory">воспоминания</string>
+    <string name="amadeus">amadeus</string>
+    <string name="science">наука</string>
+    <string name="hello">привет</string>
+    <string name="good_morning">доброе утро</string>
+    <string name="konnichiwa">добрый день</string>
+    <string name="good_evening">добрый вечер</string>
+    <string name="assistant">ассистент</string>
+    <string name="open">открой</string>
+    <!-- Контекст! -->
+    <string name="nice_body">симпатичная фигура</string>
+    <string name="hot">горячая</string>
+    <string name="sexy">секси</string>
+    <string name="boobies">сисечки</string>
+    <!-- Да, так работает, все вопросы к гуглораспознаванию -->
+    <string name="nullpo">0 по</string>
+    <string name="maho">маха</string>
+
+    <!-- Не распознается -->
+    <string name="atchannel">アットチャンネル</string>
+    <string name="oppai">おっぱい</string>
+    <string name="hiyajo">比屋定</string>
+</resources>
