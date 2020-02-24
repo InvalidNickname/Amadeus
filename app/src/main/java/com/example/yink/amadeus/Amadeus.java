@@ -16,105 +16,113 @@ import android.preference.PreferenceManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-
+import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
 class Amadeus {
 
     static Boolean isSpeaking = false;
-    static Boolean isLoop = false;
-    static MediaPlayer m;
+    static MediaPlayer player;
     private static int shaman_girls = -1;
     private static VoiceLine[] voiceLines = VoiceLine.Line.getLines();
-    private static HashMap<Bundle<Integer>, Bundle<VoiceLine>> responseInputMap = new HashMap<>();
+    private static HashMap<List<Integer>, List<VoiceLine>> responseInputMap = new HashMap<>();
 
     static {
-        responseInputMap.put(new Bundle<>(
-                R.string.christina
-        ), new Bundle<>(
-                voiceLines[VoiceLine.Line.CHRISTINA],
-                voiceLines[VoiceLine.Line.WHY_CHRISTINA],
-                voiceLines[VoiceLine.Line.SHOULD_CHRISTINA],
-                voiceLines[VoiceLine.Line.NO_TINA]
-        ));
-        responseInputMap.put(new Bundle<>(
-                R.string.the_zombie, R.string.the_zombie2,
-                R.string.celeb17
-        ), new Bundle<>(
-                voiceLines[VoiceLine.Line.DONT_CALL_ME_LIKE_THAT]
-        ));
-        responseInputMap.put(new Bundle<>(
-                R.string.atchannel,
-                R.string.kurigohan,
-                R.string.kamehameha
-        ), new Bundle<>(
-                voiceLines[VoiceLine.Line.SENPAI_DONT_TELL],
-                voiceLines[VoiceLine.Line.STILL_NOT_HAPPY]
-        ));
-        responseInputMap.put(new Bundle<>(
-                R.string.salieri,
-                R.string.maho,
-                R.string.hiyajo
-        ), new Bundle<>(
-                voiceLines[VoiceLine.Line.SENPAI_QUESTION],
-                voiceLines[VoiceLine.Line.SENPAI_WHAT_WE_TALKING],
-                voiceLines[VoiceLine.Line.SENPAI_QUESTIONMARK],
-                voiceLines[VoiceLine.Line.SENPAI_WHO_IS_THIS]
-        ));
-        responseInputMap.put(new Bundle<>(
-                R.string.time_machine, R.string.time_travel2,
-                R.string.cern,
-                R.string.time_travel
-        ), new Bundle<>(
-                voiceLines[VoiceLine.Line.TM_NONCENCE],
-                voiceLines[VoiceLine.Line.TM_YOU_SAID],
-                voiceLines[VoiceLine.Line.TM_NO_EVIDENCE],
-                voiceLines[VoiceLine.Line.TM_DONT_KNOW],
-                voiceLines[VoiceLine.Line.TM_NOT_POSSIBLE]
-        ));
-        responseInputMap.put(new Bundle<>(
-                R.string.memory,
-                R.string.amadeus,
-                R.string.science
-        ), new Bundle<>(
-                voiceLines[VoiceLine.Line.HUMANS_SOFTWARE],
-                voiceLines[VoiceLine.Line.MEMORY_COMPLEXITY],
-                voiceLines[VoiceLine.Line.SECRET_DIARY],
-                voiceLines[VoiceLine.Line.MODIFIYING_MEMORIES],
-                voiceLines[VoiceLine.Line.MEMORIES_CHRISTINA]
-        ));
-        responseInputMap.put(new Bundle<>(
-                R.string.hello,
-                R.string.good_morning,
-                R.string.konnichiwa,
-                R.string.good_evening
-        ), new Bundle<>(
-                voiceLines[VoiceLine.Line.HELLO],
-                voiceLines[VoiceLine.Line.NICE_TO_MEET_OKABE],
-                voiceLines[VoiceLine.Line.PLEASED_TO_MEET],
-                voiceLines[VoiceLine.Line.LOOKING_FORWARD_TO_WORKING]
-        ));
-        responseInputMap.put(new Bundle<>(
-                R.string.nice_body,
-                R.string.hot,
-                R.string.sexy,
-                R.string.boobies,
-                R.string.oppai
-        ), new Bundle<>(
-                voiceLines[VoiceLine.Line.DEVILISH_PERVERT],
-                voiceLines[VoiceLine.Line.PERVERT_CONFIRMED],
-                voiceLines[VoiceLine.Line.PERVERT_IDIOT]
-        ));
-        responseInputMap.put(new Bundle<>(
-                R.string.robotics_notes,
-                R.string.antimatter
-        ), new Bundle<>(
-                voiceLines[VoiceLine.Line.HEHEHE]
-        ));
+        responseInputMap.put(
+                Arrays.asList(
+                        R.string.christina
+                ), Arrays.asList(
+                        voiceLines[VoiceLine.Line.CHRISTINA],
+                        voiceLines[VoiceLine.Line.WHY_CHRISTINA],
+                        voiceLines[VoiceLine.Line.SHOULD_CHRISTINA],
+                        voiceLines[VoiceLine.Line.NO_TINA]
+                ));
+        responseInputMap.put(
+                Arrays.asList(
+                        R.string.the_zombie,
+                        R.string.the_zombie2,
+                        R.string.celeb17
+                ), Arrays.asList(
+                        voiceLines[VoiceLine.Line.DONT_CALL_ME_LIKE_THAT]
+                ));
+        responseInputMap.put(
+                Arrays.asList(
+                        R.string.atchannel,
+                        R.string.kurigohan,
+                        R.string.kamehameha
+                ), Arrays.asList(
+                        voiceLines[VoiceLine.Line.SENPAI_DONT_TELL],
+                        voiceLines[VoiceLine.Line.STILL_NOT_HAPPY]
+                ));
+        responseInputMap.put(
+                Arrays.asList(
+                        R.string.salieri,
+                        R.string.maho,
+                        R.string.hiyajo
+                ), Arrays.asList(
+                        voiceLines[VoiceLine.Line.SENPAI_QUESTION],
+                        voiceLines[VoiceLine.Line.SENPAI_WHAT_WE_TALKING],
+                        voiceLines[VoiceLine.Line.SENPAI_QUESTIONMARK],
+                        voiceLines[VoiceLine.Line.SENPAI_WHO_IS_THIS]
+                ));
+        responseInputMap.put(
+                Arrays.asList(
+                        R.string.time_machine,
+                        R.string.time_travel2,
+                        R.string.cern,
+                        R.string.time_travel
+                ), Arrays.asList(
+                        voiceLines[VoiceLine.Line.TM_NONCENCE],
+                        voiceLines[VoiceLine.Line.TM_YOU_SAID],
+                        voiceLines[VoiceLine.Line.TM_NO_EVIDENCE],
+                        voiceLines[VoiceLine.Line.TM_DONT_KNOW],
+                        voiceLines[VoiceLine.Line.TM_NOT_POSSIBLE]
+                ));
+        responseInputMap.put(
+                Arrays.asList(
+                        R.string.memory,
+                        R.string.amadeus,
+                        R.string.science
+                ), Arrays.asList(
+                        voiceLines[VoiceLine.Line.HUMANS_SOFTWARE],
+                        voiceLines[VoiceLine.Line.MEMORY_COMPLEXITY],
+                        voiceLines[VoiceLine.Line.SECRET_DIARY],
+                        voiceLines[VoiceLine.Line.MODIFIYING_MEMORIES],
+                        voiceLines[VoiceLine.Line.MEMORIES_CHRISTINA]
+                ));
+        responseInputMap.put(
+                Arrays.asList(
+                        R.string.hello,
+                        R.string.good_morning,
+                        R.string.konnichiwa,
+                        R.string.good_evening
+                ), Arrays.asList(
+                        voiceLines[VoiceLine.Line.HELLO],
+                        voiceLines[VoiceLine.Line.NICE_TO_MEET_OKABE],
+                        voiceLines[VoiceLine.Line.PLEASED_TO_MEET],
+                        voiceLines[VoiceLine.Line.LOOKING_FORWARD_TO_WORKING]
+                ));
+        responseInputMap.put(
+                Arrays.asList(
+                        R.string.nice_body,
+                        R.string.hot,
+                        R.string.sexy,
+                        R.string.boobies,
+                        R.string.oppai
+                ), Arrays.asList(
+                        voiceLines[VoiceLine.Line.DEVILISH_PERVERT],
+                        voiceLines[VoiceLine.Line.PERVERT_CONFIRMED],
+                        voiceLines[VoiceLine.Line.PERVERT_IDIOT]
+                ));
+        responseInputMap.put(
+                Arrays.asList(
+                        R.string.robotics_notes,
+                        R.string.antimatter
+                ), Arrays.asList(
+                        voiceLines[VoiceLine.Line.HEHEHE]
+                ));
     }
 
     static void speak(VoiceLine line, final Activity activity) {
@@ -124,8 +132,8 @@ class Amadeus {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(activity);
 
         try {
-            m = MediaPlayer.create(activity, line.getId());
-            final Visualizer v = new Visualizer(m.getAudioSessionId());
+            player = MediaPlayer.create(activity, line.getId());
+            final Visualizer visualizer = new Visualizer(player.getAudioSessionId());
 
             if (settings.getBoolean("show_subtitles", false)) {
                 subtitles.setText(line.getSubtitle());
@@ -134,28 +142,28 @@ class Amadeus {
             Resources res = activity.getResources();
             animation = (AnimationDrawable) Drawable.createFromXml(res, res.getXml(line.getMood()));
 
-            if (m.isPlaying()) {
-                m.stop();
-                m.release();
-                v.setEnabled(false);
-                m = new MediaPlayer();
+            if (player.isPlaying()) {
+                player.stop();
+                player.release();
+                visualizer.setEnabled(false);
+                player = new MediaPlayer();
             }
 
-            m.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            player.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
                 public void onPrepared(MediaPlayer mp) {
                     isSpeaking = true;
                     mp.start();
-                    v.setEnabled(true);
+                    visualizer.setEnabled(true);
                 }
             });
 
-            m.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
                     isSpeaking = false;
                     mp.release();
-                    v.setEnabled(false);
+                    visualizer.setEnabled(false);
 
                     activity.runOnUiThread(new Runnable() {
                         @Override
@@ -166,10 +174,9 @@ class Amadeus {
                 }
             });
 
-
-            v.setEnabled(false);
-            v.setCaptureSize(Visualizer.getCaptureSizeRange()[1]);
-            v.setDataCaptureListener(
+            visualizer.setEnabled(false);
+            visualizer.setCaptureSize(Visualizer.getCaptureSizeRange()[1]);
+            visualizer.setDataCaptureListener(
                     new Visualizer.OnDataCaptureListener() {
                         public void onWaveFormDataCapture(Visualizer visualizer, byte[] bytes, int samplingRate) {
                             int sum = 0;
@@ -183,7 +190,6 @@ class Amadeus {
                                 @Override
                                 public void run() {
                                     if (normalized > 50) {
-                                        // Todo: Maybe choose sprite based on previous choice and volume instead of random
                                         kurisu.setImageDrawable(animation.getFrame((int) Math.ceil(Math.random() * 2)));
                                     } else {
                                         kurisu.setImageDrawable(animation.getFrame(0));
@@ -235,10 +241,10 @@ class Amadeus {
                 specificLines = new VoiceLine[]{singleLine};
             }
         } else {
-            for (Bundle<Integer> input_bundle : responseInputMap.keySet()) {
+            for (List<Integer> input_bundle : responseInputMap.keySet()) {
                 for (Integer input_code : input_bundle) {
                     if (containInput(input, context.getString(input_code))) {
-                        specificLines = responseInputMap.get(input_bundle).toArray();
+                        specificLines = (VoiceLine[]) responseInputMap.get(input_bundle).toArray();
                         break;
                     }
                 }
@@ -333,37 +339,6 @@ class Amadeus {
                 /* Don't need to search for other ones, so break this loop */
                 break;
             }
-        }
-    }
-
-    private static class Bundle<T> implements Iterable<T> {
-
-        private T[] list;
-
-        Bundle(T... list) {
-            this.list = list;
-        }
-
-        T[] toArray() {
-            return list;
-        }
-
-        @NonNull
-        @Override
-        public Iterator<T> iterator() {
-            return new Iterator<T>() {
-                int index = 0;
-
-                @Override
-                public boolean hasNext() {
-                    return index < list.length;
-                }
-
-                @Override
-                public T next() {
-                    return list[index++];
-                }
-            };
         }
     }
 

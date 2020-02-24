@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
@@ -44,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         contextLang = recogLang.split("-");
         sr = SpeechRecognizer.createSpeechRecognizer(this);
         sr.setRecognitionListener(new Listener());
-        final Handler handler = new Handler();
 
         if (!settings.getBoolean("show_subtitles", false)) {
             subtitlesBackground.setVisibility(View.INVISIBLE);
@@ -56,16 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
         Amadeus.speak(voiceLines[VoiceLine.Line.HELLO], MainActivity.this);
 
-        final Runnable loop = new Runnable() {
-            @Override
-            public void run() {
-                if (Amadeus.isLoop) {
-                    Amadeus.speak(voiceLines[randomgen.nextInt(voiceLines.length)], MainActivity.this);
-                    handler.postDelayed(this, 5000 + randomgen.nextInt(5) * 1000);
-                }
-            }
-        };
-
         kurisu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                     int permissionCheck = ContextCompat.checkSelfPermission(host, Manifest.permission.RECORD_AUDIO);
 
                     /* Input during loop produces bugs and mixes with output */
-                    if (!Amadeus.isLoop && !Amadeus.isSpeaking) {
+                    if (!Amadeus.isSpeaking) {
                         if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
                             promptSpeechInput();
                         } else {
@@ -83,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
 
-                } else if (!Amadeus.isLoop && !Amadeus.isSpeaking) {
+                } else if (!Amadeus.isSpeaking) {
                     promptSpeechInput();
                 }
             }
@@ -93,12 +81,8 @@ public class MainActivity extends AppCompatActivity {
         kurisu.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                if (!Amadeus.isLoop && !Amadeus.isSpeaking) {
-                    handler.post(loop);
-                    Amadeus.isLoop = true;
-                } else {
-                    handler.removeCallbacks(loop);
-                    Amadeus.isLoop = false;
+                if (!Amadeus.isSpeaking) {
+                    Amadeus.speak(voiceLines[randomgen.nextInt(voiceLines.length)], MainActivity.this);
                 }
                 return true;
             }
@@ -115,20 +99,18 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         if (sr != null)
             sr.destroy();
-        if (Amadeus.m != null)
-            Amadeus.m.release();
+        if (Amadeus.player != null)
+            Amadeus.player.release();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Amadeus.isLoop = false;
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Amadeus.isLoop = false;
     }
 
     private void promptSpeechInput() {
