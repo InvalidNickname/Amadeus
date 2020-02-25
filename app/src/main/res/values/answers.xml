@@ -1,55 +1,253 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="InconsistentArrays">
-    <array name="ans_christina">
+    <array name="hello">
+        <item>hello</item> <!-- ID raw-ресурса -->
+        <item>happy</item> <!-- настроение -->
+        <item>@string/line_hello</item> <!-- субтитры -->
+    </array>
+    <array name="daga_kotowaru">
+        <item>daga_kotowaru</item>
+        <item>annoyed</item>
+        <item>@string/line_but_i_refuse</item>
+    </array>
+    <array name="devilish_pervert">
+        <item>devilish_pervert</item>
+        <item>angry</item>
+        <item>@string/line_devilish_pervert</item>
+    </array>
+    <array name="i_guess">
+        <item>i_guess</item>
+        <item>indifferent</item>
+        <item>@string/line_devilish_pervert</item>
+    </array>
+    <array name="nice">
+        <item>nice</item>
+        <item>winking</item>
+        <item>@string/line_nice</item>
+    </array>
+    <array name="pervert_confirmed">
+        <item>pervert_confirmed</item>
+        <item>pissed</item>
+        <item>@string/line_pervert_confirmed</item>
+    </array>
+    <array name="sorry">
+        <item>sorry</item>
+        <item>sad</item>
+        <item>@string/line_sorry</item>
+    </array>
+    <array name="sounds_tough">
+        <item>sounds_tough</item>
+        <item>side</item>
+        <item>@string/line_sounds_tough</item>
+    </array>
+    <array name="this_guy_hopeless">
+        <item>this_guy_hopeless</item>
+        <item>disappointed</item>
+        <item>@string/line_this_guy_hopeless</item>
+    </array>
+    <array name="christina">
         <item>christina</item>
+        <item>annoyed</item>
+        <item>@string/line_christina</item>
     </array>
-    <array name="ans_forbidden_names">
-        <item>the zombie</item>
-        <item>zombie</item>
-        <item>celeb seventeen</item>
+    <array name="gah">
+        <item>gah</item>
+        <item>indifferent</item>
+        <item>@string/line_gah</item>
     </array>
-    <array name="ans_atchannel">
-        <item>atchannel</item>
-        <item>kurigohan</item>
-        <item>kamehameha</item>
+    <array name="dont_add_tina">
+        <item>dont_add_tina</item>
+        <item>angry</item>
+        <item>@string/line_dont_add_tina</item>
     </array>
-    <array name="ans_maho">
-        <item>salieri</item>
-        <item>maho</item>
-        <item>hiyajo</item>
+    <array name="why_christina">
+        <item>why_christina</item>
+        <item>pissed</item>
+        <item>@string/line_why_christina</item>
     </array>
-    <array name="ans_time_machine">
-        <item>time machine</item>
-        <item>cern</item>
-        <item>time travel</item>
+    <array name="who_the_hell_christina">
+        <item>who_the_hell_christina</item>
+        <item>pissed</item>
+        <item>@string/line_who_the_hell_christina</item>
     </array>
-    <array name="ans_amadeus">
-        <item>memory</item>
-        <item>amadeus</item>
-        <item>science</item>
+    <array name="ask_me_whatever">
+        <item>ask_me_whatever</item>
+        <item>happy</item>
+        <item>@string/line_ask_me_whatever</item>
     </array>
-    <array name="ans_hi">
-        <item>hi</item>
-        <item>hello</item>
-        <item>good morning</item>
-        <item>good afternoon</item>
-        <item>good evening</item>
+    <array name="could_i_help">
+        <item>could_i_help</item>
+        <item>happy</item>
+        <item>@string/line_could_i_help</item>
     </array>
-    <array name="ans_hentai">
-        <item>nice body</item>
-        <item>hot</item>
-        <item>sexy</item>
-        <item>boobies</item>
-        <item>oppai</item>
+    <array name="what_do_you_want">
+        <item>what_do_you_want</item>
+        <item>happy</item>
+        <item>@string/line_what_do_you_want</item>
     </array>
-    <array name="ans_robotics">
-        <item>Robotics Notes</item>
-        <item>antimatter</item>
+    <array name="what_is_it">
+        <item>what_is_it</item>
+        <item>happy</item>
+        <item>@string/line_what_is_it</item>
     </array>
-    <array name="ans_secret">
-        <item>nullpo</item>
+    <array name="heheh">
+        <item>heheh</item>
+        <item>winking</item>
+        <item>@string/line_heheh</item>
     </array>
-    <array name="ans_assistant_open">
-        <item>chrome</item>
+    <array name="huh_why_say">
+        <item>huh_why_say</item>
+        <item>sided_worried</item>
+        <item>@string/line_huh_why_say</item>
+    </array>
+    <array name="you_sure">
+        <item>you_sure</item>
+        <item>sided_worried</item>
+        <item>@string/line_you_sure</item>
+    </array>
+    <array name="nice_to_meet_okabe">
+        <item>nice_to_meet_okabe</item>
+        <item>sided_pleasant</item>
+        <item>@string/line_nice_to_meet_okabe</item>
+    </array>
+    <array name="look_forward_to_working">
+        <item>look_forward_to_working</item>
+        <item>happy</item>
+        <item>@string/line_look_forward_to_working</item>
+    </array>
+    <array name="senpai_question">
+        <item>senpai_question</item>
+        <item>side</item>
+        <item>@string/line_senpai_question</item>
+    </array>
+    <array name="senpai_questionmark">
+        <item>senpai_questionmark</item>
+        <item>side</item>
+        <item>@string/line_senpai_question_mark</item>
+    </array>
+    <array name="senpai_what_we_talkin">
+        <item>senpai_what_we_talkin</item>
+        <item>sided_worried</item>
+        <item>@string/line_senpai_what_we_talkin</item>
+    </array>
+    <array name="senpai_who_is_this">
+        <item>senpai_who_is_this</item>
+        <item>normal</item>
+        <item>@string/line_senpai_who_is_this</item>
+    </array>
+    <array name="senpai_please_dont_tell">
+        <item>senpai_please_dont_tell</item>
+        <item>blush</item>
+        <item>@string/line_senpai_please_dont_tell</item>
+    </array>
+    <array name="still_not_happy">
+        <item>still_not_happy</item>
+        <item>blush</item>
+        <item>@string/line_still_not_happy</item>
+    </array>
+    <array name="dont_call_me_like_that">
+        <item>dont_call_me_like_that</item>
+        <item>angry</item>
+        <item>@string/line_dont_call_me_like_that</item>
+    </array>
+    <array name="tm_nonsense">
+        <item>tm_nonsense</item>
+        <item>disappointed</item>
+        <item>@string/line_tm_nonsense</item>
+    </array>
+    <array name="tm_scientist_no_evidence">
+        <item>tm_scientist_no_evidence</item>
+        <item>normal</item>
+        <item>@string/line_tm_scientist_no_evidence</item>
+    </array>
+    <array name="tm_we_dont_know">
+        <item>tm_we_dont_know</item>
+        <item>normal</item>
+        <item>@string/line_tm_we_dont_know</item>
+    </array>
+    <array name="tm_you_said">
+        <item>tm_you_said</item>
+        <item>sided_worried</item>
+        <item>@string/line_tm_you_said</item>
+    </array>
+    <array name="humans_software">
+        <item>humans_software</item>
+        <item>normal</item>
+        <item>@string/line_humans_software</item>
+    </array>
+    <array name="memory_complex">
+        <item>memory_complex</item>
+        <item>indifferent</item>
+        <item>@string/line_memory_complex</item>
+    </array>
+    <array name="secret_diary">
+        <item>secret_diary</item>
+        <item>indifferent</item>
+        <item>@string/line_secret_diary</item>
+    </array>
+    <array name="modifying_memories_impossible">
+        <item>modifying_memories_impossible</item>
+        <item>indifferent</item>
+        <item>@string/line_modifying_memories_impossible</item>
+    </array>
+    <array name="memories_christina">
+        <item>memories_christina</item>
+        <item>winking</item>
+        <item>@string/line_memories_christina</item>
+    </array>
+    <array name="gah_extended">
+        <item>gah_extended</item>
+        <item>blush</item>
+        <item>@string/line_gah_extended</item>
+    </array>
+    <array name="should_christina">
+        <item>should_christina</item>
+        <item>pissed</item>
+        <item>@string/line_should_christina</item>
+    </array>
+    <array name="ok">
+        <item>ok</item>
+        <item>happy</item>
+        <item>@string/line_ok</item>
+    </array>
+    <array name="tm_not_possible">
+        <item>tm_not_possible</item>
+        <item>disappointed</item>
+        <item>@string/line_tm_not_possible</item>
+    </array>
+    <array name="pleased_to_meet_you">
+        <item>pleased_to_meet_you</item>
+        <item>sided_pleasant</item>
+        <item>@array/pleased_to_meet_you</item>
+    </array>
+    <array name="pervert_idiot_wanttodie">
+        <item>pervert_idiot_wanttodie</item>
+        <item>angry</item>
+        <item>@string/line_pervert_idiot_wanttodie</item>
+    </array>
+    <array name="leskinen_awesome">
+        <item>leskinen_awesome</item>
+        <item>winking</item>
+        <item>@string/line_Leskinen_awesome</item>
+    </array>
+    <array name="leskinen_nice">
+        <item>leskinen_nice</item>
+        <item>winking</item>
+        <item>@string/line_Leskinen_nice</item>
+    </array>
+    <array name="leskinen_oh_no">
+        <item>leskinen_oh_no</item>
+        <item>winking</item>
+        <item>@string/line_Leskinen_oh_no</item>
+    </array>
+    <array name="leskinen_shaman">
+        <item>leskinen_shaman</item>
+        <item>winking</item>
+        <item>@string/line_Leskinen_shaman</item>
+    </array>
+    <array name="leskinen_holy_cow">
+        <item>leskinen_holy_cow</item>
+        <item>winking</item>
+        <item>@string/line_Leskinen_holy_cow</item>
     </array>
 </resources>

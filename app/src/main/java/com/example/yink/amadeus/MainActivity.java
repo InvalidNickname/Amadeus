@@ -19,11 +19,12 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private VoiceLine[] voiceLines = VoiceLine.Line.getLines();
+    private HashMap<String, VoiceLine> voiceLines;
     private Random randomgen = new Random();
     private String recogLang;
     private String[] contextLang;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        voiceLines = VoiceLine.Line.getLines(this);
 
         ImageView kurisu = findViewById(R.id.kurisu);
         ImageView subtitlesBackground = findViewById(R.id.subtitles_background);
@@ -53,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         Amadeus.initialize(this);
 
-        Amadeus.speak(voiceLines[VoiceLine.Line.HELLO], this);
+        Amadeus.speak(voiceLines.get("HELLO"), this);
 
         kurisu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                         if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
                             promptSpeechInput();
                         } else {
-                            Amadeus.speak(voiceLines[VoiceLine.Line.DAGA_KOTOWARU], MainActivity.this);
+                            Amadeus.speak(voiceLines.get("DAGA_KOTOWARU"), MainActivity.this);
                         }
                     }
 
@@ -82,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View view) {
                 if (!Amadeus.isSpeaking) {
-                    Amadeus.speak(voiceLines[randomgen.nextInt(voiceLines.length)], MainActivity.this);
+                    VoiceLine[] temp = voiceLines.values().toArray(new VoiceLine[0]);
+                    Amadeus.speak(temp[randomgen.nextInt(voiceLines.size())], MainActivity.this);
                 }
                 return true;
             }
@@ -155,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
 
         public void onError(int error) {
             sr.cancel();
-            Amadeus.speak(voiceLines[VoiceLine.Line.SORRY], MainActivity.this);
+            Amadeus.speak(voiceLines.get("SORRY"), MainActivity.this);
         }
 
         public void onResults(Bundle results) {
