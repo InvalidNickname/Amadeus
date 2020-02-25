@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="apps_to_open">
+        <item>chrome</item>
+        <item>calendar</item>
+        <item>clock</item>
+        <item>camera</item>
+    </string-array>
+</resources>

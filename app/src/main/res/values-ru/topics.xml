@@ -50,11 +50,17 @@
         <item>antimatter</item>
     </string-array>
     <string-array name="secret">
-        <item>0 по</item>
+        <item>ноль по</item>
     </string-array>
     <string-array name="assistant">
         <item>ассистент</item>
         <item>кристина</item>
         <item>курису</item>
+    </string-array>
+    <string-array name="assistant_open">
+        <item>хром</item>
+        <item>календарь</item>
+        <item>часы будильник</item>
+        <item>камеру</item>
     </string-array>
 </resources>

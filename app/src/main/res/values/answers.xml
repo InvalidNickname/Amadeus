@@ -1,63 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="InconsistentArrays">
-    <string-array name="christina">
+    <array name="ans_christina">
         <item>christina</item>
-    </string-array>
-    <string-array name="forbidden_names">
+    </array>
+    <array name="ans_forbidden_names">
         <item>the zombie</item>
         <item>zombie</item>
         <item>celeb seventeen</item>
-    </string-array>
-    <string-array name="atchannel">
+    </array>
+    <array name="ans_atchannel">
         <item>atchannel</item>
         <item>kurigohan</item>
         <item>kamehameha</item>
-    </string-array>
-    <string-array name="maho">
+    </array>
+    <array name="ans_maho">
         <item>salieri</item>
         <item>maho</item>
         <item>hiyajo</item>
-    </string-array>
-    <string-array name="time_machine">
+    </array>
+    <array name="ans_time_machine">
         <item>time machine</item>
         <item>cern</item>
         <item>time travel</item>
-    </string-array>
-    <string-array name="amadeus">
+    </array>
+    <array name="ans_amadeus">
         <item>memory</item>
         <item>amadeus</item>
         <item>science</item>
-    </string-array>
-    <string-array name="hi">
+    </array>
+    <array name="ans_hi">
         <item>hi</item>
         <item>hello</item>
         <item>good morning</item>
         <item>good afternoon</item>
         <item>good evening</item>
-    </string-array>
-    <string-array name="hentai">
+    </array>
+    <array name="ans_hentai">
         <item>nice body</item>
         <item>hot</item>
         <item>sexy</item>
         <item>boobies</item>
         <item>oppai</item>
-    </string-array>
-    <string-array name="robotics">
+    </array>
+    <array name="ans_robotics">
         <item>Robotics Notes</item>
         <item>antimatter</item>
-    </string-array>
-    <string-array name="secret">
+    </array>
+    <array name="ans_secret">
         <item>nullpo</item>
-    </string-array>
-    <string-array name="assistant">
-        <item>assistant</item>
-        <item>christina</item>
-        <item>kurisu</item>
-    </string-array>
-    <string-array name="assistant_open">
+    </array>
+    <array name="ans_assistant_open">
         <item>chrome</item>
-        <item>calendar</item>
-        <item>clock</item>
-        <item>camera</item>
-    </string-array>
+    </array>
 </resources>

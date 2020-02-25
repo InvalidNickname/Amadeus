@@ -27,11 +27,11 @@ class Amadeus {
     static MediaPlayer player;
     private static int shaman_girls = -1;
     private static VoiceLine[] voiceLines = VoiceLine.Line.getLines();
-    private static HashMap<List<String>, List<VoiceLine>> responseInputMap = new HashMap<>();
+    private static HashMap<String[], List<VoiceLine>> responseInputMap = new HashMap<>();
 
     static void initialize(Context context) {
         responseInputMap.put(
-                Arrays.asList(context.getResources().getStringArray(R.array.christina)),
+                context.getResources().getStringArray(R.array.christina),
                 Arrays.asList(
                         voiceLines[VoiceLine.Line.CHRISTINA],
                         voiceLines[VoiceLine.Line.WHY_CHRISTINA],
@@ -39,18 +39,18 @@ class Amadeus {
                         voiceLines[VoiceLine.Line.NO_TINA]
                 ));
         responseInputMap.put(
-                Arrays.asList(context.getResources().getStringArray(R.array.forbidden_names)),
+                context.getResources().getStringArray(R.array.forbidden_names),
                 Arrays.asList(
                         voiceLines[VoiceLine.Line.DONT_CALL_ME_LIKE_THAT]
                 ));
         responseInputMap.put(
-                Arrays.asList(context.getResources().getStringArray(R.array.atchannel)),
+                context.getResources().getStringArray(R.array.atchannel),
                 Arrays.asList(
                         voiceLines[VoiceLine.Line.SENPAI_DONT_TELL],
                         voiceLines[VoiceLine.Line.STILL_NOT_HAPPY]
                 ));
         responseInputMap.put(
-                Arrays.asList(context.getResources().getStringArray(R.array.maho)),
+                context.getResources().getStringArray(R.array.maho),
                 Arrays.asList(
                         voiceLines[VoiceLine.Line.SENPAI_QUESTION],
                         voiceLines[VoiceLine.Line.SENPAI_WHAT_WE_TALKING],
@@ -58,7 +58,7 @@ class Amadeus {
                         voiceLines[VoiceLine.Line.SENPAI_WHO_IS_THIS]
                 ));
         responseInputMap.put(
-                Arrays.asList(context.getResources().getStringArray(R.array.time_machine)),
+                context.getResources().getStringArray(R.array.time_machine),
                 Arrays.asList(
                         voiceLines[VoiceLine.Line.TM_NONCENCE],
                         voiceLines[VoiceLine.Line.TM_YOU_SAID],
@@ -67,7 +67,7 @@ class Amadeus {
                         voiceLines[VoiceLine.Line.TM_NOT_POSSIBLE]
                 ));
         responseInputMap.put(
-                Arrays.asList(context.getResources().getStringArray(R.array.amadeus)),
+                context.getResources().getStringArray(R.array.amadeus),
                 Arrays.asList(
                         voiceLines[VoiceLine.Line.HUMANS_SOFTWARE],
                         voiceLines[VoiceLine.Line.MEMORY_COMPLEXITY],
@@ -76,7 +76,7 @@ class Amadeus {
                         voiceLines[VoiceLine.Line.MEMORIES_CHRISTINA]
                 ));
         responseInputMap.put(
-                Arrays.asList(context.getResources().getStringArray(R.array.hi)),
+                context.getResources().getStringArray(R.array.hi),
                 Arrays.asList(
                         voiceLines[VoiceLine.Line.HELLO],
                         voiceLines[VoiceLine.Line.NICE_TO_MEET_OKABE],
@@ -84,14 +84,14 @@ class Amadeus {
                         voiceLines[VoiceLine.Line.LOOKING_FORWARD_TO_WORKING]
                 ));
         responseInputMap.put(
-                Arrays.asList(context.getResources().getStringArray(R.array.hentai)),
+                context.getResources().getStringArray(R.array.hentai),
                 Arrays.asList(
                         voiceLines[VoiceLine.Line.DEVILISH_PERVERT],
                         voiceLines[VoiceLine.Line.PERVERT_CONFIRMED],
                         voiceLines[VoiceLine.Line.PERVERT_IDIOT]
                 ));
         responseInputMap.put(
-                Arrays.asList(context.getResources().getStringArray(R.array.robotics)),
+                context.getResources().getStringArray(R.array.robotics),
                 Arrays.asList(
                         voiceLines[VoiceLine.Line.HEHEHE]
                 ));
@@ -182,7 +182,7 @@ class Amadeus {
         VoiceLine[] specificLines = null;
         input = input.toLowerCase();
 
-        if (containInput(input, context.getResources().getStringArray(R.array.secret))) {
+        if (containsInput(input, context.getResources().getStringArray(R.array.secret))) {
             shaman_girls++;
             if (shaman_girls < 5) {
                 specificLines = new VoiceLine[]{
@@ -213,9 +213,9 @@ class Amadeus {
                 specificLines = new VoiceLine[]{singleLine};
             }
         } else {
-            for (List<String> input_bundle : responseInputMap.keySet()) {
+            for (String[] input_bundle : responseInputMap.keySet()) {
                 for (String inputString : input_bundle) {
-                    if (containInput(input, inputString)) {
+                    if (containsInput(input, inputString)) {
                         specificLines = responseInputMap.get(input_bundle).toArray(new VoiceLine[0]);
                         break;
                     }
@@ -240,7 +240,7 @@ class Amadeus {
         Amadeus.speak(specificLines[intTarget], activity);
     }
 
-    private static boolean containInput(final String input, final String... strings) {
+    private static boolean containsInput(final String input, final String... strings) {
         for (String s : strings) {
             if (input.contains(s)) return true;
         }
@@ -248,68 +248,48 @@ class Amadeus {
     }
 
     static void openApp(String[] input, Activity activity) {
+        List<ApplicationInfo> packages = activity.getPackageManager().getInstalledApplications(PackageManager.GET_META_DATA);
 
-        final PackageManager pm = activity.getPackageManager();
-        List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
+        String[] apps = activity.getResources().getStringArray(R.array.assistant_open);
 
-        HashMap<String, Integer> dictionary = new HashMap<>();
-        String corrected;
-        boolean found;
-        /* TODO: Dictionary for other language equivalents. To be reworked. */
-        dictionary.put("хром", 0);
-        dictionary.put("календарь", 1);
-        dictionary.put("часы", 2);
-        dictionary.put("будильник", 2);
-        dictionary.put("камеру", 3);
-
-        String[] apps = {
-                "chrome", "calendar", "clock", "camera"
-        };
-
-        for (ApplicationInfo packageInfo : packages) {
-            found = true;
-            /* Look up words in dictionary and correct the input since we can't open some apps in other langs */
-            for (String word : input) {
-                if (dictionary.get(word) != null) {
-                    corrected = apps[dictionary.get(word)].toLowerCase();
-                } else {
-                    corrected = word.toLowerCase();
-                }
-                if (!packageInfo.packageName.contains(corrected)) {
-                    found = false;
-                    break;
+        // проверяем что это одно из приложений, название которых можно перевести на английский
+        for (int i = 0; i < input.length; i++) {
+            for (int j = 0; j < apps.length; j++) {
+                if (apps[j].contains(input[i])) {
+                    input[i] = activity.getResources().getStringArray(R.array.apps_to_open)[j];
                 }
             }
+        }
 
-            if (found) {
-                Intent app;
-                Amadeus.speak(voiceLines[VoiceLine.Line.OK], activity);
-                switch (packageInfo.packageName) {
-                    /* Exceptional cases */
-                    case "com.android.phone": {
-                        app = new Intent(Intent.ACTION_DIAL, null);
-                        activity.startActivity(app);
-                        break;
-                    }
-                    case "com.android.chrome": {
-                        app = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
-                        /* Default browser might be different */
-                        app.setPackage(packageInfo.packageName);
-                        activity.startActivity(app);
-                        break;
-                    }
-                    default: {
-                        app = activity.getPackageManager().getLaunchIntentForPackage(packageInfo.packageName);
-                        /* Check if intent is not null to avoid crash */
-                        if (app != null) {
-                            app.addCategory(Intent.CATEGORY_LAUNCHER);
+        for (ApplicationInfo packageInfo : packages) {
+            for (String word : input) {
+                if (packageInfo.packageName.contains(word)) {
+                    Intent app;
+                    Amadeus.speak(voiceLines[VoiceLine.Line.OK], activity);
+                    switch (packageInfo.packageName) {
+                        /* Exceptional cases */
+                        case "com.android.phone": {
+                            app = new Intent(Intent.ACTION_DIAL, null);
                             activity.startActivity(app);
+                            break;
                         }
-                        break;
+                        case "com.android.chrome": {
+                            app = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
+                            app.setPackage(packageInfo.packageName);
+                            activity.startActivity(app);
+                            break;
+                        }
+                        default: {
+                            app = activity.getPackageManager().getLaunchIntentForPackage(packageInfo.packageName);
+                            if (app != null) {
+                                app.addCategory(Intent.CATEGORY_LAUNCHER);
+                                activity.startActivity(app);
+                            }
+                            break;
+                        }
                     }
+                    break;
                 }
-                /* Don't need to search for other ones, so break this loop */
-                break;
             }
         }
     }

@@ -19,7 +19,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -78,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
 
         kurisu.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -161,11 +159,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public void onResults(Bundle results) {
-            String input = "";
             ArrayList data = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
 
-            input += data.get(0);
-            input = input.replace(".","");
+            String input = (String) data.get(0);
+            input = input.replace(".", "").toLowerCase();
             String[] splitInput = input.split(" ");
 
             /* Switch language within current context for voice recognition */
