@@ -27,53 +27,39 @@ class Amadeus {
     static MediaPlayer player;
     private static int shaman_girls = -1;
     private static VoiceLine[] voiceLines = VoiceLine.Line.getLines();
-    private static HashMap<List<Integer>, List<VoiceLine>> responseInputMap = new HashMap<>();
+    private static HashMap<List<String>, List<VoiceLine>> responseInputMap = new HashMap<>();
 
-    static {
+    static void initialize(Context context) {
         responseInputMap.put(
+                Arrays.asList(context.getResources().getStringArray(R.array.christina)),
                 Arrays.asList(
-                        R.string.christina
-                ), Arrays.asList(
                         voiceLines[VoiceLine.Line.CHRISTINA],
                         voiceLines[VoiceLine.Line.WHY_CHRISTINA],
                         voiceLines[VoiceLine.Line.SHOULD_CHRISTINA],
                         voiceLines[VoiceLine.Line.NO_TINA]
                 ));
         responseInputMap.put(
+                Arrays.asList(context.getResources().getStringArray(R.array.forbidden_names)),
                 Arrays.asList(
-                        R.string.the_zombie,
-                        R.string.the_zombie2,
-                        R.string.celeb17
-                ), Arrays.asList(
                         voiceLines[VoiceLine.Line.DONT_CALL_ME_LIKE_THAT]
                 ));
         responseInputMap.put(
+                Arrays.asList(context.getResources().getStringArray(R.array.atchannel)),
                 Arrays.asList(
-                        R.string.atchannel,
-                        R.string.kurigohan,
-                        R.string.kamehameha
-                ), Arrays.asList(
                         voiceLines[VoiceLine.Line.SENPAI_DONT_TELL],
                         voiceLines[VoiceLine.Line.STILL_NOT_HAPPY]
                 ));
         responseInputMap.put(
+                Arrays.asList(context.getResources().getStringArray(R.array.maho)),
                 Arrays.asList(
-                        R.string.salieri,
-                        R.string.maho,
-                        R.string.hiyajo
-                ), Arrays.asList(
                         voiceLines[VoiceLine.Line.SENPAI_QUESTION],
                         voiceLines[VoiceLine.Line.SENPAI_WHAT_WE_TALKING],
                         voiceLines[VoiceLine.Line.SENPAI_QUESTIONMARK],
                         voiceLines[VoiceLine.Line.SENPAI_WHO_IS_THIS]
                 ));
         responseInputMap.put(
+                Arrays.asList(context.getResources().getStringArray(R.array.time_machine)),
                 Arrays.asList(
-                        R.string.time_machine,
-                        R.string.time_travel2,
-                        R.string.cern,
-                        R.string.time_travel
-                ), Arrays.asList(
                         voiceLines[VoiceLine.Line.TM_NONCENCE],
                         voiceLines[VoiceLine.Line.TM_YOU_SAID],
                         voiceLines[VoiceLine.Line.TM_NO_EVIDENCE],
@@ -81,11 +67,8 @@ class Amadeus {
                         voiceLines[VoiceLine.Line.TM_NOT_POSSIBLE]
                 ));
         responseInputMap.put(
+                Arrays.asList(context.getResources().getStringArray(R.array.amadeus)),
                 Arrays.asList(
-                        R.string.memory,
-                        R.string.amadeus,
-                        R.string.science
-                ), Arrays.asList(
                         voiceLines[VoiceLine.Line.HUMANS_SOFTWARE],
                         voiceLines[VoiceLine.Line.MEMORY_COMPLEXITY],
                         voiceLines[VoiceLine.Line.SECRET_DIARY],
@@ -93,34 +76,23 @@ class Amadeus {
                         voiceLines[VoiceLine.Line.MEMORIES_CHRISTINA]
                 ));
         responseInputMap.put(
+                Arrays.asList(context.getResources().getStringArray(R.array.hi)),
                 Arrays.asList(
-                        R.string.hello,
-                        R.string.good_morning,
-                        R.string.konnichiwa,
-                        R.string.good_evening
-                ), Arrays.asList(
                         voiceLines[VoiceLine.Line.HELLO],
                         voiceLines[VoiceLine.Line.NICE_TO_MEET_OKABE],
                         voiceLines[VoiceLine.Line.PLEASED_TO_MEET],
                         voiceLines[VoiceLine.Line.LOOKING_FORWARD_TO_WORKING]
                 ));
         responseInputMap.put(
+                Arrays.asList(context.getResources().getStringArray(R.array.hentai)),
                 Arrays.asList(
-                        R.string.nice_body,
-                        R.string.hot,
-                        R.string.sexy,
-                        R.string.boobies,
-                        R.string.oppai
-                ), Arrays.asList(
                         voiceLines[VoiceLine.Line.DEVILISH_PERVERT],
                         voiceLines[VoiceLine.Line.PERVERT_CONFIRMED],
                         voiceLines[VoiceLine.Line.PERVERT_IDIOT]
                 ));
         responseInputMap.put(
+                Arrays.asList(context.getResources().getStringArray(R.array.robotics)),
                 Arrays.asList(
-                        R.string.robotics_notes,
-                        R.string.antimatter
-                ), Arrays.asList(
                         voiceLines[VoiceLine.Line.HEHEHE]
                 ));
     }
@@ -210,7 +182,7 @@ class Amadeus {
         VoiceLine[] specificLines = null;
         input = input.toLowerCase();
 
-        if (containInput(input, context.getString(R.string.nullpo))) {
+        if (containInput(input, context.getResources().getStringArray(R.array.secret))) {
             shaman_girls++;
             if (shaman_girls < 5) {
                 specificLines = new VoiceLine[]{
@@ -241,10 +213,10 @@ class Amadeus {
                 specificLines = new VoiceLine[]{singleLine};
             }
         } else {
-            for (List<Integer> input_bundle : responseInputMap.keySet()) {
-                for (Integer input_code : input_bundle) {
-                    if (containInput(input, context.getString(input_code))) {
-                        specificLines = (VoiceLine[]) responseInputMap.get(input_bundle).toArray();
+            for (List<String> input_bundle : responseInputMap.keySet()) {
+                for (String inputString : input_bundle) {
+                    if (containInput(input, inputString)) {
+                        specificLines = responseInputMap.get(input_bundle).toArray(new VoiceLine[0]);
                         break;
                     }
                 }
@@ -276,6 +248,7 @@ class Amadeus {
     }
 
     static void openApp(String[] input, Activity activity) {
+
         final PackageManager pm = activity.getPackageManager();
         List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
 
@@ -294,7 +267,6 @@ class Amadeus {
         };
 
         for (ApplicationInfo packageInfo : packages) {
-            /* TODO: Needs to be adjusted probably. */
             found = true;
             /* Look up words in dictionary and correct the input since we can't open some apps in other langs */
             for (String word : input) {

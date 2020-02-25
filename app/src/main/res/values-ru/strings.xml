@@ -80,34 +80,8 @@
     <string name="line_nice">Nice.</string>
 
     <!-- Фразы для ввода -->
-    <string name="christina">кристина</string>
-    <string name="the_zombie">зомби</string>
-    <string name="the_zombie2">зомби</string>
-    <string name="celeb17">поп-дива</string>
-    <string name="kurigohan">кури гохан</string>
-    <string name="kamehameha">камехамеха</string>
-    <string name="salieri">сальери</string>
-    <string name="time_machine">машина времени</string>
-    <string name="cern">церн</string>
-    <string name="time_travel">путешествие во времени</string>
-    <string name="time_travel2">путешествие во времени</string>
-    <string name="memory">воспоминания</string>
-    <string name="amadeus">amadeus</string>
-    <string name="science">наука</string>
-    <string name="hello">привет</string>
-    <string name="good_morning">доброе утро</string>
-    <string name="konnichiwa">добрый день</string>
-    <string name="good_evening">добрый вечер</string>
     <string name="assistant">ассистент</string>
     <string name="open">открой</string>
-    <!-- Контекст! -->
-    <string name="nice_body">симпатичная фигура</string>
-    <string name="hot">горячая</string>
-    <string name="sexy">секси</string>
-    <string name="boobies">сисечки</string>
-    <!-- Да, так работает, все вопросы к гуглораспознаванию -->
-    <string name="nullpo">0 по</string>
-    <string name="maho">маха</string>
 
     <!-- Не распознается -->
     <string name="atchannel">アットチャンネル</string>

@@ -11,7 +11,6 @@ import android.preference.PreferenceManager;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -20,6 +19,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -52,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.RECORD_AUDIO}, 1);
         }
 
-        Amadeus.speak(voiceLines[VoiceLine.Line.HELLO], MainActivity.this);
+        Amadeus.initialize(this);
+
+        Amadeus.speak(voiceLines[VoiceLine.Line.HELLO], this);
 
         kurisu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,30 +140,22 @@ public class MainActivity extends AppCompatActivity {
 
     private class Listener implements RecognitionListener {
 
-        private final String TAG = "VoiceListener";
-
         public void onReadyForSpeech(Bundle params) {
-            Log.d(TAG, "Speech recognition start");
         }
 
         public void onBeginningOfSpeech() {
-            Log.d(TAG, "Listening speech");
         }
 
         public void onRmsChanged(float rmsdB) {
-            //Log.d(TAG, "onRmsChanged");
         }
 
         public void onBufferReceived(byte[] buffer) {
-            Log.d(TAG, "onBufferReceived");
         }
 
         public void onEndOfSpeech() {
-            Log.d(TAG, "Speech recognition end");
         }
 
         public void onError(int error) {
-            Log.d(TAG, "error " + error);
             sr.cancel();
             Amadeus.speak(voiceLines[VoiceLine.Line.SORRY], MainActivity.this);
         }
@@ -171,37 +165,36 @@ public class MainActivity extends AppCompatActivity {
             ArrayList data = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
 
             input += data.get(0);
-            /* TODO: Japanese doesn't split the words. Sigh. */
+            input = input.replace(".","");
             String[] splitInput = input.split(" ");
-
-            /* Really, google? */
-            if (splitInput[0].equalsIgnoreCase("Асистент")) {
-                splitInput[0] = "Ассистент";
-            }
 
             /* Switch language within current context for voice recognition */
             Context context = LangContext.load(getApplicationContext(), contextLang[0]);
 
-            if (splitInput.length > 2 && splitInput[0].equalsIgnoreCase(context.getString(R.string.assistant))) {
+            // проверка на запуск ассистента
+            boolean assistant = false;
+            for (String s : getResources().getStringArray(R.array.assistant)) {
+                if (splitInput[0].equalsIgnoreCase(s)) assistant = true;
+            }
+
+            if (splitInput.length > 2 && assistant) {
                 String cmd = splitInput[1].toLowerCase();
                 String[] args = new String[splitInput.length - 2];
                 System.arraycopy(splitInput, 2, args, 0, splitInput.length - 2);
-
                 if (cmd.contains(context.getString(R.string.open))) {
                     Amadeus.openApp(args, MainActivity.this);
+                } else {
+                    Amadeus.responseToInput(input, context, MainActivity.this);
                 }
-
             } else {
                 Amadeus.responseToInput(input, context, MainActivity.this);
             }
         }
 
         public void onPartialResults(Bundle partialResults) {
-            Log.d(TAG, "onPartialResults");
         }
 
         public void onEvent(int eventType, Bundle params) {
-            Log.d(TAG, "onEvent " + eventType);
         }
 
     }

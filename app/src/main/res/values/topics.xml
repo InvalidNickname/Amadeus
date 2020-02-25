@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="InconsistentArrays">
+    <string-array name="christina">
+        <item>christina</item>
+    </string-array>
+    <string-array name="forbidden_names">
+        <item>the zombie</item>
+        <item>zombie</item>
+        <item>celeb seventeen</item>
+    </string-array>
+    <string-array name="atchannel">
+        <item>atchannel</item>
+        <item>kurigohan</item>
+        <item>kamehameha</item>
+    </string-array>
+    <string-array name="maho">
+        <item>salieri</item>
+        <item>maho</item>
+        <item>hiyajo</item>
+    </string-array>
+    <string-array name="time_machine">
+        <item>time machine</item>
+        <item>cern</item>
+        <item>time travel</item>
+    </string-array>
+    <string-array name="amadeus">
+        <item>memory</item>
+        <item>amadeus</item>
+        <item>science</item>
+    </string-array>
+    <string-array name="hi">
+        <item>hi</item>
+        <item>hello</item>
+        <item>good morning</item>
+        <item>good afternoon</item>
+        <item>good evening</item>
+    </string-array>
+    <string-array name="hentai">
+        <item>nice body</item>
+        <item>hot</item>
+        <item>sexy</item>
+        <item>boobies</item>
+        <item>oppai</item>
+    </string-array>
+    <string-array name="robotics">
+        <item>Robotics Notes</item>
+        <item>antimatter</item>
+    </string-array>
+    <string-array name="secret">
+        <item>nullpo</item>
+    </string-array>
+    <string-array name="assistant">
+        <item>assistant</item>
+        <item>christina</item>
+        <item>kurisu</item>
+    </string-array>
+</resources>
