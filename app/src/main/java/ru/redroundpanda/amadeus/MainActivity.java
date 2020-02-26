@@ -1,4 +1,4 @@
-package com.example.yink.amadeus;
+package ru.redroundpanda.amadeus;
 
 import android.Manifest;
 import android.content.Context;
@@ -24,8 +24,8 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final Random randomgen = new Random();
     private HashMap<String, VoiceLine> voiceLines;
-    private Random randomgen = new Random();
     private String recogLang;
     private String[] contextLang;
     private SpeechRecognizer sr;
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         Amadeus.initialize(this);
 
-        Amadeus.speak(voiceLines.get("HELLO"), this);
+        Amadeus.speak(voiceLines.get("hello"), this);
 
         kurisu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,14 +64,12 @@ public class MainActivity extends AppCompatActivity {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     MainActivity host = (MainActivity) view.getContext();
 
-                    int permissionCheck = ContextCompat.checkSelfPermission(host, Manifest.permission.RECORD_AUDIO);
-
                     /* Input during loop produces bugs and mixes with output */
                     if (!Amadeus.isSpeaking) {
-                        if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
+                        if (ContextCompat.checkSelfPermission(host, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
                             promptSpeechInput();
                         } else {
-                            Amadeus.speak(voiceLines.get("DAGA_KOTOWARU"), MainActivity.this);
+                            Amadeus.speak(voiceLines.get("daga_kotowaru"), MainActivity.this);
                         }
                     }
 
@@ -86,6 +84,11 @@ public class MainActivity extends AppCompatActivity {
             public boolean onLongClick(View view) {
                 if (!Amadeus.isSpeaking) {
                     VoiceLine[] temp = voiceLines.values().toArray(new VoiceLine[0]);
+                    int id = temp[randomgen.nextInt(voiceLines.size())].getId();
+                    // чтобы не говорила пасхалки случайно
+                    while (id == R.raw.leskinen_awesome || id == R.raw.leskinen_nice || id == R.raw.leskinen_oh_no || id == R.raw.leskinen_shaman || id == R.raw.leskinen_holy_cow) {
+                        id = temp[randomgen.nextInt(voiceLines.size())].getId();
+                    }
                     Amadeus.speak(temp[randomgen.nextInt(voiceLines.size())], MainActivity.this);
                 }
                 return true;
@@ -101,20 +104,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (sr != null)
-            sr.destroy();
-        if (Amadeus.player != null)
-            Amadeus.player.release();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
+        if (sr != null) sr.destroy();
+        if (Amadeus.player != null) Amadeus.player.release();
     }
 
     private void promptSpeechInput() {
@@ -128,12 +119,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (requestCode == 1) {
-            if (resultCode == RESULT_OK && null != data) {
-
+            if (resultCode == RESULT_OK && data != null) {
                 Context context = LangContext.load(getApplicationContext(), contextLang[0]);
-
                 ArrayList<String> input = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                 Amadeus.responseToInput(input.get(0), context, MainActivity.this);
             }
@@ -159,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
 
         public void onError(int error) {
             sr.cancel();
-            Amadeus.speak(voiceLines.get("SORRY"), MainActivity.this);
+            Amadeus.speak(voiceLines.get("sorry"), MainActivity.this);
         }
 
         public void onResults(Bundle results) {
@@ -175,7 +163,10 @@ public class MainActivity extends AppCompatActivity {
             // проверка на запуск ассистента
             boolean assistant = false;
             for (String s : getResources().getStringArray(R.array.assistant)) {
-                if (splitInput[0].equalsIgnoreCase(s)) assistant = true;
+                if (splitInput[0].equalsIgnoreCase(s)) {
+                    assistant = true;
+                    break;
+                }
             }
 
             if (splitInput.length > 2 && assistant) {

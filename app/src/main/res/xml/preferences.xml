@@ -7,16 +7,16 @@
             android:summary="@string/pref_subtitles_desc"
             android:title="@string/pref_subtitles" />
         <ListPreference
-            android:defaultValue="@string/default_recog_lang"
-            android:entries="@array/languagesRecogArray"
-            android:entryValues="@array/languagesRecogValues"
+            android:defaultValue="@string/default_recognition_lang"
+            android:entries="@array/languages_recognition_array"
+            android:entryValues="@array/languages_recognition_values"
             android:key="recognition_lang"
-            android:summary="@string/pref_recog_lang_desc"
+            android:summary="@string/pref_recognition_lang_desc"
             android:title="@string/pref_recog_lang" />
         <ListPreference
             android:defaultValue="@string/default_lang"
-            android:entries="@array/languagesArray"
-            android:entryValues="@array/languagesValues"
+            android:entries="@array/languages_array"
+            android:entryValues="@array/languages_values"
             android:key="lang"
             android:summary="@string/pref_lang_desc"
             android:title="@string/pref_lang" />

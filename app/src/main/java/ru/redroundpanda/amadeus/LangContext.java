@@ -1,4 +1,4 @@
-package com.example.yink.amadeus;
+package ru.redroundpanda.amadeus;
 
 import android.annotation.TargetApi;
 import android.content.Context;

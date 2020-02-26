@@ -1,4 +1,4 @@
-package com.example.yink.amadeus;
+package ru.redroundpanda.amadeus;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,12 +13,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class LaunchActivity extends AppCompatActivity {
 
+    private final Handler aniHandle = new Handler();
     private ImageView connect, cancel, logo;
     private Boolean isPressed = false;
     private MediaPlayer m;
-    private Handler aniHandle = new Handler();
     private int i = 0;
-    Runnable aniRunnable = new Runnable() {
+    final Runnable aniRunnable = new Runnable() {
         public void run() {
             if (i < 39) {
                 i++;
@@ -115,7 +115,7 @@ public class LaunchActivity extends AppCompatActivity {
         super.onResume();
 
         isPressed = false;
-        connect.setImageResource(R.drawable.connect_unselect);
-        cancel.setImageResource(R.drawable.cancel_unselect);
+        connect.setImageResource(R.drawable.connect_not_selected);
+        cancel.setImageResource(R.drawable.cancel_not_selected);
     }
 }

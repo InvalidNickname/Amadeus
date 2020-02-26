@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.yink.amadeus">
+    package="ru.redroundpanda.amadeus"
+    tools:ignore="LockedOrientationActivity">
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -16,18 +17,18 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".MainActivity"
-            android:parentActivityName=".LaunchActivity"
+            android:name="ru.redroundpanda.amadeus.MainActivity"
+            android:parentActivityName="ru.redroundpanda.amadeus.LaunchActivity"
             android:screenOrientation="portrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LaunchActivity" />
+                android:value="ru.redroundpanda.amadeus.LaunchActivity" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".LaunchActivity"
+            android:name="ru.redroundpanda.amadeus.LaunchActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,13 +37,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name="ru.redroundpanda.amadeus.SettingsActivity"
             android:label="Preferences"
-            android:parentActivityName=".LaunchActivity"
+            android:parentActivityName="ru.redroundpanda.amadeus.LaunchActivity"
             android:theme="@style/PreferenceTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LaunchActivity" />
+                android:value="ru.redroundpanda.amadeus.LaunchActivity" />
         </activity>
     </application>
 

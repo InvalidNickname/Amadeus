@@ -1,4 +1,4 @@
-package com.example.yink.amadeus;
+package ru.redroundpanda.amadeus;
 
 import android.app.Activity;
 import android.content.Context;
@@ -23,78 +23,78 @@ import java.util.Random;
 
 class Amadeus {
 
+    private static final HashMap<String[], List<VoiceLine>> responseInputMap = new HashMap<>();
     static Boolean isSpeaking = false;
     static MediaPlayer player;
     private static int shaman_girls = -1;
     private static HashMap<String, VoiceLine> voiceLines;
-    private static HashMap<String[], List<VoiceLine>> responseInputMap = new HashMap<>();
 
     static void initialize(Context context) {
         voiceLines = VoiceLine.Line.getLines(context);
         responseInputMap.put(
                 context.getResources().getStringArray(R.array.t_christina),
                 Arrays.asList(
-                        voiceLines.get("CHRISTINA"),
-                        voiceLines.get("WHY_CHRISTINA"),
-                        voiceLines.get("SHOULD_CHRISTINA"),
-                        voiceLines.get("NO_TINA")
+                        voiceLines.get("christina"),
+                        voiceLines.get("why_christina"),
+                        voiceLines.get("should_christina"),
+                        voiceLines.get("no_tina")
                 ));
         responseInputMap.put(
                 context.getResources().getStringArray(R.array.forbidden_names),
                 Arrays.asList(
-                        voiceLines.get("DONT_CALL_ME_LIKE_THAT")
+                        voiceLines.get("dont_call_me_like_that")
                 ));
         responseInputMap.put(
                 context.getResources().getStringArray(R.array.atchannel),
                 Arrays.asList(
-                        voiceLines.get("SENPAI_DONT_TELL"),
-                        voiceLines.get("STILL_NOT_HAPPY")
+                        voiceLines.get("senpai_dont_tell"),
+                        voiceLines.get("still_not_happy")
                 ));
         responseInputMap.put(
                 context.getResources().getStringArray(R.array.maho),
                 Arrays.asList(
-                        voiceLines.get("SENPAI_QUESTION"),
-                        voiceLines.get("SENPAI_WHAT_WE_TALKING"),
-                        voiceLines.get("SENPAI_QUESTIONMARK"),
-                        voiceLines.get("SENPAI_WHO_IS_THIS")
+                        voiceLines.get("senpai_question"),
+                        voiceLines.get("senpai_what_we_talking"),
+                        voiceLines.get("senpai_questionmark"),
+                        voiceLines.get("senpai_who_is_this")
                 ));
         responseInputMap.put(
                 context.getResources().getStringArray(R.array.time_machine),
                 Arrays.asList(
-                        voiceLines.get("TM_NONCENCE"),
-                        voiceLines.get("TM_YOU_SAID"),
-                        voiceLines.get("TM_NO_EVIDENCE"),
-                        voiceLines.get("TM_DONT_KNOW"),
-                        voiceLines.get("TM_NOT_POSSIBLE")
+                        voiceLines.get("tm_noncence"),
+                        voiceLines.get("tm_you_said"),
+                        voiceLines.get("tm_no_evidence"),
+                        voiceLines.get("tm_dont_know"),
+                        voiceLines.get("tm_not_possible")
                 ));
         responseInputMap.put(
                 context.getResources().getStringArray(R.array.amadeus),
                 Arrays.asList(
-                        voiceLines.get("HUMANS_SOFTWARE"),
-                        voiceLines.get("MEMORY_COMPLEXITY"),
-                        voiceLines.get("SECRET_DIARY"),
-                        voiceLines.get("MODIFIYING_MEMORIES"),
-                        voiceLines.get("MEMORIES_CHRISTINA")
+                        voiceLines.get("humans_software"),
+                        voiceLines.get("memory_complexity"),
+                        voiceLines.get("secret_diary"),
+                        voiceLines.get("modifiying_memories"),
+                        voiceLines.get("memories_christina")
                 ));
         responseInputMap.put(
                 context.getResources().getStringArray(R.array.hi),
                 Arrays.asList(
-                        voiceLines.get("HELLO"),
-                        voiceLines.get("NICE_TO_MEET_OKABE"),
-                        voiceLines.get("PLEASED_TO_MEET"),
-                        voiceLines.get("LOOKING_FORWARD_TO_WORKING")
+                        voiceLines.get("hello"),
+                        voiceLines.get("nice_to_meet_okabe"),
+                        voiceLines.get("pleased_to_meet"),
+                        voiceLines.get("looking_forward_to_working")
                 ));
         responseInputMap.put(
                 context.getResources().getStringArray(R.array.hentai),
                 Arrays.asList(
-                        voiceLines.get("DEVILISH_PERVERT"),
-                        voiceLines.get("PERVERT_CONFIRMED"),
-                        voiceLines.get("PERVERT_IDIOT")
+                        voiceLines.get("devilish_pervert"),
+                        voiceLines.get("pervert_confirmed"),
+                        voiceLines.get("pervert_idiot")
                 ));
         responseInputMap.put(
                 context.getResources().getStringArray(R.array.robotics),
                 Arrays.asList(
-                        voiceLines.get("HEHEHE")
+                        voiceLines.get("hehehe")
                 ));
     }
 
@@ -187,27 +187,27 @@ class Amadeus {
             shaman_girls++;
             if (shaman_girls < 5) {
                 specificLines = new VoiceLine[]{
-                        voiceLines.get("GAH"),
-                        voiceLines.get("GAH_EXTENDED")
+                        voiceLines.get("gah"),
+                        voiceLines.get("gah_extended")
                 };
             } else {
                 VoiceLine singleLine;
                 switch (shaman_girls) {
                     case 5:
-                        singleLine = voiceLines.get("LESKINEN_AWESOME");
+                        singleLine = voiceLines.get("leskinen_awesome");
                         break;
                     case 6:
-                        singleLine = voiceLines.get("LESKINEN_NICE");
+                        singleLine = voiceLines.get("leskinen_nice");
                         break;
                     case 7:
-                        singleLine = voiceLines.get("LESKINEN_OH_NO");
+                        singleLine = voiceLines.get("leskinen_oh_no");
                         break;
                     case 8:
-                        singleLine = voiceLines.get("LESKINEN_SHAMAN");
+                        singleLine = voiceLines.get("leskinen_shaman");
                         break;
                     case 9:
                     default:
-                        singleLine = voiceLines.get("LESKINEN_HOLY_COW");
+                        singleLine = voiceLines.get("leskinen_holy_cow");
                         shaman_girls = 0;
                         break;
                 }
@@ -225,12 +225,12 @@ class Amadeus {
 
             if (specificLines == null) {
                 specificLines = new VoiceLine[]{
-                        voiceLines.get("ASK_ME"),
-                        voiceLines.get("WHAT_DO_YOU_WANT"),
-                        voiceLines.get("WHAT_IS_IT"),
-                        voiceLines.get("HEHEHE"),
-                        voiceLines.get("WHY_SAY_THAT"),
-                        voiceLines.get("YOU_SURE")
+                        voiceLines.get("ask_me"),
+                        voiceLines.get("what_do_you_want"),
+                        voiceLines.get("what_is_it"),
+                        voiceLines.get("hehehe"),
+                        voiceLines.get("why_say_that"),
+                        voiceLines.get("you_sure")
                 };
             }
         }
@@ -266,7 +266,7 @@ class Amadeus {
             for (String word : input) {
                 if (packageInfo.packageName.contains(word)) {
                     Intent app;
-                    Amadeus.speak(voiceLines.get("OK"), activity);
+                    Amadeus.speak(voiceLines.get("ok"), activity);
                     switch (packageInfo.packageName) {
                         /* Exceptional cases */
                         case "com.android.phone": {

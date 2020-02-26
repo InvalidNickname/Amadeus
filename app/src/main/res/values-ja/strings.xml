@@ -1,11 +1,7 @@
 <resources>
     <string name="app_name">Amadeus</string>
-    <string name="call">Connect to Kurisu?</string>
-    <string name="connecting">Connecting…</string>
-    <string name="disconnected">Disconnected.</string>
     <string name="default_lang">ja</string>
-    <string name="default_recog_lang">ja-JP</string>
-    <string name="google_app_error">Google App wasn\'t detected.</string>
+    <string name="default_recognition_lang">ja-JP</string>
 
     <string name="line_hello">Hello.</string>
     <string name="line_dont_call_me_like_that">Don\'t call me like that!</string>

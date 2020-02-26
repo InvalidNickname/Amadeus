@@ -1,30 +1,16 @@
 <resources>
     <string name="app_name">Amadeus</string>
-    <string name="call">Подключиться к Курису?</string>
-    <string name="connecting">Подключение…</string>
-    <string name="disconnected">Отключено.</string>
     <string name="default_lang">ru</string>
-    <string name="default_recog_lang">ru-RU</string>
-    <string name="google_app_error">Google App не найден.</string>
-    <string name="incoming_call">Звонок от Курису.</string>
-    <string name="notification_text">Твоя вайфу скучает по тебе.</string>
+    <string name="default_recognition_lang">ru-RU</string>
 
     <!-- Настройки -->
     <string name="pref_app_settings">Настройки приложения</string>
     <string name="pref_recog_lang">Язык распознавания</string>
-    <string name="pref_recog_lang_desc">Выберите язык распознавания голоса</string>
+    <string name="pref_recognition_lang_desc">Выберите язык распознавания голоса</string>
     <string name="pref_lang">Язык</string>
     <string name="pref_lang_desc">Выберите язык приложения (требуется перезапуск)</string>
     <string name="pref_subtitles">Показывать субтитры</string>
     <string name="pref_subtitles_desc">Показывает субтитры с ответами Амадеуса</string>
-    <string name="pref_notification">Показывать иконку &quot;XP&quot;</string>
-    <string name="pref_notification_desc">Показывает иконку в статус-баре (требуется перезапуск)</string>
-    <string name="pref_alarm_settings">Настройки будильника</string>
-    <string name="pref_alarm_setup">Настройка будильника</string>
-    <string name="pref_alarm_ringtone">Выберите рингтон для будильника</string>
-    <string name="pref_alarm_ringtone_desc">Рингтон будильника</string>
-    <string name="pref_alarm_vibrate">Вибрация будильника</string>
-    <string name="pref_alarm_24hour_format">24-часовой формат</string>
 
     <!-- Многие фразы были вырваны из контекста, поэтому прошу не пинать -->
     <string name="line_hello">Привет.</string>
@@ -72,7 +58,7 @@
     <string name="line_Leskinen_oh_no">О нет!</string>
     <string name="line_Leskinen_shaman">Где японские шаманки, Линтало?</string>
     <string name="line_Leskinen_holy_cow">О боже! Поэтому я сказал что мы скоро придем.</string>
-    <string name="line_should_christina">Или я должна была представиться как, /"Кристина/"?</string>
+    <string name="line_should_christina">Или я должна была представиться как, \"Кристина\"?</string>
     <string name="line_pervert_confirmed">PERVERT CONFIRMED.</string>
 
     <!-- Пока не используются -->
@@ -80,7 +66,6 @@
     <string name="line_nice">Nice.</string>
 
     <!-- Фразы для ввода -->
-    <string name="assistant">ассистент</string>
     <string name="open">открой</string>
 
     <!-- Не распознается -->

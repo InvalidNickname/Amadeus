@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="languagesArray">
+    <string-array name="languages_array">
         <item>English</item>
         <item>Русский</item>
         <item>日本語</item>
     </string-array>
     
-    <string-array name="languagesValues">
+    <string-array name="languages_values">
         <item>en</item>
         <item>ru</item>
         <item>ja</item>
     </string-array>
 
-    <string-array name="languagesRecogArray">
+    <string-array name="languages_recognition_array">
         <item>English</item>
         <item>日本語</item>
         <item>Русский</item>
     </string-array>
 
-    <string-array name="languagesRecogValues">
+    <string-array name="languages_recognition_values">
         <item>en-US</item>
         <item>ja-JP</item>
         <item>ru-RU</item>
     </string-array>
 
-    <string-array name="ringtonesArray">
+    <string-array name="ringtones_array">
         <item>Gate Of Steiner</item>
         <item>Village</item>
         <item>Beginning Of Fight</item>
@@ -34,7 +34,7 @@
         <item>Over The Sky</item>
     </string-array>
 
-    <string-array name="ringtonesValues">
+    <string-array name="ringtones_values">
         <item>0</item>
         <item>1</item>
         <item>2</item>

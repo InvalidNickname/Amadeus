@@ -1,4 +1,4 @@
-package com.example.yink.amadeus;
+package ru.redroundpanda.amadeus;
 
 import android.content.Context;
 import android.os.Bundle;

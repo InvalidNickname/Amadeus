@@ -1,10 +1,7 @@
-package com.example.yink.amadeus;
+package ru.redroundpanda.amadeus;
 
-import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
-
-import androidx.annotation.RequiresApi;
 
 public class SettingsFragment extends PreferenceFragment {
 

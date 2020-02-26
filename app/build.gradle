@@ -2,13 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
-    buildToolsVersion '26.0.2'
     defaultConfig {
-        applicationId "com.example.yink.amadeus.kurisutina"
+        applicationId "ru.redroundpanda.amadeus"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
-        versionName "0.9.6-alpha.5"
+        versionName "0.0.1"
     }
     buildTypes {
         release {

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- список используемых ответов -->
+    <array name="answers">
+        <item>@array/hello</item>
+        <item>@array/daga_kotowaru</item>
+        <item>@array/devilish_pervert</item>
+        <item>@array/i_guess</item>
+        <item>@array/nice</item>
+        <item>@array/pervert_confirmed</item>
+        <item>@array/sorry</item>
+        <item>@array/sounds_tough</item>
+        <item>@array/this_guy_hopeless</item>
+        <item>@array/christina</item>
+        <item>@array/gah</item>
+        <item>@array/dont_add_tina</item>
+        <item>@array/why_christina</item>
+        <item>@array/who_the_hell_christina</item>
+        <item>@array/ask_me_whatever</item>
+        <item>@array/could_i_help</item>
+        <item>@array/what_do_you_want</item>
+        <item>@array/what_is_it</item>
+        <item>@array/heheh</item>
+        <item>@array/huh_why_say</item>
+        <item>@array/you_sure</item>
+        <item>@array/nice_to_meet_okabe</item>
+        <item>@array/look_forward_to_working</item>
+        <item>@array/senpai_question</item>
+        <item>@array/senpai_questionmark</item>
+        <item>@array/senpai_what_we_talkin</item>
+        <item>@array/senpai_who_is_this</item>
+        <item>@array/senpai_please_dont_tell</item>
+        <item>@array/still_not_happy</item>
+        <item>@array/dont_call_me_like_that</item>
+        <item>@array/tm_nonsense</item>
+        <item>@array/tm_scientist_no_evidence</item>
+        <item>@array/tm_we_dont_know</item>
+        <item>@array/tm_you_said</item>
+        <item>@array/humans_software</item>
+        <item>@array/memory_complex</item>
+        <item>@array/secret_diary</item>
+        <item>@array/modifying_memories_impossible</item>
+        <item>@array/memories_christina</item>
+        <item>@array/gah_extended</item>
+        <item>@array/should_christina</item>
+        <item>@array/ok</item>
+        <item>@array/tm_not_possible</item>
+        <item>@array/pleased_to_meet_you</item>
+        <item>@array/pervert_idiot_wanttodie</item>
+        <item>@array/leskinen_awesome</item>
+        <item>@array/leskinen_nice</item>
+        <item>@array/leskinen_oh_no</item>
+        <item>@array/leskinen_shaman</item>
+        <item>@array/leskinen_holy_cow</item>
+    </array>
+</resources>
