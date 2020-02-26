@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Amadeus.initialize(this);
-
         Amadeus.speak(voiceLines.get("hello"), this);
 
         kurisu.setOnClickListener(new View.OnClickListener() {
@@ -84,12 +83,14 @@ public class MainActivity extends AppCompatActivity {
             public boolean onLongClick(View view) {
                 if (!Amadeus.isSpeaking) {
                     VoiceLine[] temp = voiceLines.values().toArray(new VoiceLine[0]);
-                    int id = temp[randomgen.nextInt(voiceLines.size())].getId();
+                    int id = randomgen.nextInt(voiceLines.size());
+                    int raw_id = temp[id].getId();
                     // чтобы не говорила пасхалки случайно
-                    while (id == R.raw.leskinen_awesome || id == R.raw.leskinen_nice || id == R.raw.leskinen_oh_no || id == R.raw.leskinen_shaman || id == R.raw.leskinen_holy_cow) {
-                        id = temp[randomgen.nextInt(voiceLines.size())].getId();
+                    while (raw_id == R.raw.leskinen_awesome || raw_id == R.raw.leskinen_nice || raw_id == R.raw.leskinen_oh_no || raw_id == R.raw.leskinen_shaman || raw_id == R.raw.leskinen_holy_cow) {
+                        id = randomgen.nextInt(voiceLines.size());
+                        raw_id = temp[id].getId();
                     }
-                    Amadeus.speak(temp[randomgen.nextInt(voiceLines.size())], MainActivity.this);
+                    Amadeus.speak(temp[id], MainActivity.this);
                 }
                 return true;
             }

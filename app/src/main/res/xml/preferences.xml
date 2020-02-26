@@ -2,7 +2,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="@string/pref_app_settings">
         <SwitchPreference
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="show_subtitles"
             android:summary="@string/pref_subtitles_desc"
             android:title="@string/pref_subtitles" />
