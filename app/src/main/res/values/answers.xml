@@ -219,7 +219,7 @@
     <array name="pleased_to_meet_you">
         <item>pleased_to_meet_you</item>
         <item>sided_pleasant</item>
-        <item>@array/pleased_to_meet_you</item>
+        <item>@string/line_pleased_to_meet_you</item>
     </array>
     <array name="pervert_idiot_wanttodie">
         <item>pervert_idiot_wanttodie</item>
@@ -250,5 +250,10 @@
         <item>leskinen_holy_cow</item>
         <item>winking</item>
         <item>@string/line_Leskinen_holy_cow</item>
+    </array>
+    <array name="nice_to_meet_you">
+        <item>nice_to_meet_you</item>
+        <item>happy</item>
+        <item>@string/line_nice_to_meet_you</item>
     </array>
 </resources>

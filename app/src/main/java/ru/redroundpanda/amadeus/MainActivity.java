@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (splitInput.length > 2 && assistant) {
-                String cmd = splitInput[1].toLowerCase();
+                String cmd = splitInput[1];
                 String[] args = new String[splitInput.length - 2];
                 System.arraycopy(splitInput, 2, args, 0, splitInput.length - 2);
                 if (cmd.contains(context.getString(R.string.open))) {

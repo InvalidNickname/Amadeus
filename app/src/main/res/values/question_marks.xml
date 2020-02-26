@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="InconsistentArrays">
+    <string-array name="q_marks">
+        <item>\?</item>
+        <item>what</item>
+        <item>when</item>
+        <item>where</item>
+        <item>which</item>
+        <item>who</item>
+        <item>whom</item>
+        <item>whose</item>
+        <item>why</item>
+        <item>how</item>
+    </string-array>
+</resources>

@@ -52,5 +52,6 @@
         <item>@array/leskinen_oh_no</item>
         <item>@array/leskinen_shaman</item>
         <item>@array/leskinen_holy_cow</item>
+        <item>@array/nice_to_meet_you</item>
     </array>
 </resources>

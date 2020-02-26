@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="InconsistentArrays">
+    <string-array name="obj_christina">
+        <item>ты</item>
+        <item>кристина</item>
+        <item>курису</item>
+        <item>тебя</item>
+        <item>твой</item>
+        <item>твоё</item>
+        <item>твоя</item>
+        <item>твои</item>
+        <item>тебе</item>
+        <item>кристине</item>
+    </string-array>
+</resources>

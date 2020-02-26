@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="InconsistentArrays">
+    <string-array name="subj_name">
+        <item>name</item>
+        <item>called</item>
+    </string-array>
+    <string-array name="subj_christina">
+        <item>кристина</item>
+    </string-array>
+</resources>
