@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="InconsistentArrays">
     <string-array name="obj_christina">
-
+        <item>you</item>
+        <item>your</item>
+        <item>christina</item>
+        <item>makise</item>
+        <item>kurisu</item>
+    </string-array>
+    <string-array name="obj_me">
+        <item>I</item>
+        <item>me</item>
+        <item>my</item>
+        <item>mine</item>
     </string-array>
 </resources>

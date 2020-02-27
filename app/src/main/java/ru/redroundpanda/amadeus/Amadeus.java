@@ -14,6 +14,7 @@ import android.media.MediaPlayer;
 import android.media.audiofx.Visualizer;
 import android.net.Uri;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -84,6 +85,8 @@ class Amadeus {
         final TextView subtitles = activity.findViewById(R.id.subtitles_text);
         final ImageView kurisu = activity.findViewById(R.id.kurisu);
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(activity);
+
+        Log.i("Amadeus", activity.getString(line.getSubtitle()));
 
         try {
             player = MediaPlayer.create(activity, line.getId());
@@ -195,8 +198,8 @@ class Amadeus {
                 specificLines = new VoiceLine[]{singleLine};
             }
         } else {
-            String object = identifyTopic(input, objectMap, "obj_christina");
-            String subject = identifyTopic(input, subjectMap, "");
+            String object = identifyObject(input.split(" "), objectMap, "obj_christina");
+            String subject = identifySubject(input, subjectMap);
 
             boolean question = false;
             for (String questionMarks : context.getResources().getStringArray(R.array.q_marks)) {
@@ -205,6 +208,9 @@ class Amadeus {
                     break;
                 }
             }
+
+            Log.i("Amadeus", input);
+            Log.i("Amadeus", object + " " + subject + " " + (question ? "?" : "."));
 
             if (responseInputMap.containsKey(object) && responseInputMap.get(object).containsKey(subject) && responseInputMap.get(object).get(subject).containsKey(question)) {
                 specificLines = responseInputMap.get(object).get(subject).get(question).toArray(new VoiceLine[0]);
@@ -235,13 +241,33 @@ class Amadeus {
         return false;
     }
 
-    private static String identifyTopic(String input, HashMap<String, String> data, String def) {
+    private static String identifyObject(String[] input, HashMap<String, String> data, String def) {
         String result = def;
+        for (String i : input)
+            for (String key : data.keySet()) {
+                if ((key.startsWith("u/") && i.contains(key.substring(2))) || (!key.startsWith("u/") && i.equals(key))) {
+                    result = data.get(key);
+                    break;
+                }
+            }
+        return result;
+    }
+
+    private static String identifySubject(String input, HashMap<String, String> data) {
+        String result = "";
+        String tempSub = "";
         for (String key : data.keySet()) {
             if (input.contains(key)) {
-                result = data.get(key);
-                break;
+                if (data.get(key).equals("subj_christina") && input.split(" ").length > 1) {
+                    tempSub = "subj_christina";
+                } else {
+                    result = data.get(key);
+                    break;
+                }
             }
+        }
+        if (result.equals("")) {
+            result = tempSub;
         }
         return result;
     }

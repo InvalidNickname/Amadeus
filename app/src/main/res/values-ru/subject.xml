@@ -12,4 +12,49 @@
     <string-array name="subj_christina">
         <item>кристина</item>
     </string-array>
+    <string-array name="subj_greeting">
+        <item>привет</item>
+        <item>здравствуй</item>
+        <item>добрый день</item>
+        <item>добрый вечер</item>
+        <item>доброе утро</item>
+        <item>доброй ночи</item>
+    </string-array>
+    <string-array name="subj_okarin">
+        <item>окабе</item>
+        <item>ринтаро</item>
+        <item>окарин</item>
+        <item>okabe</item> <!-- почему-то иногда распознает так -->
+        <item>rintarou</item>
+    </string-array>
+    <string-array name="subj_abilities">
+        <item>можешь</item>
+        <item>возможности</item>
+        <item>умеешь</item>
+    </string-array>
+    <string-array name="subj_time_machine">
+        <item>машина времени</item>
+        <item>машине времени</item>
+        <item>машину времени</item>
+        <item>машины времени</item>
+        <item>путешествие во времени</item>
+        <item>путешествии во времени</item>
+        <item>путешествию во времени</item>
+        <item>путешествия во времени</item>
+        <item>путешествиях во времени</item>
+        <item>путешествиям во времени</item>
+    </string-array>
+    <string-array name="subj_memory">
+        <item>воспоминани</item> <!-- воспоминание, воспоминания, воспоминаниях и т.д. -->
+        <item>памят</item> <!-- память, памяти -->
+    </string-array>
+    <string-array name="subj_organization">
+        <item>организац</item> <!-- организация, организации и т.д. -->
+    </string-array>
+    <string-array name="subj_know_me">
+        <item>помнишь меня</item>
+        <item>знаешь меня</item>
+        <item>меня помнишь</item>
+        <item>меня знаешь</item>
+    </string-array>
 </resources>

@@ -3,5 +3,12 @@
     <array name="subjects">
         <item>@array/subj_name</item>
         <item>@array/subj_christina</item>
+        <item>@array/subj_greeting</item>
+        <item>@array/subj_okarin</item>
+        <item>@array/subj_abilities</item>
+        <item>@array/subj_time_machine</item>
+        <item>@array/subj_memory</item>
+        <item>@array/subj_organization</item>
+        <item>@array/subj_know_me</item>
     </array>
 </resources>

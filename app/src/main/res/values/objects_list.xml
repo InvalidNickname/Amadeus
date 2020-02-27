@@ -2,5 +2,6 @@
 <resources>
     <string-array name="objects">
         <item>@array/obj_christina</item>
+        <item>@array/obj_me</item>
     </string-array>
 </resources>

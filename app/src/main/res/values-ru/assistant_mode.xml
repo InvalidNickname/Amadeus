@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="open">открой</string>
     <string-array name="assistant">
         <item>ассистент</item>
         <item>кристина</item>
         <item>курису</item>
     </string-array>
     <string-array name="assistant_open">
-        <item>хром</item>
+        <item>хром браузер</item>
         <item>календарь</item>
         <item>часы будильник</item>
         <item>камеру</item>

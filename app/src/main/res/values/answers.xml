@@ -256,4 +256,29 @@
         <item>happy</item>
         <item>@string/line_nice_to_meet_you</item>
     </array>
+    <array name="makise_kurisu_desu">
+        <item>makise_kurisu_desu</item>
+        <item>happy</item>
+        <item>@string/line_makise_kurisu_desu</item>
+    </array>
+    <array name="huh">
+        <item>huh</item>
+        <item>annoyed</item>
+        <item>@string/line_huh</item>
+    </array>
+    <array name="hhuh">
+        <item>hhuh</item>
+        <item>annoyed</item>
+        <item>@string/line_hhuh</item>
+    </array>
+    <array name="what_are_you_talking_about">
+        <item>what_are_you_talking_about</item>
+        <item>annoyed</item>
+        <item>@string/line_what_are_you_talking_about</item>
+    </array>
+    <array name="why_have_we_met_before">
+        <item>why_have_we_met_before</item>
+        <item>sided_worried</item>
+        <item>@string/line_why_have_we_met_before</item>
+    </array>
 </resources>

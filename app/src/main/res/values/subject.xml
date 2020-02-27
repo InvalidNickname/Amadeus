@@ -7,4 +7,34 @@
     <string-array name="subj_christina">
         <item>christina</item>
     </string-array>
+    <string-array name="subj_greeting">
+        <item>hi</item>
+        <item>hello</item>
+        <item>good morning</item>
+        <item>good afternoon</item>
+        <item>good evening</item>
+    </string-array>
+    <string-array name="subj_okarin">
+        <item>okabe</item>
+        <item>rintaro</item>
+        <item>okarin</item>
+    </string-array>
+    <string-array name="subj_abilities">
+        <item>can</item>
+        <item>abilities</item>
+    </string-array>
+    <string-array name="subj_time_machine">
+        <item>time machine</item>
+        <item>time travel</item>
+    </string-array>
+    <string-array name="subj_memory">
+        <item>memory</item>
+    </string-array>
+    <string-array name="subj_organization">
+        <item>organization</item>
+    </string-array>
+    <string-array name="subj_know_me">
+        <item>know me</item>
+        <item>remember me</item>
+    </string-array>
 </resources>

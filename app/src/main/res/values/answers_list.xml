@@ -53,5 +53,10 @@
         <item>@array/leskinen_shaman</item>
         <item>@array/leskinen_holy_cow</item>
         <item>@array/nice_to_meet_you</item>
+        <item>@array/makise_kurisu_desu</item>
+        <item>@array/huh</item>
+        <item>@array/hhuh</item>
+        <item>@array/what_are_you_talking_about</item>
+        <item>@array/why_have_we_met_before</item>
     </array>
 </resources>

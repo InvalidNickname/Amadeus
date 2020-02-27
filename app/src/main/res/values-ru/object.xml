@@ -2,14 +2,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="InconsistentArrays">
     <string-array name="obj_christina">
         <item>ты</item>
-        <item>кристина</item>
+        <item>u/кристин</item> <!-- кристина, кристину, кристине, кристиной -->
         <item>курису</item>
-        <item>тебя</item>
-        <item>твой</item>
-        <item>твоё</item>
-        <item>твоя</item>
-        <item>твои</item>
-        <item>тебе</item>
-        <item>кристине</item>
+        <item>макисэ</item>
+        <item>u/теб</item> <!-- тебе, тебя -->
+        <item>u/тво</item> <!-- твой, твоя, твоё, твои -->
+        <item>тобой</item>
+    </string-array>
+    <string-array name="obj_me">
+        <item>я</item>
+        <item>меня</item>
+        <item>моё</item> <!-- вот тут сокращать не буду, возникнет много ошибочных слов со слогом -мо- -->
+        <item>мой</item>
+        <item>моя</item>
+        <item>мои</item>
     </string-array>
 </resources>

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="voice_lines">
-        <item>@array/vl_forbidden_names</item>
         <item>@array/vl_greeting</item>
-        <item>@array/vl_hentai</item>
         <item>@array/vl_name</item>
         <item>@array/vl_no_tina</item>
-        <item>@array/vl_robotics</item>
-        <item>@array/vl_senpai_who_is_this</item>
-        <item>@array/vl_tech</item>
-        <item>@array/vl_time_machine</item>
-        <item>@array/vl_unhappy</item>
+        <item>@array/vl_hi_okabe</item>
+        <item>@array/vl_abilities</item>
+        <item>@array/vl_time_travel</item>
+        <item>@array/vl_memory</item>
+        <item>@array/vl_organization</item>
+        <item>@array/vl_know_me</item>
     </array>
 </resources>

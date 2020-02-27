@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="open">open</string>
     <string-array name="assistant">
         <item>assistant</item>
         <item>christina</item>
         <item>kurisu</item>
     </string-array>
     <string-array name="assistant_open">
-        <item>chrome</item>
+        <item>chrome browser</item>
         <item>calendar</item>
         <item>clock</item>
         <item>camera</item>

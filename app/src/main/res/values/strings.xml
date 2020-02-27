@@ -13,6 +13,11 @@
     <string name="pref_subtitles">Show subtitles</string>
     <string name="pref_subtitles_desc">Shows subtitles for Amadeus\' answers</string>
 
+    <!-- Shaman Girls -->
+    <string-array name="secret">
+        <item>nullpo</item>
+    </string-array>
+
     <!-- Subtitles -->
     <string name="line_hello">Hello.</string>
     <string name="line_dont_call_me_like_that">Don\'t call me like that!</string>
@@ -61,11 +66,13 @@
     <string name="line_Leskinen_nice">Nice!</string>
     <string name="line_Leskinen_oh_no">Oh no!</string>
     <string name="line_Leskinen_shaman">Where are the Japanese shaman girls, Lintahlo?</string>
-    <string name="line_Leskinen_holy_cow">Holy Cow! So I said we should come soon.</string>
+    <string name="line_Leskinen_holy_cow">Holy Cow! So I said we should come soon</string>
     <string name="line_should_christina">Or should I have introduced myself with, \"It\'s Christina\"?</string>
     <string name="line_nice_to_meet_you">Nice to meet you. I\'m Makise Kurisu</string>
-    <string name="line_ok">OK.</string>
-
-    <!-- Input strings -->
-    <string name="open">open</string>
+    <string name="line_makise_kurisu_desu">I\'m Makise Kurisu</string>
+    <string name="line_ok" translatable="false">OK</string>
+    <string name="line_huh">Huh</string>
+    <string name="line_hhuh">Hhuh?</string>
+    <string name="line_what_are_you_talking_about">What are you talking about?</string>
+    <string name="line_why_have_we_met_before">Why? Have we met before?</string>
 </resources>
