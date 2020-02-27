@@ -17,14 +17,14 @@ import android.preference.PreferenceManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
 class Amadeus {
 
-    private static final HashMap<String, HashMap<String, HashMap<Boolean, List<VoiceLine>>>> responseInputMap = new HashMap<>();
+    private static final HashMap<String, HashMap<String, HashMap<Boolean, List<VoiceLine>>>> responseInputMap = new HashMap<>(); // карта <объект, субъект, вопрос, VoiceLine>
     private static final HashMap<String, String> objectMap = new HashMap<>(); // карта <слово, объект>
     private static final HashMap<String, String> subjectMap = new HashMap<>(); // карта <слово, субъект>
     static Boolean isSpeaking = false;
@@ -35,99 +35,24 @@ class Amadeus {
     static void initialize(Context context) {
         voiceLines = VoiceLine.Line.getLines(context);
 
-        fillMap(
-                "obj_christina",
-                "subj_christina",
-                false,
-                Arrays.asList(
-                        voiceLines.get("christina"),
-                        voiceLines.get("why_christina"),
-                        voiceLines.get("should_christina"),
-                        voiceLines.get("dont_add_tina")
-                ));
-        fillMap(
-                "TODO",
-                "TODO",
-                false,
-                Arrays.asList(
-                        voiceLines.get("dont_call_me_like_that")
-                ));
-        fillMap(
-                "TODO",
-                "TODO",
-                false,
-                Arrays.asList(
-                        voiceLines.get("senpai_dont_tell"),
-                        voiceLines.get("still_not_happy")
-                ));
-        fillMap(
-                "TODO",
-                "TODO",
-                false,
-                Arrays.asList(
-                        voiceLines.get("senpai_question"),
-                        voiceLines.get("senpai_what_we_talking"),
-                        voiceLines.get("senpai_questionmark"),
-                        voiceLines.get("senpai_who_is_this")
-                ));
-        fillMap(
-                "TODO",
-                "TODO",
-                false,
-                Arrays.asList(
-                        voiceLines.get("tm_noncence"),
-                        voiceLines.get("tm_you_said"),
-                        voiceLines.get("tm_no_evidence"),
-                        voiceLines.get("tm_dont_know"),
-                        voiceLines.get("tm_not_possible")
-                ));
-        fillMap(
-                "TODO",
-                "TODO",
-                false,
-                Arrays.asList(
-                        voiceLines.get("humans_software"),
-                        voiceLines.get("memory_complexity"),
-                        voiceLines.get("secret_diary"),
-                        voiceLines.get("modifiying_memories"),
-                        voiceLines.get("memories_christina")
-                ));
-        fillMap(
-                "obj_christina",
-                "subj_greeting",
-                false,
-                Arrays.asList(
-                        voiceLines.get("hello"),
-                        voiceLines.get("nice_to_meet_okabe"),
-                        voiceLines.get("pleased_to_meet_you"),
-                        voiceLines.get("look_forward_to_working")
-                ));
-        fillMap(
-                "TODO",
-                "TODO",
-                false,
-                Arrays.asList(
-                        voiceLines.get("devilish_pervert"),
-                        voiceLines.get("pervert_confirmed"),
-                        voiceLines.get("pervert_idiot")
-                ));
-        fillMap(
-                "TODO",
-                "TODO",
-                false,
-                Arrays.asList(
-                        voiceLines.get("hehehe")
-                ));
-        fillMap("obj_christina",
-                "subj_name",
-                true,
-                Arrays.asList(
-                        voiceLines.get("pleased_to_meet_you"),
-                        voiceLines.get("nice_to_meet_you")
-                ));
+        // считывание ответов
+        TypedArray tempVoiceLine = context.getResources().obtainTypedArray(R.array.voice_lines);
+        for (int i = 0; i < tempVoiceLine.length(); i++) {
+            int id = tempVoiceLine.getResourceId(i, 0);
+            if (id > 0) {
+                String[] temp = context.getResources().getStringArray(id);
+                ArrayList<VoiceLine> lines = new ArrayList<>();
+                for (int j = 3; j < temp.length; j++) {
+                    lines.add(voiceLines.get(temp[j]));
+                }
+                fillMap(temp[0], temp[1], Boolean.parseBoolean(temp[2]), lines);
+            }
+        }
+        tempVoiceLine.recycle();
 
+        // считывание объектов разговора
         TypedArray tempObject = context.getResources().obtainTypedArray(R.array.objects);
-        for (int i = 0; i < tempObject.length(); ++i) {
+        for (int i = 0; i < tempObject.length(); i++) {
             int id = tempObject.getResourceId(i, 0);
             if (id > 0) {
                 String[] temp = context.getResources().getStringArray(id);
@@ -139,8 +64,9 @@ class Amadeus {
         }
         tempObject.recycle();
 
+        // считывание субъектов разговора
         TypedArray tempSubject = context.getResources().obtainTypedArray(R.array.subjects);
-        for (int i = 0; i < tempSubject.length(); ++i) {
+        for (int i = 0; i < tempSubject.length(); i++) {
             int id = tempSubject.getResourceId(i, 0);
             if (id > 0) {
                 String[] temp = context.getResources().getStringArray(id);
@@ -280,8 +206,6 @@ class Amadeus {
                 }
             }
 
-            //System.out.println(input + "\n" + object + " " + subject + " " + (question ? "?" : "."));
-
             if (responseInputMap.containsKey(object) && responseInputMap.get(object).containsKey(subject) && responseInputMap.get(object).get(subject).containsKey(question)) {
                 specificLines = responseInputMap.get(object).get(subject).get(question).toArray(new VoiceLine[0]);
             }
@@ -369,19 +293,23 @@ class Amadeus {
         }
     }
 
-    static void fillMap(String object, String subject, boolean question, List<VoiceLine> lines) {
-        if (!responseInputMap.containsKey(object)) {
+    private static void fillMap(String object, String subject, boolean question, List<VoiceLine> lines) {
+        HashMap<String, HashMap<Boolean, List<VoiceLine>>> fMap = responseInputMap.get(object);
+        if (fMap == null) {
             HashMap<Boolean, List<VoiceLine>> temp1 = new HashMap<>();
             temp1.put(question, lines);
             HashMap<String, HashMap<Boolean, List<VoiceLine>>> temp2 = new HashMap<>();
             temp2.put(subject, temp1);
             responseInputMap.put(object, temp2);
-        } else if (!responseInputMap.get(object).containsKey(subject)) {
-            HashMap<Boolean, List<VoiceLine>> temp1 = new HashMap<>();
-            temp1.put(question, lines);
-            responseInputMap.get(object).put(subject, temp1);
-        } else if (!responseInputMap.get(object).get(subject).containsKey(question)) {
-            responseInputMap.get(object).get(subject).put(question, lines);
+        } else {
+            HashMap<Boolean, List<VoiceLine>> tMap = fMap.get(subject);
+            if (tMap == null) {
+                HashMap<Boolean, List<VoiceLine>> temp1 = new HashMap<>();
+                temp1.put(question, lines);
+                fMap.put(subject, temp1);
+            } else {
+                tMap.put(question, lines);
+            }
         }
     }
 }

@@ -1,54 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="InconsistentArrays">
-    <string-array name="t_christina">
-        <item>кристина</item>
-    </string-array>
-    <string-array name="forbidden_names">
-        <item>зомби</item>
-        <item>celeb seventeen</item>
-    </string-array>
-    <string-array name="atchannel">
-        <item>atchannel</item>
-        <item>кури гохан</item>
-        <item>камехамеха</item>
-    </string-array>
-    <string-array name="maho">
-        <item>сальери</item>
-        <item>маха</item>
-        <item>hiyajo</item>
-    </string-array>
-    <string-array name="time_machine">
-        <item>машина времени</item>
-        <item>машине времени</item>
-        <item>машины времени</item>
-        <item>церн</item>
-        <item>путешествие во времени</item>
-        <item>путешествиях во времени</item>
-        <item>путешествии во времени</item>
-    </string-array>
-    <string-array name="amadeus">
-        <item>воспоминания</item>
-        <item>amadeus</item>
-        <item>амадей</item>
-        <item>наука</item>
-    </string-array>
-    <string-array name="hi">
-        <item>привет</item>
-        <item>здравствуй</item>
-        <item>доброе утро</item>
-        <item>добрый день</item>
-        <item>добрый вечер</item>
-    </string-array>
-    <string-array name="hentai">
-        <item>симпатичная фигура</item>
-        <item>горячая</item>
-        <item>секси</item>
-        <item>сисечки</item>
-    </string-array>
-    <string-array name="robotics">
-        <item>Robotics Notes</item>
-        <item>antimatter</item>
-    </string-array>
     <string-array name="secret">
         <item>ноль по</item>
     </string-array>

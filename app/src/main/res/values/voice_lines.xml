@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="vl_no_tina">
+        <item>obj_christina</item>
+        <item>subj_christina</item>
+        <item>false</item>
+        <!-- список фраз -->
+        <item>christina</item>
+        <item>why_christina</item>
+        <item>should_christina</item>
+        <item>dont_add_tina</item>
+    </string-array>
+    <string-array name="vl_name">
+        <item>obj_christina</item>
+        <item>subj_name</item>
+        <item>true</item>
+        <!-- -->
+        <item>pleased_to_meet_you</item>
+        <item>nice_to_meet_you</item>
+    </string-array>
+    <string-array name="vl_forbidden_names">
+        <item>obj_christina</item>
+        <item>TODO</item>
+        <item>false</item>
+        <!-- -->
+        <item>dont_call_me_like_that</item>
+    </string-array>
+    <string-array name="vl_unhappy">
+        <item>TODO</item>
+        <item>TODO</item>
+        <item>false</item>
+        <!-- -->
+        <item>senpai_dont_tell</item>
+        <item>still_not_happy</item>
+    </string-array>
+    <string-array name="vl_senpai_who_is_this">
+        <item>TODO</item>
+        <item>TODO</item>
+        <item>false</item>
+        <!-- -->
+        <item>senpai_question</item>
+        <item>senpai_what_we_talkin</item>
+        <item>senpai_questionmark</item>
+        <item>senpai_who_is_this</item>
+    </string-array>
+    <string-array name="vl_time_machine">
+        <item>TODO</item>
+        <item>TODO</item>
+        <item>false</item>
+        <!-- -->
+        <item>tm_noncence</item>
+        <item>tm_you_said</item>
+        <item>tm_no_evidence</item>
+        <item>tm_dont_know</item>
+        <item>tm_not_possible</item>
+    </string-array>
+    <string-array name="vl_tech">
+        <item>TODO</item>
+        <item>TODO</item>
+        <item>false</item>
+        <!-- -->
+        <item>humans_software</item>
+        <item>memory_complexity</item>
+        <item>secret_diary</item>
+        <item>modifiying_memories</item>
+        <item>memories_christina</item>
+    </string-array>
+    <string-array name="vl_greeting">
+        <item>obj_christina</item>
+        <item>subj_greeting</item>
+        <item>false</item>
+        <!-- -->
+        <item>hello</item>
+        <item>nice_to_meet_okabe</item>
+        <item>pleased_to_meet_you</item>
+        <item>look_forward_to_working</item>
+    </string-array>
+    <string-array name="vl_hentai">
+        <item>TODO</item>
+        <item>TODO</item>
+        <item>false</item>
+        <!-- -->
+        <item>devilish_pervert</item>
+        <item>pervert_confirmed</item>
+        <item>pervert_idiot_wanttodie</item>
+    </string-array>
+    <string-array name="vl_robotics">
+        <item>TODO</item>
+        <item>TODO</item>
+        <item>false</item>
+        <!-- -->
+        <item>heheh</item>
+    </string-array>
+</resources>
