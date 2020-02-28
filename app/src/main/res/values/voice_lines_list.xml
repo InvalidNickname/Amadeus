@@ -13,5 +13,7 @@
         <item>@array/vl_im_from_the_future</item>
         <item>@array/vl_cosmic_strings</item>
         <item>@array/vl_wormholes</item>
+        <item>@array/vl_paradox</item>
+        <item>@array/vl_forbidden_names</item>
     </array>
 </resources>

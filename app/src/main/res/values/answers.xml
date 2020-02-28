@@ -18,7 +18,7 @@
     <array name="ans_i_guess">
         <item>i_guess</item>
         <item>indifferent</item>
-        <item>@string/line_devilish_pervert</item>
+        <item>@string/line_i_guess</item>
     </array>
     <array name="ans_nice">
         <item>nice</item>
@@ -354,5 +354,25 @@
         <item>time_travel_other_factors</item>
         <item>normal</item>
         <item>@string/line_time_travel_other_factors</item>
+    </array>
+    <array name="ans_paradox_not_family_tree">
+        <item>paradox_not_family_tree</item>
+        <item>sided_worried</item>
+        <item>@string/line_paradox_not_family_tree</item>
+    </array>
+    <array name="ans_paradox_danger">
+        <item>paradox_danger</item>
+        <item>sided_worried</item>
+        <item>@string/line_paradox_danger</item>
+    </array>
+    <array name="ans_paradox_thought_experiment">
+        <item>paradox_thought_experiment</item>
+        <item>normal</item>
+        <item>@string/line_paradox_thought_experiment</item>
+    </array>
+    <array name="ans_paradox_impossible">
+        <item>paradox_impossible</item>
+        <item>normal</item>
+        <item>@string/line_paradox_impossible</item>
     </array>
 </resources>

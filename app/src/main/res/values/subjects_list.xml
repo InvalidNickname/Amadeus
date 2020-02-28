@@ -13,5 +13,7 @@
         <item>@array/subj_future</item>
         <item>@array/subj_cosmic_strings</item>
         <item>@array/subj_wormholes</item>
+        <item>@array/subj_time_paradox</item>
+        <item>@array/subj_forbidden_names</item>
     </array>
 </resources>

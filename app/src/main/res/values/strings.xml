@@ -90,4 +90,8 @@
     <string name="line_wormholes_urashima_effect">This still can\'t be called true time travel. It only seems that way. This is called the Urashima effect</string>
     <string name="line_time_travel_impossible">Time travel theories are all just thought experiments. Not one of them can create a viable time machine. That is my answer</string>
     <string name="line_time_travel_other_factors">Even if someone did overcome the logistical requirements, there may be other factors that prevent time travel from working</string>
+    <string name="line_paradox_not_family_tree">You can\'t think of it like a sci-fi movie. It\'s not just about your family tree. There are far greater dangers than that</string>
+    <string name="line_paradox_danger">Any paradox, no matter how small, would cause the collapse of the causality, the crumble of the theory of relativity, and even the breakdown of all the laws of physics</string>
+    <string name="line_paradox_thought_experiment">Paradoxes are nothing more than thought experiments. They cannot occur in reality, and they should not</string>
+    <string name="line_paradox_impossible">Nothing that has even a 0.000001% chance of causing a paradox can happen. The universe won\'t allow it. Wouldn\'t you say this is the logical conclusion?</string>
 </resources>

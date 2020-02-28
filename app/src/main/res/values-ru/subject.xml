@@ -33,16 +33,8 @@
         <item>умеешь</item>
     </string-array>
     <string-array name="subj_time_machine">
-        <item>машина времени</item>
-        <item>машине времени</item>
-        <item>машину времени</item>
-        <item>машины времени</item>
-        <item>путешествие во времени</item>
-        <item>путешествии во времени</item>
-        <item>путешествию во времени</item>
-        <item>путешествия во времени</item>
-        <item>путешествиях во времени</item>
-        <item>путешествиям во времени</item>
+        <item>машин времени</item> <!-- машина времени -->
+        <item>путешестви во времени</item> <!-- путешествие во времени -->
     </string-array>
     <string-array name="subj_memory">
         <item>воспоминани</item> <!-- воспоминание, воспоминания, воспоминаниях и т.д. -->
@@ -61,36 +53,20 @@
         <item>будуще</item> <!-- будущее, будущего и т.д. -->
     </string-array>
     <string-array name="subj_cosmic_strings">
-        <item>теория струн</item>
-        <item>теории струн</item>
-        <item>теорией струн</item>
-        <item>теорию струн</item>
-        <item>квантовая струна</item>
-        <item>квантовой струн</item> <!-- струне, струной -->
-        <item>квантовую струну</item>
-        <item>квантовые струны</item>
-        <item>квантовых струн</item> <!-- струн, струнах -->
-        <item>квантовым струнам</item>
-        <item>квантовыми струнами</item>
-        <item>космическая струна</item>
-        <item>космической струн</item> <!-- струне, струной -->
-        <item>космическую струну</item>
-        <item>космические струны</item>
-        <item>космических струн</item> <!-- струн, струнах -->
-        <item>космическим струнам</item>
-        <item>космическими струнами</item>
+        <item>теори струн</item> <!-- теория струн -->
+        <item>квантов струн</item> <!-- квантовая струна -->
+        <item>космическ струн</item> <!-- космическая струна -->
     </string-array>
     <string-array name="subj_wormholes">
         <item>червоточин</item> <!-- червоточина, червоточины и т.д. -->
-        <item>кротовая нора</item>
-        <item>кротовой норы</item>
-        <item>кротовой норе</item>
-        <item>кротовую нору</item>
-        <item>кротовой норой</item>
-        <item>кротовые норы</item>
-        <item>кротовых нор</item>
-        <item>кротовым нора</item> <!-- норам, норах -->
-        <item>кротовыми норами</item>
-        <item>кротовин</item>
+        <item>кротов нор</item> <!-- кротовая нора -->
+        <item>кротовин</item> <!-- кротовина -->
+    </string-array>
+    <string-array name="subj_time_paradox">
+        <item>временн парадокс</item> <!-- временной парадокс -->
+        <item>парадокс дедушки</item>
+    </string-array>
+    <string-array name="subj_forbidden_names">
+        <item>зомби</item>
     </string-array>
 </resources>

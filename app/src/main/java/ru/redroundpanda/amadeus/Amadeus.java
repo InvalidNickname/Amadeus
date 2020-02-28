@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
@@ -210,7 +211,7 @@ class Amadeus {
             }
         } else {
             String object = identifyObject(input.split(" "), objectMap, "obj_christina");
-            String subject = identifySubject(input, subjectMap);
+            String subject = identifySubject(input.split(" "), subjectMap);
 
             boolean question = false;
             for (String questionMarks : context.getResources().getStringArray(R.array.q_marks)) {
@@ -264,21 +265,24 @@ class Amadeus {
         return result;
     }
 
-    private static String identifySubject(String input, HashMap<String, String> data) {
+    private static String identifySubject(String[] input, HashMap<String, String> data) {
         String result = "";
-        String tempSub = "";
         for (String key : data.keySet()) {
-            if (input.contains(key)) {
-                if (data.get(key).equals("subj_christina") && input.split(" ").length > 1) {
-                    tempSub = "subj_christina";
-                } else {
-                    result = data.get(key);
-                    break;
+            String[] splitKey = key.split(" ");
+            int last = 0;
+            int found = 0;
+            for (String val : splitKey) {
+                for (int i = last; i < input.length; i++) {
+                    if (input[i].contains(val)) {
+                        last = i + 1;
+                        found++;
+                        break;
+                    }
                 }
             }
-        }
-        if (result.equals("")) {
-            result = tempSub;
+            if (found == splitKey.length) {
+                result = data.get(key);
+            }
         }
         return result;
     }

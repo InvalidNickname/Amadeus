@@ -72,5 +72,9 @@
         <item>@array/ans_wormholes_urashima_effect</item>
         <item>@array/ans_time_travel_impossible</item>
         <item>@array/ans_time_travel_other_factors</item>
+        <item>@array/ans_paradox_not_family_tree</item>
+        <item>@array/ans_paradox_danger</item>
+        <item>@array/ans_paradox_thought_experiment</item>
+        <item>@array/ans_paradox_impossible</item>
     </array>
 </resources>

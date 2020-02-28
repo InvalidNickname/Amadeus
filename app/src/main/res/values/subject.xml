@@ -48,4 +48,14 @@
     <string-array name="subj_wormholes">
         <item>wormhole</item>
     </string-array>
+    <string-array name="subj_time_paradox">
+        <item>time paradox</item>
+        <item>grandfather paradox</item>
+        <item>temporal paradox</item>
+        <item>time travel paradox</item>
+    </string-array>
+    <string-array name="subj_forbidden_names">
+        <item>zombie</item>
+        <item>celeb seventeen</item>
+    </string-array>
 </resources>

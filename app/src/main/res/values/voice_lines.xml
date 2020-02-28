@@ -110,4 +110,21 @@
         <item>ans_wormholes_simple</item>
         <item>ans_wormholes_urashima_effect</item>
     </string-array>
+    <string-array name="vl_paradox">
+        <item>obj_christina</item>
+        <item>subj_time_paradox</item>
+        <item>true</item>
+        <!-- -->
+        <item>ans_paradox_not_family_tree</item>
+        <item>ans_paradox_danger</item>
+        <item>ans_paradox_thought_experiment</item>
+        <item>ans_paradox_impossible</item>
+    </string-array>
+    <string-array name="vl_forbidden_names">
+        <item>obj_christina</item>
+        <item>subj_forbidden_names</item>
+        <item>both</item>
+        <!-- -->
+        <item>ans_dont_call_me_like_that</item>
+    </string-array>
 </resources>
