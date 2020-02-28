@@ -1,284 +1,358 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="InconsistentArrays">
-    <!-- ответы -->
-    <array name="hello">
-        <item>hello</item> <!-- ID raw-ресурса -->
-        <item>happy</item> <!-- настроение -->
-        <item>@string/line_hello</item> <!-- субтитры -->
+    <array name="ans_hello">
+        <item>hello</item> <!-- raw-resource ID -->
+        <item>happy</item> <!-- mood -->
+        <item>@string/line_hello</item> <!-- subtitles -->
     </array>
-    <array name="daga_kotowaru">
+    <array name="ans_daga_kotowaru">
         <item>daga_kotowaru</item>
         <item>annoyed</item>
         <item>@string/line_but_i_refuse</item>
     </array>
-    <array name="devilish_pervert">
+    <array name="ans_devilish_pervert">
         <item>devilish_pervert</item>
         <item>angry</item>
         <item>@string/line_devilish_pervert</item>
     </array>
-    <array name="i_guess">
+    <array name="ans_i_guess">
         <item>i_guess</item>
         <item>indifferent</item>
         <item>@string/line_devilish_pervert</item>
     </array>
-    <array name="nice">
+    <array name="ans_nice">
         <item>nice</item>
         <item>winking</item>
         <item>@string/line_nice</item>
     </array>
-    <array name="pervert_confirmed">
+    <array name="ans_pervert_confirmed">
         <item>pervert_confirmed</item>
         <item>pissed</item>
         <item>@string/line_pervert_confirmed</item>
     </array>
-    <array name="sorry">
+    <array name="ans_sorry">
         <item>sorry</item>
         <item>sad</item>
         <item>@string/line_sorry</item>
     </array>
-    <array name="sounds_tough">
+    <array name="ans_sounds_tough">
         <item>sounds_tough</item>
         <item>side</item>
         <item>@string/line_sounds_tough</item>
     </array>
-    <array name="this_guy_hopeless">
+    <array name="ans_this_guy_hopeless">
         <item>this_guy_hopeless</item>
         <item>disappointed</item>
         <item>@string/line_this_guy_hopeless</item>
     </array>
-    <array name="christina">
+    <array name="ans_christina">
         <item>christina</item>
         <item>annoyed</item>
         <item>@string/line_christina</item>
     </array>
-    <array name="gah">
+    <array name="ans_gah">
         <item>gah</item>
         <item>indifferent</item>
         <item>@string/line_gah</item>
     </array>
-    <array name="dont_add_tina">
+    <array name="ans_dont_add_tina">
         <item>dont_add_tina</item>
         <item>angry</item>
         <item>@string/line_dont_add_tina</item>
     </array>
-    <array name="why_christina">
+    <array name="ans_why_christina">
         <item>why_christina</item>
         <item>pissed</item>
         <item>@string/line_why_christina</item>
     </array>
-    <array name="who_the_hell_christina">
+    <array name="ans_who_the_hell_christina">
         <item>who_the_hell_christina</item>
         <item>pissed</item>
         <item>@string/line_who_the_hell_christina</item>
     </array>
-    <array name="ask_me_whatever">
+    <array name="ans_ask_me_whatever">
         <item>ask_me_whatever</item>
         <item>happy</item>
         <item>@string/line_ask_me_whatever</item>
     </array>
-    <array name="could_i_help">
+    <array name="ans_could_i_help">
         <item>could_i_help</item>
         <item>happy</item>
         <item>@string/line_could_i_help</item>
     </array>
-    <array name="what_do_you_want">
+    <array name="ans_what_do_you_want">
         <item>what_do_you_want</item>
         <item>happy</item>
         <item>@string/line_what_do_you_want</item>
     </array>
-    <array name="what_is_it">
+    <array name="ans_what_is_it">
         <item>what_is_it</item>
         <item>happy</item>
         <item>@string/line_what_is_it</item>
     </array>
-    <array name="heheh">
+    <array name="ans_heheh">
         <item>heheh</item>
         <item>winking</item>
         <item>@string/line_heheh</item>
     </array>
-    <array name="huh_why_say">
+    <array name="ans_huh_why_say">
         <item>huh_why_say</item>
         <item>sided_worried</item>
         <item>@string/line_huh_why_say</item>
     </array>
-    <array name="you_sure">
+    <array name="ans_you_sure">
         <item>you_sure</item>
         <item>sided_worried</item>
         <item>@string/line_you_sure</item>
     </array>
-    <array name="nice_to_meet_okabe">
+    <array name="ans_nice_to_meet_okabe">
         <item>nice_to_meet_okabe</item>
         <item>sided_pleasant</item>
         <item>@string/line_nice_to_meet_okabe</item>
     </array>
-    <array name="look_forward_to_working">
+    <array name="ans_look_forward_to_working">
         <item>look_forward_to_working</item>
         <item>happy</item>
         <item>@string/line_look_forward_to_working</item>
     </array>
-    <array name="senpai_question">
+    <array name="ans_senpai_question">
         <item>senpai_question</item>
         <item>side</item>
         <item>@string/line_senpai_question</item>
     </array>
-    <array name="senpai_questionmark">
+    <array name="ans_senpai_questionmark">
         <item>senpai_questionmark</item>
         <item>side</item>
         <item>@string/line_senpai_question_mark</item>
     </array>
-    <array name="senpai_what_we_talkin">
+    <array name="ans_senpai_what_we_talkin">
         <item>senpai_what_we_talkin</item>
         <item>sided_worried</item>
         <item>@string/line_senpai_what_we_talkin</item>
     </array>
-    <array name="senpai_who_is_this">
+    <array name="ans_senpai_who_is_this">
         <item>senpai_who_is_this</item>
         <item>normal</item>
         <item>@string/line_senpai_who_is_this</item>
     </array>
-    <array name="senpai_please_dont_tell">
+    <array name="ans_senpai_please_dont_tell">
         <item>senpai_please_dont_tell</item>
         <item>blush</item>
         <item>@string/line_senpai_please_dont_tell</item>
     </array>
-    <array name="still_not_happy">
+    <array name="ans_still_not_happy">
         <item>still_not_happy</item>
         <item>blush</item>
         <item>@string/line_still_not_happy</item>
     </array>
-    <array name="dont_call_me_like_that">
+    <array name="ans_dont_call_me_like_that">
         <item>dont_call_me_like_that</item>
         <item>angry</item>
         <item>@string/line_dont_call_me_like_that</item>
     </array>
-    <array name="tm_nonsense">
+    <array name="ans_tm_nonsense">
         <item>tm_nonsense</item>
         <item>disappointed</item>
         <item>@string/line_tm_nonsense</item>
     </array>
-    <array name="tm_scientist_no_evidence">
+    <array name="ans_tm_scientist_no_evidence">
         <item>tm_scientist_no_evidence</item>
         <item>normal</item>
         <item>@string/line_tm_scientist_no_evidence</item>
     </array>
-    <array name="tm_we_dont_know">
+    <array name="ans_tm_we_dont_know">
         <item>tm_we_dont_know</item>
         <item>normal</item>
         <item>@string/line_tm_we_dont_know</item>
     </array>
-    <array name="tm_you_said">
+    <array name="ans_tm_you_said">
         <item>tm_you_said</item>
         <item>sided_worried</item>
         <item>@string/line_tm_you_said</item>
     </array>
-    <array name="humans_software">
+    <array name="ans_humans_software">
         <item>humans_software</item>
         <item>normal</item>
         <item>@string/line_humans_software</item>
     </array>
-    <array name="memory_complex">
+    <array name="ans_memory_complex">
         <item>memory_complex</item>
         <item>indifferent</item>
         <item>@string/line_memory_complex</item>
     </array>
-    <array name="secret_diary">
+    <array name="ans_secret_diary">
         <item>secret_diary</item>
         <item>indifferent</item>
         <item>@string/line_secret_diary</item>
     </array>
-    <array name="modifying_memories_impossible">
+    <array name="ans_modifying_memories_impossible">
         <item>modifying_memories_impossible</item>
         <item>indifferent</item>
         <item>@string/line_modifying_memories_impossible</item>
     </array>
-    <array name="memories_christina">
+    <array name="ans_memories_christina">
         <item>memories_christina</item>
         <item>winking</item>
         <item>@string/line_memories_christina</item>
     </array>
-    <array name="gah_extended">
+    <array name="ans_gah_extended">
         <item>gah_extended</item>
         <item>blush</item>
         <item>@string/line_gah_extended</item>
     </array>
-    <array name="should_christina">
+    <array name="ans_should_christina">
         <item>should_christina</item>
         <item>pissed</item>
         <item>@string/line_should_christina</item>
     </array>
-    <array name="ok">
+    <array name="ans_ok">
         <item>ok</item>
         <item>happy</item>
         <item>@string/line_ok</item>
     </array>
-    <array name="tm_not_possible">
+    <array name="ans_tm_not_possible">
         <item>tm_not_possible</item>
         <item>disappointed</item>
         <item>@string/line_tm_not_possible</item>
     </array>
-    <array name="pleased_to_meet_you">
+    <array name="ans_pleased_to_meet_you">
         <item>pleased_to_meet_you</item>
         <item>sided_pleasant</item>
         <item>@string/line_pleased_to_meet_you</item>
     </array>
-    <array name="pervert_idiot_wanttodie">
+    <array name="ans_pervert_idiot_wanttodie">
         <item>pervert_idiot_wanttodie</item>
         <item>angry</item>
         <item>@string/line_pervert_idiot_wanttodie</item>
     </array>
-    <array name="leskinen_awesome">
+    <array name="ans_leskinen_awesome">
         <item>leskinen_awesome</item>
         <item>winking</item>
         <item>@string/line_Leskinen_awesome</item>
     </array>
-    <array name="leskinen_nice">
+    <array name="ans_leskinen_nice">
         <item>leskinen_nice</item>
         <item>winking</item>
         <item>@string/line_Leskinen_nice</item>
     </array>
-    <array name="leskinen_oh_no">
+    <array name="ans_leskinen_oh_no">
         <item>leskinen_oh_no</item>
         <item>winking</item>
         <item>@string/line_Leskinen_oh_no</item>
     </array>
-    <array name="leskinen_shaman">
+    <array name="ans_leskinen_shaman">
         <item>leskinen_shaman</item>
         <item>winking</item>
         <item>@string/line_Leskinen_shaman</item>
     </array>
-    <array name="leskinen_holy_cow">
+    <array name="ans_leskinen_holy_cow">
         <item>leskinen_holy_cow</item>
         <item>winking</item>
         <item>@string/line_Leskinen_holy_cow</item>
     </array>
-    <array name="nice_to_meet_you">
+    <array name="ans_nice_to_meet_you">
         <item>nice_to_meet_you</item>
         <item>happy</item>
         <item>@string/line_nice_to_meet_you</item>
     </array>
-    <array name="makise_kurisu_desu">
+    <array name="ans_makise_kurisu_desu">
         <item>makise_kurisu_desu</item>
         <item>happy</item>
         <item>@string/line_makise_kurisu_desu</item>
     </array>
-    <array name="huh">
+    <array name="ans_huh">
         <item>huh</item>
         <item>annoyed</item>
         <item>@string/line_huh</item>
     </array>
-    <array name="hhuh">
+    <array name="ans_hhuh">
         <item>hhuh</item>
         <item>annoyed</item>
         <item>@string/line_hhuh</item>
     </array>
-    <array name="what_are_you_talking_about">
+    <array name="ans_what_are_you_talking_about">
         <item>what_are_you_talking_about</item>
         <item>annoyed</item>
         <item>@string/line_what_are_you_talking_about</item>
     </array>
-    <array name="why_have_we_met_before">
+    <array name="ans_why_have_we_met_before">
         <item>why_have_we_met_before</item>
         <item>sided_worried</item>
         <item>@string/line_why_have_we_met_before</item>
+    </array>
+    <array name="ans_time_travel_is_possible_theory_of_relativity">
+        <item>time_travel_is_possible_theory_of_relativity</item>
+        <item>normal</item>
+        <item>@string/line_time_travel_is_possible_theory_of_relativity</item>
+    </array>
+    <array name="ans_came_from_the_future">
+        <item>came_from_the_future</item>
+        <item>sided_worried</item>
+        <item>@string/line_came_from_the_future</item>
+    </array>
+    <array name="ans_cosmic_string_definition">
+        <item>cosmic_string_definition</item>
+        <item>normal</item>
+        <item>@string/line_cosmic_string_definition</item>
+    </array>
+    <array name="ans_cosmic_string_size">
+        <item>cosmic_string_size</item>
+        <item>normal</item>
+        <item>@string/line_cosmic_string_size</item>
+    </array>
+    <array name="ans_cosmic_string_distorts_space_time">
+        <item>cosmic_string_distorts_space_time</item>
+        <item>normal</item>
+        <item>@string/line_cosmic_string_distorts_space_time</item>
+    </array>
+    <array name="ans_cosmic_string_time_flow">
+        <item>cosmic_string_time_flow</item>
+        <item>normal</item>
+        <item>@string/line_cosmic_string_time_flow</item>
+    </array>
+    <array name="ans_cosmic_string_deficit_jump">
+        <item>cosmic_string_deficit_jump</item>
+        <item>normal</item>
+        <item>@string/line_cosmic_string_deficit_jump</item>
+    </array>
+    <array name="ans_cosmic_string_not_superstring">
+        <item>cosmic_string_not_superstring</item>
+        <item>normal</item>
+        <item>@string/line_cosmic_string_not_superstring</item>
+    </array>
+    <array name="ans_wormholes_tunnel">
+        <item>wormholes_tunnel</item>
+        <item>normal</item>
+        <item>@string/line_wormholes_tunnel</item>
+    </array>
+    <array name="ans_wormholes_collapse">
+        <item>wormholes_collapse</item>
+        <item>normal</item>
+        <item>@string/line_wormholes_collapse</item>
+    </array>
+    <array name="ans_wormholes_stabilizing">
+        <item>wormholes_stabilizing</item>
+        <item>normal</item>
+        <item>@string/line_wormholes_stabilizing</item>
+    </array>
+    <array name="ans_wormholes_simple">
+        <item>wormholes_simple</item>
+        <item>normal</item>
+        <item>@string/line_wormholes_simple</item>
+    </array>
+    <array name="ans_wormholes_urashima_effect">
+        <item>wormholes_urashima_effect</item>
+        <item>normal</item>
+        <item>@string/line_wormholes_urashima_effect</item>
+    </array>
+    <array name="ans_time_travel_impossible">
+        <item>time_travel_impossible</item>
+        <item>normal</item>
+        <item>@string/line_time_travel_impossible</item>
+    </array>
+    <array name="ans_time_travel_other_factors">
+        <item>time_travel_other_factors</item>
+        <item>normal</item>
+        <item>@string/line_time_travel_other_factors</item>
     </array>
 </resources>

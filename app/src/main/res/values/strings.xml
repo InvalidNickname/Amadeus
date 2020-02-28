@@ -75,4 +75,19 @@
     <string name="line_hhuh">Hhuh?</string>
     <string name="line_what_are_you_talking_about">What are you talking about?</string>
     <string name="line_why_have_we_met_before">Why? Have we met before?</string>
+    <string name="line_time_travel_is_possible_theory_of_relativity">By the way, time travel to the future is available to us right now, according to Einstein\'s special theory of relativity</string>
+    <string name="line_came_from_the_future">Are you from the future?</string>
+    <string name="line_cosmic_string_definition">A cosmic string is a string shaped \"crevice\" with extreme mass</string>
+    <string name="line_cosmic_string_size">The string is a \"crevice\" about as wide as an elementary particle, and at least as long as the diameter of a galaxy</string>
+    <string name="line_cosmic_string_distorts_space_time">The string has immense mass, so it distorts space-time. If you were to travel through this distortion, you could make a full circle around the string in less than 360 degrees</string>
+    <string name="line_cosmic_string_time_flow">According to the special theory of relativity, time will flow slower for the cosmic string in relation to its surroundings</string>
+    <string name="line_cosmic_string_deficit_jump">If you use two cosmic strings, you can do a space deficit jump. If you loop back to your original location, you can return to the same time you started revolving</string>
+    <string name="line_cosmic_string_not_superstring">By the way, cosmic strings are not the same as superstrings</string>
+    <string name="line_wormholes_tunnel">There are two wormholes joined by a tunnel. No matter how far away the wormholes are, transit time through the tunnel is zero</string>
+    <string name="line_wormholes_collapse">The wormhole tunnel suffers from super gravity, and collapses as soon as it opens</string>
+    <string name="line_wormholes_stabilizing">If you stabilize the wormhole tunnel with exotic matter injection, instantaneous travel between wormholes becomes possible. To travel through time, however, takes a little more effort</string>
+    <string name="line_wormholes_simple">The prerequisites for wormhole travel are simpler than the ones for cosmic string travel</string>
+    <string name="line_wormholes_urashima_effect">This still can\'t be called true time travel. It only seems that way. This is called the Urashima effect</string>
+    <string name="line_time_travel_impossible">Time travel theories are all just thought experiments. Not one of them can create a viable time machine. That is my answer</string>
+    <string name="line_time_travel_other_factors">Even if someone did overcome the logistical requirements, there may be other factors that prevent time travel from working</string>
 </resources>

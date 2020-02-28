@@ -46,7 +46,18 @@ class Amadeus {
                 for (int j = 3; j < temp.length; j++) {
                     lines.add(voiceLines.get(temp[j]));
                 }
-                fillMap(temp[0], temp[1], Boolean.parseBoolean(temp[2]), lines);
+                switch (temp[2]) {
+                    case "true":
+                        fillMap(temp[0], temp[1], true, lines);
+                        break;
+                    case "false":
+                        fillMap(temp[0], temp[1], false, lines);
+                        break;
+                    default:
+                        fillMap(temp[0], temp[1], true, lines);
+                        fillMap(temp[0], temp[1], false, lines);
+                        break;
+                }
             }
         }
         tempVoiceLine.recycle();
@@ -171,27 +182,27 @@ class Amadeus {
             shaman_girls++;
             if (shaman_girls < 5) {
                 specificLines = new VoiceLine[]{
-                        voiceLines.get("gah"),
-                        voiceLines.get("gah_extended")
+                        voiceLines.get("ans_gah"),
+                        voiceLines.get("ans_gah_extended")
                 };
             } else {
                 VoiceLine singleLine;
                 switch (shaman_girls) {
                     case 5:
-                        singleLine = voiceLines.get("leskinen_awesome");
+                        singleLine = voiceLines.get("ans_leskinen_awesome");
                         break;
                     case 6:
-                        singleLine = voiceLines.get("leskinen_nice");
+                        singleLine = voiceLines.get("ans_leskinen_nice");
                         break;
                     case 7:
-                        singleLine = voiceLines.get("leskinen_oh_no");
+                        singleLine = voiceLines.get("ans_leskinen_oh_no");
                         break;
                     case 8:
-                        singleLine = voiceLines.get("leskinen_shaman");
+                        singleLine = voiceLines.get("ans_leskinen_shaman");
                         break;
                     case 9:
                     default:
-                        singleLine = voiceLines.get("leskinen_holy_cow");
+                        singleLine = voiceLines.get("ans_leskinen_holy_cow");
                         shaman_girls = 0;
                         break;
                 }
@@ -218,12 +229,12 @@ class Amadeus {
 
             if (specificLines == null) {
                 specificLines = new VoiceLine[]{
-                        voiceLines.get("ask_me_whatever"),
-                        voiceLines.get("what_do_you_want"),
-                        voiceLines.get("what_is_it"),
-                        voiceLines.get("heheh"),
-                        voiceLines.get("huh_why_say"),
-                        voiceLines.get("you_sure")
+                        voiceLines.get("ans_ask_me_whatever"),
+                        voiceLines.get("ans_what_do_you_want"),
+                        voiceLines.get("ans_what_is_it"),
+                        voiceLines.get("ans_heheh"),
+                        voiceLines.get("ans_huh_why_say"),
+                        voiceLines.get("ans_you_sure")
                 };
             }
         }
@@ -290,7 +301,7 @@ class Amadeus {
             for (String word : input) {
                 if (packageInfo.packageName.contains(word)) {
                     Intent app;
-                    Amadeus.speak(voiceLines.get("ok"), activity);
+                    Amadeus.speak(voiceLines.get("ans_ok"), activity);
                     switch (packageInfo.packageName) {
                         /* Exceptional cases */
                         case "com.android.phone": {

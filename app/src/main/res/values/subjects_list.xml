@@ -10,5 +10,8 @@
         <item>@array/subj_memory</item>
         <item>@array/subj_organization</item>
         <item>@array/subj_know_me</item>
+        <item>@array/subj_future</item>
+        <item>@array/subj_cosmic_strings</item>
+        <item>@array/subj_wormholes</item>
     </array>
 </resources>

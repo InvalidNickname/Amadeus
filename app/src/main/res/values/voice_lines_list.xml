@@ -10,5 +10,8 @@
         <item>@array/vl_memory</item>
         <item>@array/vl_organization</item>
         <item>@array/vl_know_me</item>
+        <item>@array/vl_im_from_the_future</item>
+        <item>@array/vl_cosmic_strings</item>
+        <item>@array/vl_wormholes</item>
     </array>
 </resources>

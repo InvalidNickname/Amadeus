@@ -37,4 +37,15 @@
         <item>know me</item>
         <item>remember me</item>
     </string-array>
+    <string-array name="subj_future">
+        <item>future</item>
+    </string-array>
+    <string-array name="subj_cosmic_strings">
+        <item>string theory</item>
+        <item>cosmic string</item>
+        <item>quantum string</item>
+    </string-array>
+    <string-array name="subj_wormholes">
+        <item>wormhole</item>
+    </string-array>
 </resources>

@@ -57,4 +57,40 @@
         <item>меня помнишь</item>
         <item>меня знаешь</item>
     </string-array>
+    <string-array name="subj_future">
+        <item>будуще</item> <!-- будущее, будущего и т.д. -->
+    </string-array>
+    <string-array name="subj_cosmic_strings">
+        <item>теория струн</item>
+        <item>теории струн</item>
+        <item>теорией струн</item>
+        <item>теорию струн</item>
+        <item>квантовая струна</item>
+        <item>квантовой струн</item> <!-- струне, струной -->
+        <item>квантовую струну</item>
+        <item>квантовые струны</item>
+        <item>квантовых струн</item> <!-- струн, струнах -->
+        <item>квантовым струнам</item>
+        <item>квантовыми струнами</item>
+        <item>космическая струна</item>
+        <item>космической струн</item> <!-- струне, струной -->
+        <item>космическую струну</item>
+        <item>космические струны</item>
+        <item>космических струн</item> <!-- струн, струнах -->
+        <item>космическим струнам</item>
+        <item>космическими струнами</item>
+    </string-array>
+    <string-array name="subj_wormholes">
+        <item>червоточин</item> <!-- червоточина, червоточины и т.д. -->
+        <item>кротовая нора</item>
+        <item>кротовой норы</item>
+        <item>кротовой норе</item>
+        <item>кротовую нору</item>
+        <item>кротовой норой</item>
+        <item>кротовые норы</item>
+        <item>кротовых нор</item>
+        <item>кротовым нора</item> <!-- норам, норах -->
+        <item>кротовыми норами</item>
+        <item>кротовин</item>
+    </string-array>
 </resources>

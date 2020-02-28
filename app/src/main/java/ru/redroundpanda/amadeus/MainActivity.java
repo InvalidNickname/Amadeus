@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Amadeus.initialize(this);
-        Amadeus.speak(voiceLines.get("hello"), this);
+        Amadeus.speak(voiceLines.get("ans_hello"), this);
 
         kurisu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                         if (ContextCompat.checkSelfPermission(host, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
                             promptSpeechInput();
                         } else {
-                            Amadeus.speak(voiceLines.get("daga_kotowaru"), MainActivity.this);
+                            Amadeus.speak(voiceLines.get("ans_daga_kotowaru"), MainActivity.this);
                         }
                     }
 
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
 
         public void onError(int error) {
             sr.cancel();
-            Amadeus.speak(voiceLines.get("sorry"), MainActivity.this);
+            Amadeus.speak(voiceLines.get("ans_sorry"), MainActivity.this);
         }
 
         public void onResults(Bundle results) {
