@@ -94,4 +94,6 @@
     <string name="line_paradox_danger">Any paradox, no matter how small, would cause the collapse of the causality, the crumble of the theory of relativity, and even the breakdown of all the laws of physics</string>
     <string name="line_paradox_thought_experiment">Paradoxes are nothing more than thought experiments. They cannot occur in reality, and they should not</string>
     <string name="line_paradox_impossible">Nothing that has even a 0.000001% chance of causing a paradox can happen. The universe won\'t allow it. Wouldn\'t you say this is the logical conclusion?</string>
+    <string name="line_who_is_zombie">Who are you calling a zombie?</string>
+    <string name="line_you_idiot">You... idiot!</string>
 </resources>

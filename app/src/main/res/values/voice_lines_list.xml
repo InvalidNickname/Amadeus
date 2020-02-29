@@ -14,6 +14,8 @@
         <item>@array/vl_cosmic_strings</item>
         <item>@array/vl_wormholes</item>
         <item>@array/vl_paradox</item>
+        <item>@array/vl_zombie</item>
+        <item>@array/vl_hentai</item>
         <item>@array/vl_forbidden_names</item>
     </array>
 </resources>

@@ -14,6 +14,8 @@
         <item>@array/subj_cosmic_strings</item>
         <item>@array/subj_wormholes</item>
         <item>@array/subj_time_paradox</item>
+        <item>@array/subj_zombie</item>
         <item>@array/subj_forbidden_names</item>
+        <item>@array/subj_hentai</item>
     </array>
 </resources>

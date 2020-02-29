@@ -375,4 +375,14 @@
         <item>normal</item>
         <item>@string/line_paradox_impossible</item>
     </array>
+    <array name="ans_who_is_zombie">
+        <item>who_is_zombie</item>
+        <item>sided_angry</item>
+        <item>@string/line_who_is_zombie</item>
+    </array>
+    <array name="ans_you_idiot">
+        <item>you_idiot</item>
+        <item>angry</item>
+        <item>@string/line_you_idiot</item>
+    </array>
 </resources>

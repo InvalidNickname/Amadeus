@@ -60,6 +60,9 @@ class VoiceLine {
             case "sided_worried":
                 mood = R.drawable.kurisu_sided_worried;
                 break;
+            case "sided_angry":
+                mood = R.drawable.kurisu_sided_angry;
+                break;
             default:
                 // недостижимо
                 mood = R.drawable.kurisu_happy1;

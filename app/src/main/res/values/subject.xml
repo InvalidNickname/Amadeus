@@ -54,8 +54,16 @@
         <item>temporal paradox</item>
         <item>time travel paradox</item>
     </string-array>
-    <string-array name="subj_forbidden_names">
+    <string-array name="subj_zombie">
         <item>zombie</item>
+    </string-array>
+    <string-array name="subj_forbidden_names">
         <item>celeb seventeen</item>
+    </string-array>
+    <string-array name="subj_hentai">
+        <item>hot</item>
+        <item>boob</item>
+        <item>sexy</item>
+        <item>perv</item>
     </string-array>
 </resources>

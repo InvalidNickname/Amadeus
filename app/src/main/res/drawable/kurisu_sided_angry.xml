@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:drawable="@drawable/kurisu_side1"
+        android:drawable="@drawable/kurisu_sided_angry1"
         android:duration="150" />
     <item
-        android:drawable="@drawable/kurisu_side2"
+        android:drawable="@drawable/kurisu_sided_angry2"
         android:duration="150" />
     <item
-        android:drawable="@drawable/kurisu_side3"
+        android:drawable="@drawable/kurisu_sided_angry3"
         android:duration="150" />
 </animation-list>

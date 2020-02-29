@@ -76,5 +76,7 @@
         <item>@array/ans_paradox_danger</item>
         <item>@array/ans_paradox_thought_experiment</item>
         <item>@array/ans_paradox_impossible</item>
+        <item>@array/ans_who_is_zombie</item>
+        <item>@array/ans_you_idiot</item>
     </array>
 </resources>

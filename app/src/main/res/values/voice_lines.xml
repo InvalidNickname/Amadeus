@@ -120,11 +120,29 @@
         <item>ans_paradox_thought_experiment</item>
         <item>ans_paradox_impossible</item>
     </string-array>
+    <string-array name="vl_zombie">
+        <item>obj_christina</item>
+        <item>subj_zombie</item>
+        <item>both</item>
+        <!-- -->
+        <item>ans_dont_call_me_like_that</item>
+        <item>ans_who_is_zombie</item>
+    </string-array>
     <string-array name="vl_forbidden_names">
         <item>obj_christina</item>
         <item>subj_forbidden_names</item>
         <item>both</item>
         <!-- -->
         <item>ans_dont_call_me_like_that</item>
+    </string-array>
+    <string-array name="vl_hentai">
+        <item>obj_christina</item>
+        <item>subj_hentai</item>
+        <item>both</item>
+        <!-- -->
+        <item>ans_you_idiot</item>
+        <item>ans_devilish_pervert</item>
+        <item>ans_pervert_confirmed</item>
+        <item>ans_pervert_idiot_wanttodie</item>
     </string-array>
 </resources>
