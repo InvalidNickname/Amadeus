@@ -28,3 +28,6 @@ gradle.properties
 ehthumbs.db
 Thumbs.db
 /gradle/wrapper/gradle-wrapper.properties
+/app/release
+key.jks
+private_key.pepk
