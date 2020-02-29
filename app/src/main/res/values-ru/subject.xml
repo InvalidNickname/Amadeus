@@ -70,12 +70,19 @@
         <item>зомби</item>
     </string-array>
     <string-array name="subj_forbidden_names">
-        <item>звезда 17</item>
+        <item>звезд 17</item> <!-- звезда 17 -->
+        <item>гениальн извращенк</item> <!-- гениальная извращенка -->
     </string-array>
     <string-array name="subj_hentai">
         <item>секс</item> <!-- сексуальная, секси и т.д. -->
         <item>груд</item> <!-- грудь -->
         <item>сиськ</item> <!-- сиськи -->
         <item>горяч</item> <!-- горячая -->
+    </string-array>
+    <string-array name="subj_help">
+        <item>помо</item> <!-- помощь, помоги, поможешь и т.д. -->
+    </string-array>
+    <string-array name="subj_perv">
+        <item>извращенк</item> <!-- извращенка -->
     </string-array>
 </resources>

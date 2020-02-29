@@ -9,6 +9,8 @@
         <item>ans_why_christina</item>
         <item>ans_should_christina</item>
         <item>ans_dont_add_tina</item>
+        <item>ans_stop_adding_tina</item>
+        <item>ans_use_my_real_name</item>
     </string-array>
     <string-array name="vl_name">
         <item>obj_christina</item>
@@ -127,6 +129,7 @@
         <!-- -->
         <item>ans_dont_call_me_like_that</item>
         <item>ans_who_is_zombie</item>
+        <item>ans_use_my_real_name</item>
     </string-array>
     <string-array name="vl_forbidden_names">
         <item>obj_christina</item>
@@ -134,6 +137,7 @@
         <item>both</item>
         <!-- -->
         <item>ans_dont_call_me_like_that</item>
+        <item>ans_use_my_real_name</item>
     </string-array>
     <string-array name="vl_hentai">
         <item>obj_christina</item>
@@ -144,5 +148,23 @@
         <item>ans_devilish_pervert</item>
         <item>ans_pervert_confirmed</item>
         <item>ans_pervert_idiot_wanttodie</item>
+        <item>ans_hentai_thoughts</item>
+    </string-array>
+    <string-array name="vl_help_me">
+        <item>obj_me</item>
+        <item>subj_help</item>
+        <item>both</item>
+        <!-- -->
+        <item>ans_share_knowledge_not_hentai</item>
+        <item>ans_ask_me_whatever</item>
+        <item>ans_what_do_you_want</item>
+        <item>ans_what_is_it</item>
+    </string-array>
+    <string-array name="vl_dont_call_me_perv">
+        <item>obj_christina</item>
+        <item>subj_perv</item>
+        <item>false</item>
+        <!-- -->
+        <item>ans_no_more_hentai</item>
     </string-array>
 </resources>

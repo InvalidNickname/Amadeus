@@ -96,4 +96,9 @@
     <string name="line_paradox_impossible">Nothing that has even a 0.000001% chance of causing a paradox can happen. The universe won\'t allow it. Wouldn\'t you say this is the logical conclusion?</string>
     <string name="line_who_is_zombie">Who are you calling a zombie?</string>
     <string name="line_you_idiot">You... idiot!</string>
+    <string name="line_hentai_thoughts">That creepy grin... are you thinking perverted thoughts again?</string>
+    <string name="line_share_knowledge_not_hentai">I don\'t mind lending you my knowledge, but if there is more pervy nonsense involved, the answer is NO</string>
+    <string name="line_stop_adding_tina">Stop adding -tina! My name is Kurisu!</string>
+    <string name="line_use_my_real_name">I won\'t answer to either. Use my real name</string>
+    <string name="line_no_more_hentai">Come on! No more saying \'perv\'! I won\'t treat you like a perv either! So let\'s drop it already!</string>
 </resources>

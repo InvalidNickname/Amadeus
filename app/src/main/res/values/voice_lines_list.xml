@@ -17,5 +17,7 @@
         <item>@array/vl_zombie</item>
         <item>@array/vl_hentai</item>
         <item>@array/vl_forbidden_names</item>
+        <item>@array/vl_help_me</item>
+        <item>@array/vl_dont_call_me_perv</item>
     </array>
 </resources>

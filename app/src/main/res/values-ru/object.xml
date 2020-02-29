@@ -12,6 +12,7 @@
     <string-array name="obj_me">
         <item>я</item>
         <item>меня</item>
+        <item>мне</item>
         <item>моё</item> <!-- вот тут сокращать не буду, возникнет много ошибочных слов со слогом -мо- -->
         <item>мой</item>
         <item>моя</item>

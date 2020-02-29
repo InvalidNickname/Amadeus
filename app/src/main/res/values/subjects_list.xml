@@ -17,5 +17,7 @@
         <item>@array/subj_zombie</item>
         <item>@array/subj_forbidden_names</item>
         <item>@array/subj_hentai</item>
+        <item>@array/subj_help</item>
+        <item>@array/subj_perv</item>
     </array>
 </resources>

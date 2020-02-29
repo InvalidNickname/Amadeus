@@ -385,4 +385,29 @@
         <item>angry</item>
         <item>@string/line_you_idiot</item>
     </array>
+    <array name="ans_hentai_thoughts">
+        <item>hentai_thoughts</item>
+        <item>disappointed</item>
+        <item>@string/line_hentai_thoughts</item>
+    </array>
+    <array name="ans_share_knowledge_not_hentai">
+        <item>share_knowledge_not_hentai</item>
+        <item>annoyed</item>
+        <item>@string/line_share_knowledge_not_hentai</item>
+    </array>
+    <array name="ans_stop_adding_tina">
+        <item>stop_adding_tina</item>
+        <item>angry</item>
+        <item>@string/line_stop_adding_tina</item>
+    </array>
+    <array name="ans_use_my_real_name">
+        <item>use_my_real_name</item>
+        <item>angry</item>
+        <item>@string/line_use_my_real_name</item>
+    </array>
+    <array name="ans_no_more_hentai">
+        <item>no_more_hentai</item>
+        <item>angry</item>
+        <item>@string/line_no_more_hentai</item>
+    </array>
 </resources>

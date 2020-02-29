@@ -59,11 +59,17 @@
     </string-array>
     <string-array name="subj_forbidden_names">
         <item>celeb seventeen</item>
+        <item>genius perv girl</item>
     </string-array>
     <string-array name="subj_hentai">
         <item>hot</item>
         <item>boob</item>
         <item>sexy</item>
+    </string-array>
+    <string-array name="subj_help">
+        <item>help</item>
+    </string-array>
+    <string-array name="subj_perv">
         <item>perv</item>
     </string-array>
 </resources>

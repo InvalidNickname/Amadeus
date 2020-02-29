@@ -78,5 +78,10 @@
         <item>@array/ans_paradox_impossible</item>
         <item>@array/ans_who_is_zombie</item>
         <item>@array/ans_you_idiot</item>
+        <item>@array/ans_hentai_thoughts</item>
+        <item>@array/ans_share_knowledge_not_hentai</item>
+        <item>@array/ans_stop_adding_tina</item>
+        <item>@array/ans_use_my_real_name</item>
+        <item>@array/ans_no_more_hentai</item>
     </array>
 </resources>
