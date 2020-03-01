@@ -9,13 +9,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/bg1" />
+        android:src="@drawable/background" />
 
     <ImageView
         android:id="@+id/kurisu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/kurisu_normal" />
+
+    <ImageView
+        android:id="@+id/mouth"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/mouth_normal"/>
 
     <ImageView
         android:id="@+id/logo_small"

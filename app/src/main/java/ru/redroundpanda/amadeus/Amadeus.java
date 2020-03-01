@@ -19,7 +19,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
@@ -96,6 +95,7 @@ class Amadeus {
         final AnimationDrawable animation;
         final TextView subtitles = activity.findViewById(R.id.subtitles_text);
         final ImageView kurisu = activity.findViewById(R.id.kurisu);
+        final ImageView mouth = activity.findViewById(R.id.mouth);
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(activity);
 
         Log.i("Amadeus", activity.getString(line.getSubtitle()));
@@ -108,8 +108,10 @@ class Amadeus {
                 subtitles.setText(line.getSubtitle());
             }
 
+            kurisu.setImageResource(line.getMood());
+
             Resources res = activity.getResources();
-            animation = (AnimationDrawable) Drawable.createFromXml(res, res.getXml(line.getMood()));
+            animation = (AnimationDrawable) Drawable.createFromXml(res, res.getXml(line.getExpression()));
 
             if (player.isPlaying()) {
                 player.stop();
@@ -137,7 +139,7 @@ class Amadeus {
                     activity.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            kurisu.setImageDrawable(animation.getFrame(0));
+                            mouth.setImageDrawable(animation.getFrame(0));
                         }
                     });
                 }
@@ -158,10 +160,12 @@ class Amadeus {
                             activity.runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    if (normalized > 50) {
-                                        kurisu.setImageDrawable(animation.getFrame((int) Math.ceil(Math.random() * 2)));
+                                    if (normalized > 120) {
+                                        mouth.setImageDrawable(animation.getFrame(2));
+                                    } else if (normalized > 60) {
+                                        mouth.setImageDrawable(animation.getFrame(1));
                                     } else {
-                                        kurisu.setImageDrawable(animation.getFrame(0));
+                                        mouth.setImageDrawable(animation.getFrame(0));
                                     }
                                 }
                             });

@@ -54,7 +54,7 @@ public class LaunchActivity extends AppCompatActivity {
                 if (!isPressed && isGQSBInstalled()) {
                     isPressed = true;
 
-                    connect.setImageResource(R.drawable.connect_select);
+                    connect.setImageResource(R.drawable.connect_selected);
 
                     m = MediaPlayer.create(LaunchActivity.this, R.raw.tone);
 
@@ -80,7 +80,7 @@ public class LaunchActivity extends AppCompatActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cancel.setImageResource(R.drawable.cancel_select);
+                cancel.setImageResource(R.drawable.cancel_selected);
                 onBackPressed();
             }
         });
