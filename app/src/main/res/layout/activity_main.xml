@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -21,7 +23,7 @@
         android:id="@+id/mouth"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/mouth_normal"/>
+        android:src="@drawable/mouth_normal" />
 
     <ImageView
         android:id="@+id/logo_small"
@@ -35,8 +37,8 @@
 
     <ImageView
         android:id="@+id/subtitles_background"
-        android:layout_width="fill_parent"
-        android:layout_height="140dp"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:scaleType="centerCrop"
@@ -45,19 +47,19 @@
     <TextView
         android:id="@+id/subtitles_text"
         android:layout_width="wrap_content"
-        android:layout_height="150dp"
+        android:layout_height="110dp"
         android:layout_alignTop="@+id/subtitles_background"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="35dp"
         android:layout_marginTop="11dp"
-        android:fontFamily="Droid"
         android:gravity="start"
         android:shadowColor="#000"
         android:shadowRadius="2"
         android:textAlignment="gravity"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="#FFF"
-        android:textSize="16.0sp"
-        android:typeface="monospace" />
+        android:typeface="monospace"
+        android:textSize="14sp"
+        tools:text="@string/line_cosmic_string_distorts_space_time" />
 
 </RelativeLayout>

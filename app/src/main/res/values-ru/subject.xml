@@ -85,4 +85,13 @@
     <string-array name="subj_perv">
         <item>извращенк</item> <!-- извращенка -->
     </string-array>
+    <string-array name="subj_nakabachi">
+        <item>накабачи</item>
+        <item>на каба</item> <!-- все вопросы к распознаванию -->
+        <item>накаба чей</item>
+        <item>на копа</item>
+    </string-array>
+    <string-array name="subj_assistant">
+        <item>ассистент</item>
+    </string-array>
 </resources>

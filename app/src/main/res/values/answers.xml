@@ -410,4 +410,29 @@
         <item>angry</item>
         <item>@string/line_no_more_hentai</item>
     </array>
+    <array name="ans_eh_yes">
+        <item>eh_yes</item>
+        <item>blush</item>
+        <item>@string/line_eh_yes</item>
+    </array>
+    <array name="ans_doctor_nakabachi">
+        <item>doctor_nakabachi</item>
+        <item>sided_surprised</item>
+        <item>@string/line_doctor_nakabachi</item>
+    </array>
+    <array name="ans_uh_what">
+        <item>uh_what</item>
+        <item>sided_worried</item>
+        <item>@string/line_uh_what</item>
+    </array>
+    <array name="ans_when_did_i_become_your_assistant">
+        <item>when_did_i_become_your_assistant</item>
+        <item>sided_angry</item>
+        <item>@string/line_when_did_i_become_your_assistant</item>
+    </array>
+    <array name="ans_dont_call_me_your_assistant">
+        <item>dont_call_me_your_assistant</item>
+        <item>angry</item>
+        <item>@string/line_dont_call_me_your_assistant</item>
+    </array>
 </resources>

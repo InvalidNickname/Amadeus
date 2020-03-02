@@ -219,14 +219,7 @@ class Amadeus {
             }
 
             if (specificLines == null) {
-                specificLines = new VoiceLine[]{
-                        voiceLines.get("ans_ask_me_whatever"),
-                        voiceLines.get("ans_what_do_you_want"),
-                        voiceLines.get("ans_what_is_it"),
-                        voiceLines.get("ans_heheh"),
-                        voiceLines.get("ans_huh_why_say"),
-                        voiceLines.get("ans_you_sure")
-                };
+                specificLines = responseInputMap.get("system").get("EMPTY").get(false).toArray(new VoiceLine[0]);
             }
         }
         if (specificLines.length > 1) {
@@ -295,9 +288,9 @@ class Amadeus {
             for (String word : input) {
                 if (packageInfo.packageName.contains(word)) {
                     Intent app;
-                    Amadeus.speak(voiceLines.get("ans_ok"), activity);
+                    VoiceLine[] specificLines = responseInputMap.get("system").get("OK").get(false).toArray(new VoiceLine[0]);
+                    Amadeus.speak(specificLines[new Random().nextInt(specificLines.length)], activity);
                     switch (packageInfo.packageName) {
-                        /* Exceptional cases */
                         case "com.android.phone": {
                             app = new Intent(Intent.ACTION_DIAL, null);
                             activity.startActivity(app);

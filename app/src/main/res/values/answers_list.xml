@@ -83,5 +83,10 @@
         <item>@array/ans_stop_adding_tina</item>
         <item>@array/ans_use_my_real_name</item>
         <item>@array/ans_no_more_hentai</item>
+        <item>@array/ans_eh_yes</item>
+        <item>@array/ans_doctor_nakabachi</item>
+        <item>@array/ans_uh_what</item>
+        <item>@array/ans_when_did_i_become_your_assistant</item>
+        <item>@array/ans_dont_call_me_your_assistant</item>
     </array>
 </resources>

@@ -19,5 +19,7 @@
         <item>@array/subj_hentai</item>
         <item>@array/subj_help</item>
         <item>@array/subj_perv</item>
+        <item>@array/subj_nakabachi</item>
+        <item>@array/subj_assistant</item>
     </array>
 </resources>

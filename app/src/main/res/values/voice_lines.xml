@@ -167,4 +167,40 @@
         <!-- -->
         <item>ans_no_more_hentai</item>
     </string-array>
+    <string-array name="vl_ok">
+        <item>system</item>
+        <item>OK</item>
+        <item>false</item>
+        <!-- -->
+        <item>ans_eh_yes</item>
+        <item>ans_ok</item>
+    </string-array>
+    <string-array name="vl_nakabachi">
+        <item>obj_christina</item>
+        <item>subj_nakabachi</item>
+        <item>both</item>
+        <!-- -->
+        <item>ans_doctor_nakabachi</item>
+    </string-array>
+    <string-array name="vl_empty">
+        <item>system</item>
+        <item>EMPTY</item>
+        <item>both</item>
+        <!-- -->
+        <item>ans_ask_me_whatever</item>
+        <item>ans_what_do_you_want</item>
+        <item>ans_what_is_it</item>
+        <item>ans_heheh</item>
+        <item>ans_huh_why_say</item>
+        <item>ans_you_sure</item>
+        <item>ans_uh_what</item>
+    </string-array>
+    <string-array name="vl_assistant">
+        <item>obj_christina</item>
+        <item>subj_assistant</item>
+        <item>both</item>
+        <!-- -->
+        <item>ans_when_did_i_become_your_assistant</item>
+        <item>ans_dont_call_me_your_assistant</item>
+    </string-array>
 </resources>
