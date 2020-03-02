@@ -41,12 +41,12 @@ public class MainActivity extends AppCompatActivity {
         ImageView kurisu = findViewById(R.id.kurisu);
         ImageView subtitlesBackground = findViewById(R.id.subtitles_background);
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        recogLang = settings.getString("recognition_lang", "ja-JP");
+        recogLang = settings.getString("recognition_lang", getString(R.string.default_recognition_lang));
         contextLang = recogLang.split("-");
         sr = SpeechRecognizer.createSpeechRecognizer(this);
         sr.setRecognitionListener(new Listener());
 
-        if (!settings.getBoolean("show_subtitles", false)) {
+        if (!settings.getBoolean("show_subtitles", true)) {
             subtitlesBackground.setVisibility(View.INVISIBLE);
         }
 
@@ -57,43 +57,37 @@ public class MainActivity extends AppCompatActivity {
         Amadeus.initialize(this);
         Amadeus.speak(voiceLines.get("ans_hello"), this);
 
-        kurisu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    MainActivity host = (MainActivity) view.getContext();
+        kurisu.setOnClickListener(view -> {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                MainActivity host = (MainActivity) view.getContext();
 
-                    /* Input during loop produces bugs and mixes with output */
-                    if (!Amadeus.isSpeaking) {
-                        if (ContextCompat.checkSelfPermission(host, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
-                            promptSpeechInput();
-                        } else {
-                            Amadeus.speak(voiceLines.get("ans_daga_kotowaru"), MainActivity.this);
-                        }
+                /* Input during loop produces bugs and mixes with output */
+                if (!Amadeus.isSpeaking) {
+                    if (ContextCompat.checkSelfPermission(host, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
+                        promptSpeechInput();
+                    } else {
+                        Amadeus.speak(voiceLines.get("ans_daga_kotowaru"), MainActivity.this);
                     }
-
-                } else if (!Amadeus.isSpeaking) {
-                    promptSpeechInput();
                 }
+
+            } else if (!Amadeus.isSpeaking) {
+                promptSpeechInput();
             }
         });
 
-        kurisu.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                if (!Amadeus.isSpeaking) {
-                    VoiceLine[] temp = voiceLines.values().toArray(new VoiceLine[0]);
-                    int id = randomgen.nextInt(voiceLines.size());
-                    int raw_id = temp[id].getId();
-                    // чтобы не говорила пасхалки случайно
-                    while (raw_id == R.raw.leskinen_awesome || raw_id == R.raw.leskinen_nice || raw_id == R.raw.leskinen_oh_no || raw_id == R.raw.leskinen_shaman || raw_id == R.raw.leskinen_holy_cow) {
-                        id = randomgen.nextInt(voiceLines.size());
-                        raw_id = temp[id].getId();
-                    }
-                    Amadeus.speak(temp[id], MainActivity.this);
+        kurisu.setOnLongClickListener(view -> {
+            if (!Amadeus.isSpeaking) {
+                VoiceLine[] temp = voiceLines.values().toArray(new VoiceLine[0]);
+                int id = randomgen.nextInt(voiceLines.size());
+                int raw_id = temp[id].getId();
+                // чтобы не говорила пасхалки случайно
+                while (raw_id == R.raw.leskinen_awesome || raw_id == R.raw.leskinen_nice || raw_id == R.raw.leskinen_oh_no || raw_id == R.raw.leskinen_shaman || raw_id == R.raw.leskinen_holy_cow) {
+                    id = randomgen.nextInt(voiceLines.size());
+                    raw_id = temp[id].getId();
                 }
-                return true;
+                Amadeus.speak(temp[id], MainActivity.this);
             }
+            return true;
         });
     }
 

@@ -5,6 +5,7 @@ import android.app.assist.AssistStructure;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.service.voice.VoiceInteractionSession;
 import android.view.View;
 
@@ -35,7 +36,7 @@ public class LoggerSession extends VoiceInteractionSession {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             contentView = getLayoutInflater().inflate(R.layout.activity_assist, null);
             View background = contentView.findViewById(R.id.background);
-            background.setOnClickListener(v -> onBackPressed());
+            background.setOnClickListener(v -> LoggerSession.this.onBackPressed());
             return contentView;
         } else {
             return super.onCreateContentView();
