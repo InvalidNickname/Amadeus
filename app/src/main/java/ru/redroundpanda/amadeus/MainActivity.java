@@ -129,6 +129,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+    }
+
     private class Listener implements RecognitionListener {
 
         public void onReadyForSpeech(Bundle params) {
@@ -191,5 +196,4 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
 }

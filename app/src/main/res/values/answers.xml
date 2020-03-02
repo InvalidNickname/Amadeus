@@ -410,4 +410,9 @@
         <item>angry</item>
         <item>@string/line_no_more_hentai</item>
     </array>
+    <array name="ans_eh_yes">
+        <item>eh_yes</item>
+        <item>blush</item>
+        <item>@string/line_eh_yes</item>
+    </array>
 </resources>

@@ -5,9 +5,6 @@
     tools:ignore="LockedOrientationActivity">
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -46,6 +43,21 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ru.redroundpanda.amadeus.LaunchActivity" />
         </activity>
-    </application>
 
+        <service
+            android:name="ru.redroundpanda.amadeus.LoggerService"
+            android:permission="android.permission.BIND_VOICE_INTERACTION">
+            <meta-data
+                android:name="android.voice_interaction"
+                android:resource="@xml/assist_service" />
+            <intent-filter>
+                <action android:name="android.service.voice.VoiceInteractionService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="ru.redroundpanda.amadeus.LoggerSessionService"
+            android:permission="android.permission.BIND_VOICE_INTERACTION">
+            <!-- -->
+        </service>
+    </application>
 </manifest>

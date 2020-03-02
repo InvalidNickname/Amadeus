@@ -83,5 +83,6 @@
         <item>@array/ans_stop_adding_tina</item>
         <item>@array/ans_use_my_real_name</item>
         <item>@array/ans_no_more_hentai</item>
+        <item>@array/ans_eh_yes</item>
     </array>
 </resources>
