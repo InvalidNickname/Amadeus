@@ -120,29 +120,18 @@ class Amadeus {
                 player = new MediaPlayer();
             }
 
-            player.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                @Override
-                public void onPrepared(MediaPlayer mp) {
-                    isSpeaking = true;
-                    mp.start();
-                    visualizer.setEnabled(true);
-                }
+            player.setOnPreparedListener(mp -> {
+                isSpeaking = true;
+                mp.start();
+                visualizer.setEnabled(true);
             });
 
-            player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                @Override
-                public void onCompletion(MediaPlayer mp) {
-                    isSpeaking = false;
-                    mp.release();
-                    visualizer.setEnabled(false);
+            player.setOnCompletionListener(mp -> {
+                isSpeaking = false;
+                mp.release();
+                visualizer.setEnabled(false);
 
-                    activity.runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            mouth.setImageDrawable(animation.getFrame(0));
-                        }
-                    });
-                }
+                activity.runOnUiThread(() -> mouth.setImageDrawable(animation.getFrame(0)));
             });
 
             visualizer.setEnabled(false);
@@ -157,16 +146,13 @@ class Amadeus {
                             // The normalized volume
                             final float normalized = sum / (float) bytes.length;
 
-                            activity.runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    if (normalized > 120) {
-                                        mouth.setImageDrawable(animation.getFrame(2));
-                                    } else if (normalized > 60) {
-                                        mouth.setImageDrawable(animation.getFrame(1));
-                                    } else {
-                                        mouth.setImageDrawable(animation.getFrame(0));
-                                    }
+                            activity.runOnUiThread(() -> {
+                                if (normalized > 120) {
+                                    mouth.setImageDrawable(animation.getFrame(2));
+                                } else if (normalized > 60) {
+                                    mouth.setImageDrawable(animation.getFrame(1));
+                                } else {
+                                    mouth.setImageDrawable(animation.getFrame(0));
                                 }
                             });
                         }

@@ -20,7 +20,7 @@ public class LangContext extends ContextWrapper {
 
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
 
-        String lang = settings.getString("lang", "en");
+        String lang = settings.getString("lang", context.getResources().getString(R.string.default_lang));
         String[] langArr = lang.split("-");
         Locale locale;
         switch (langArr.length) {

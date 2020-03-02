@@ -48,49 +48,32 @@ public class LaunchActivity extends AppCompatActivity {
 
         aniHandle.post(aniRunnable);
 
-        connect.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!isPressed && isGQSBInstalled()) {
-                    isPressed = true;
+        connect.setOnClickListener(view -> {
+            if (!isPressed && isGQSBInstalled()) {
+                isPressed = true;
 
-                    connect.setImageResource(R.drawable.connect_selected);
+                connect.setImageResource(R.drawable.connect_selected);
 
-                    m = MediaPlayer.create(LaunchActivity.this, R.raw.tone);
+                m = MediaPlayer.create(LaunchActivity.this, R.raw.tone);
 
-                    m.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                        @Override
-                        public void onPrepared(MediaPlayer mp) {
-                            mp.start();
-                        }
-                    });
+                m.setOnPreparedListener(MediaPlayer::start);
 
-                    m.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            mp.release();
-                            Intent intent = new Intent(LaunchActivity.this, MainActivity.class);
-                            startActivity(intent);
-                        }
-                    });
-                }
+                m.setOnCompletionListener(mp -> {
+                    mp.release();
+                    Intent intent = new Intent(LaunchActivity.this, MainActivity.class);
+                    startActivity(intent);
+                });
             }
         });
 
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                cancel.setImageResource(R.drawable.cancel_selected);
-                onBackPressed();
-            }
+        cancel.setOnClickListener(view -> {
+            cancel.setImageResource(R.drawable.cancel_selected);
+            onBackPressed();
         });
 
-        logo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent settingIntent = new Intent(LaunchActivity.this, SettingsActivity.class);
-                startActivity(settingIntent);
-            }
+        logo.setOnClickListener(view -> {
+            Intent settingIntent = new Intent(LaunchActivity.this, SettingsActivity.class);
+            startActivity(settingIntent);
         });
     }
 
