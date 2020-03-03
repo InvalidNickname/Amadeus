@@ -94,6 +94,10 @@ class VoiceLine {
                 mood = R.drawable.kurisu_sided_thinking;
                 expression = R.drawable.mouth_sided_thinking;
                 break;
+            case "back":
+                mood = R.drawable.kurisu_back;
+                expression = R.drawable.mouth_empty;
+                break;
             default:
                 // unreachable
                 mood = 0;

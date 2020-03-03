@@ -10,7 +10,6 @@
         <item>ans_should_christina</item>
         <item>ans_dont_add_tina</item>
         <item>ans_stop_adding_tina</item>
-        <item>ans_use_my_real_name</item>
     </string-array>
     <string-array name="vl_name">
         <item>obj_christina</item>
@@ -231,5 +230,12 @@
         <!-- -->
         <item>ans_gah_extended</item>
         <item>ans_gah</item>
+    </string-array>
+    <string-array name="vl_christina_rage">
+        <item>system</item>
+        <item>CHRISTINA_RAGE</item>
+        <item>both</item>
+        <!-- -->
+        <item>ans_use_my_real_name</item>
     </string-array>
 </resources>

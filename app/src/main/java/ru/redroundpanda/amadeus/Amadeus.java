@@ -36,7 +36,7 @@ class Amadeus {
     private static final HashMap<String, String> subjectMap = new HashMap<>(); // карта <слово, субъект>
     static Boolean isSpeaking = false;
     static MediaPlayer player;
-    private static int shaman_girls = -1;
+    private static int shaman_girls = -1, christina_calls = 0;
     private static HashMap<String, VoiceLine> voiceLines;
 
     static void initialize(Context context) {
@@ -142,6 +142,9 @@ class Amadeus {
                 mp.release();
                 visualizer.setEnabled(false);
 
+                // christina's rage
+                if (christina_calls > 5) activity.finish();
+
                 activity.runOnUiThread(() -> mouth.setImageDrawable(animation.getFrame(0)));
             });
 
@@ -209,6 +212,14 @@ class Amadeus {
             boolean question = false;
             if (containsInput(input, context.getResources().getStringArray(R.array.q_marks))) {
                 question = true;
+            }
+
+            if (subject.equals("subj_christina") && object.equals("obj_christina")) {
+                christina_calls++;
+                if (christina_calls > 5) {
+                    object = "system";
+                    subject = "CHRISTINA_RAGE";
+                }
             }
 
             Log.i("Amadeus", input);
