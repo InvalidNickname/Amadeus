@@ -95,12 +95,12 @@ class VoiceLine {
                 expression = R.drawable.mouth_sided_thinking;
                 break;
             default:
-                // недостижимо
+                // unreachable
                 mood = 0;
                 expression = 0;
                 break;
         }
-        this.subtitle = data.getResourceId(2, 0);
+        subtitle = data.getResourceId(2, 0);
         data.recycle();
     }
 

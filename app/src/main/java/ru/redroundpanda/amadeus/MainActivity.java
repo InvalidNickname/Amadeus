@@ -11,6 +11,7 @@ import android.preference.PreferenceManager;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -19,13 +20,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final Random randomgen = new Random();
-    private HashMap<String, VoiceLine> voiceLines;
     private String recogLang;
     private String[] contextLang;
     private SpeechRecognizer sr;
@@ -36,10 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        voiceLines = VoiceLine.Line.getLines(this);
-
         ImageView kurisu = findViewById(R.id.kurisu);
         ImageView subtitlesBackground = findViewById(R.id.subtitles_background);
+
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         recogLang = settings.getString("recognition_lang", getString(R.string.default_recognition_lang));
         contextLang = recogLang.split("-");
@@ -51,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.RECORD_AUDIO}, 1);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, 1);
         }
 
         Amadeus.initialize(this);
@@ -66,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
                         Amadeus.speakSpecific("system", "NO_PERMISSION", false, this);
                     }
                 }
-
             } else if (!Amadeus.isSpeaking) {
                 promptSpeechInput();
             }
@@ -74,15 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         kurisu.setOnLongClickListener(view -> {
             if (!Amadeus.isSpeaking) {
-                VoiceLine[] temp = voiceLines.values().toArray(new VoiceLine[0]);
-                int id = randomgen.nextInt(voiceLines.size());
-                int raw_id = temp[id].getId();
-                // чтобы не говорила пасхалки случайно
-                while (raw_id == R.raw.leskinen_awesome || raw_id == R.raw.leskinen_nice || raw_id == R.raw.leskinen_oh_no || raw_id == R.raw.leskinen_shaman || raw_id == R.raw.leskinen_holy_cow) {
-                    id = randomgen.nextInt(voiceLines.size());
-                    raw_id = temp[id].getId();
-                }
-                Amadeus.speak(temp[id], MainActivity.this);
+                Amadeus.speakRandom(MainActivity.this);
             }
             return true;
         });
@@ -106,18 +93,6 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, recogLang);
 
         sr.startListening(intent);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
-            if (resultCode == RESULT_OK && data != null) {
-                Context context = LangContext.load(getApplicationContext(), contextLang[0]);
-                ArrayList<String> input = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                Amadeus.responseToInput(input.get(0), context, MainActivity.this);
-            }
-        }
     }
 
     private class Listener implements RecognitionListener {
@@ -145,8 +120,12 @@ public class MainActivity extends AppCompatActivity {
         public void onResults(Bundle results) {
             ArrayList data = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
 
-            String input = (String) data.get(0);
-            input = input.replace(".", "").toLowerCase();
+            if (data == null) {
+                Log.w("Amadeus", "Recognition error");
+                return;
+            }
+
+            String input = ((String) data.get(0)).replace(".", "").toLowerCase();
             String[] splitInput = input.split(" ");
 
             Context context = LangContext.load(getApplicationContext(), contextLang[0]);

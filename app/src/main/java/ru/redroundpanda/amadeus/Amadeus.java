@@ -97,7 +97,12 @@ class Amadeus {
         tempSubject.recycle();
     }
 
-    static void speak(VoiceLine line, final Activity activity) {
+    private static void speak(VoiceLine line, final Activity activity) {
+        if (line == null) {
+            Log.w("Amadeus", "Response line not found");
+            return;
+        }
+
         final AnimationDrawable animation;
         final TextView subtitles = activity.findViewById(R.id.subtitles_text);
         final ImageView kurisu = activity.findViewById(R.id.kurisu);
@@ -149,7 +154,7 @@ class Amadeus {
                             for (int i = 1; i < bytes.length; i++) {
                                 sum += bytes[i] + 128;
                             }
-                            // The normalized volume
+                            // the normalized volume
                             final float normalized = sum / (float) bytes.length;
 
                             activity.runOnUiThread(() -> {
@@ -171,39 +176,30 @@ class Amadeus {
         }
     }
 
+    // input must be already set to lower case
     static void responseToInput(String input, Context context, Activity activity) {
-        VoiceLine[] specificLines = null;
-        input = input.toLowerCase();
-
         if (containsInput(input, context.getResources().getStringArray(R.array.secret))) {
             shaman_girls++;
-            if (shaman_girls < 5) {
-                specificLines = new VoiceLine[]{
-                        voiceLines.get("ans_gah"),
-                        voiceLines.get("ans_gah_extended")
-                };
-            } else {
-                VoiceLine singleLine;
-                switch (shaman_girls) {
-                    case 5:
-                        singleLine = voiceLines.get("ans_leskinen_awesome");
-                        break;
-                    case 6:
-                        singleLine = voiceLines.get("ans_leskinen_nice");
-                        break;
-                    case 7:
-                        singleLine = voiceLines.get("ans_leskinen_oh_no");
-                        break;
-                    case 8:
-                        singleLine = voiceLines.get("ans_leskinen_shaman");
-                        break;
-                    case 9:
-                    default:
-                        singleLine = voiceLines.get("ans_leskinen_holy_cow");
-                        shaman_girls = 0;
-                        break;
-                }
-                specificLines = new VoiceLine[]{singleLine};
+            switch (shaman_girls) {
+                case 5:
+                    speak(voiceLines.get("ans_leskinen_awesome"), activity);
+                    break;
+                case 6:
+                    speak(voiceLines.get("ans_leskinen_nice"), activity);
+                    break;
+                case 7:
+                    speak(voiceLines.get("ans_leskinen_oh_no"), activity);
+                    break;
+                case 8:
+                    speak(voiceLines.get("ans_leskinen_shaman"), activity);
+                    break;
+                case 9:
+                    speak(voiceLines.get("ans_leskinen_holy_cow"), activity);
+                    shaman_girls = 0;
+                    break;
+                default:
+                    speakSpecific("system", "SHAMAN_PREPARATION", false, activity);
+                    break;
             }
         } else {
             String[] splitInput = input.split(" ");
@@ -218,18 +214,7 @@ class Amadeus {
             Log.i("Amadeus", input);
             Log.i("Amadeus", object + " " + subject + " " + (question ? "?" : "."));
 
-            if (responseInputMap.containsKey(object) && responseInputMap.get(object).containsKey(subject) && responseInputMap.get(object).get(subject).containsKey(question)) {
-                specificLines = responseInputMap.get(object).get(subject).get(question).toArray(new VoiceLine[0]);
-            }
-
-            if (specificLines == null) {
-                specificLines = responseInputMap.get("system").get("EMPTY").get(false).toArray(new VoiceLine[0]);
-            }
-        }
-        if (specificLines.length > 1) {
-            speak(specificLines[new Random().nextInt(specificLines.length)], activity);
-        } else {
-            speak(specificLines[0], activity);
+            speakSpecific(object, subject, question, activity);
         }
     }
 
@@ -375,8 +360,47 @@ class Amadeus {
         }
     }
 
+
     static void speakSpecific(String object, String subject, boolean question, Activity activity) {
-        VoiceLine[] specificLines = responseInputMap.get(object).get(subject).get(question).toArray(new VoiceLine[0]);
-        Amadeus.speak(specificLines[new Random().nextInt(specificLines.length)], activity);
+        speakSpecific(object, subject, question, activity, false);
+    }
+
+    private static void speakSpecific(String object, String subject, boolean question, Activity activity, boolean err) {
+        HashMap<String, HashMap<Boolean, List<VoiceLine>>> t1 = responseInputMap.get(object);
+        if (t1 == null) {
+            Log.w("Amadeus", "Object \"" + object + "\" doesn't exist");
+            // try to speak empty line only once, avoiding recursion if this line doesn't exist
+            if (!err) speakSpecific("system", "EMPTY", false, activity, true);
+            return;
+        }
+        HashMap<Boolean, List<VoiceLine>> t2 = t1.get(subject);
+        if (t2 == null) {
+            Log.w("Amadeus", "Subject \"" + subject + "\" for object \"" + object + "\" doesn't exist");
+            // try to speak empty line only once, avoiding recursion if this line doesn't exist
+            if (!err) speakSpecific("system", "EMPTY", false, activity, true);
+            return;
+        }
+        List<VoiceLine> t3 = t2.get(question);
+        if (t3 == null) {
+            Log.w("Amadeus", (question ? "Question " : "Non question ") + "answer for object \"" + object + "\" and subject \"" + subject + "\" doesn't exist");
+            // try to speak empty line only once, avoiding recursion if this line doesn't exist
+            if (!err) speakSpecific("system", "EMPTY", false, activity, true);
+            return;
+        }
+        VoiceLine[] specificLines = t3.toArray(new VoiceLine[0]);
+        speak(specificLines[new Random().nextInt(specificLines.length)], activity);
+    }
+
+    static void speakRandom(Activity activity) {
+        Random random = new Random();
+        VoiceLine[] temp = voiceLines.values().toArray(new VoiceLine[0]);
+        int id = random.nextInt(voiceLines.size());
+        int raw_id = temp[id].getId();
+        // чтобы не говорила пасхалки случайно
+        while (raw_id == R.raw.leskinen_awesome || raw_id == R.raw.leskinen_nice || raw_id == R.raw.leskinen_oh_no || raw_id == R.raw.leskinen_shaman || raw_id == R.raw.leskinen_holy_cow) {
+            id = random.nextInt(voiceLines.size());
+            raw_id = temp[id].getId();
+        }
+        speak(temp[id], activity);
     }
 }

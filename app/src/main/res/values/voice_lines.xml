@@ -224,4 +224,12 @@
         <!-- -->
         <item>ans_hello</item>
     </string-array>
+    <string-array name="vl_shaman_preparation">
+        <item>system</item>
+        <item>SHAMAN_PREPARATION</item>
+        <item>both</item>
+        <!-- -->
+        <item>ans_gah_extended</item>
+        <item>ans_gah</item>
+    </string-array>
 </resources>

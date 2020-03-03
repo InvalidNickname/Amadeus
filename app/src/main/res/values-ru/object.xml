@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="InconsistentArrays">
+    <!--
+        строки без u/ в начале требуют полного совпадения (equals())
+        строки с u/ в начале требуют, чтобы распознаваемые слова включали их (contains())
+    -->
     <string-array name="obj_christina">
         <item>ты</item>
         <item>u/кристин</item> <!-- кристина, кристину, кристине, кристиной -->
