@@ -1,5 +1,6 @@
 package ru.redroundpanda.amadeus;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -8,15 +9,20 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.database.Cursor;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.media.audiofx.Visualizer;
 import android.net.Uri;
 import android.preference.PreferenceManager;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -200,15 +206,13 @@ class Amadeus {
                 specificLines = new VoiceLine[]{singleLine};
             }
         } else {
-            String object = identifyObject(input.split(" "), objectMap, "obj_christina");
-            String subject = identifySubject(input.split(" "), subjectMap);
+            String[] splitInput = input.split(" ");
+            String object = identifyObject(splitInput, objectMap, "obj_christina");
+            String subject = identifySubject(splitInput, subjectMap);
 
             boolean question = false;
-            for (String questionMarks : context.getResources().getStringArray(R.array.q_marks)) {
-                if (containsInput(input, questionMarks)) {
-                    question = true;
-                    break;
-                }
+            if (containsInput(input, context.getResources().getStringArray(R.array.q_marks))) {
+                question = true;
             }
 
             Log.i("Amadeus", input);
@@ -223,9 +227,9 @@ class Amadeus {
             }
         }
         if (specificLines.length > 1) {
-            Amadeus.speak(specificLines[new Random().nextInt(specificLines.length)], activity);
+            speak(specificLines[new Random().nextInt(specificLines.length)], activity);
         } else {
-            Amadeus.speak(specificLines[0], activity);
+            speak(specificLines[0], activity);
         }
     }
 
@@ -288,8 +292,7 @@ class Amadeus {
             for (String word : input) {
                 if (packageInfo.packageName.contains(word)) {
                     Intent app;
-                    VoiceLine[] specificLines = responseInputMap.get("system").get("OK").get(false).toArray(new VoiceLine[0]);
-                    Amadeus.speak(specificLines[new Random().nextInt(specificLines.length)], activity);
+                    speakSpecific("system", "OK", false, activity);
                     switch (packageInfo.packageName) {
                         case "com.android.phone": {
                             app = new Intent(Intent.ACTION_DIAL, null);
@@ -317,6 +320,41 @@ class Amadeus {
         }
     }
 
+    static void makeACall(String[] input, Activity activity) {
+        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission(activity, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_CONTACTS, Manifest.permission.CALL_PHONE}, 0);
+        } else {
+            String number = "";
+            Cursor cur = activity.getContentResolver().query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
+            if ((cur != null ? cur.getCount() : 0) > 0) {
+                while (cur.moveToNext()) {
+                    String id = cur.getString(cur.getColumnIndex(ContactsContract.Contacts._ID));
+                    if (cur.getString(cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)).toLowerCase().equals(input[0].toLowerCase())) {
+                        if (cur.getInt(cur.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER)) > 0) {
+                            Cursor pCur = activity.getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?", new String[]{id}, null);
+                            if (pCur != null) {
+                                while (pCur.moveToNext()) {
+                                    number = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                                }
+                                pCur.close();
+                            }
+                        }
+                    }
+                }
+                cur.close();
+
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:" + number));
+                Log.i("Amadeus", "Calling " + number);
+
+                speakSpecific("system", "OK", false, activity);
+
+                activity.startActivity(intent);
+            }
+        }
+    }
+
     private static void fillMap(String object, String subject, boolean question, List<VoiceLine> lines) {
         HashMap<String, HashMap<Boolean, List<VoiceLine>>> fMap = responseInputMap.get(object);
         if (fMap == null) {
@@ -335,5 +373,10 @@ class Amadeus {
                 tMap.put(question, lines);
             }
         }
+    }
+
+    static void speakSpecific(String object, String subject, boolean question, Activity activity) {
+        VoiceLine[] specificLines = responseInputMap.get(object).get(subject).get(question).toArray(new VoiceLine[0]);
+        Amadeus.speak(specificLines[new Random().nextInt(specificLines.length)], activity);
     }
 }

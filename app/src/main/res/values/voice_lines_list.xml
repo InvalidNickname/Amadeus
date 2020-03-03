@@ -23,5 +23,8 @@
         <item>@array/vl_nakabachi</item>
         <item>@array/vl_empty</item>
         <item>@array/vl_assistant</item>
+        <item>@array/vl_sorry</item>
+        <item>@array/vl_daga_kotowaru</item>
+        <item>@array/vl_hello</item>
     </array>
 </resources>

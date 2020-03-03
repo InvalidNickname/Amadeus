@@ -55,18 +55,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Amadeus.initialize(this);
-        Amadeus.speak(voiceLines.get("ans_hello"), this);
+        Amadeus.speakSpecific("system", "HELLO", false, this);
 
         kurisu.setOnClickListener(view -> {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                MainActivity host = (MainActivity) view.getContext();
-
-                /* Input during loop produces bugs and mixes with output */
                 if (!Amadeus.isSpeaking) {
-                    if (ContextCompat.checkSelfPermission(host, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
+                    if (ContextCompat.checkSelfPermission(view.getContext(), Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
                         promptSpeechInput();
                     } else {
-                        Amadeus.speak(voiceLines.get("ans_daga_kotowaru"), MainActivity.this);
+                        Amadeus.speakSpecific("system", "NO_PERMISSION", false, this);
                     }
                 }
 
@@ -142,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
 
         public void onError(int error) {
             sr.cancel();
-            Amadeus.speak(voiceLines.get("ans_sorry"), MainActivity.this);
+            Amadeus.speakSpecific("system", "ERROR", false, MainActivity.this);
         }
 
         public void onResults(Bundle results) {
@@ -152,10 +149,9 @@ public class MainActivity extends AppCompatActivity {
             input = input.replace(".", "").toLowerCase();
             String[] splitInput = input.split(" ");
 
-            /* Switch language within current context for voice recognition */
             Context context = LangContext.load(getApplicationContext(), contextLang[0]);
 
-            // проверка на запуск ассистента
+            // check for assistant commands
             boolean assistant = false;
             for (String s : getResources().getStringArray(R.array.assistant)) {
                 if (splitInput[0].equalsIgnoreCase(s)) {
@@ -170,6 +166,8 @@ public class MainActivity extends AppCompatActivity {
                 System.arraycopy(splitInput, 2, args, 0, splitInput.length - 2);
                 if (cmd.contains(context.getString(R.string.open))) {
                     Amadeus.openApp(args, MainActivity.this);
+                } else if (cmd.contains(context.getString(R.string.call))) {
+                    Amadeus.makeACall(args, MainActivity.this);
                 } else {
                     Amadeus.responseToInput(input, context, MainActivity.this);
                 }

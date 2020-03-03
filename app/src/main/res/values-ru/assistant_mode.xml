@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="open">открой</string>
+    <string name="call">позвони</string>
     <string-array name="assistant">
         <item>ассистент</item>
         <item>кристина</item>

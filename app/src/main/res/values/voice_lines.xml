@@ -203,4 +203,25 @@
         <item>ans_when_did_i_become_your_assistant</item>
         <item>ans_dont_call_me_your_assistant</item>
     </string-array>
+    <string-array name="vl_sorry">
+        <item>system</item>
+        <item>ERROR</item>
+        <item>both</item>
+        <!-- -->
+        <item>ans_sorry</item>
+    </string-array>
+    <string-array name="vl_daga_kotowaru">
+        <item>system</item>
+        <item>NO_PERMISSION</item>
+        <item>both</item>
+        <!-- -->
+        <item>ans_daga_kotowaru</item>
+    </string-array>
+    <string-array name="vl_hello">
+        <item>system</item>
+        <item>HELLO</item>
+        <item>both</item>
+        <!-- -->
+        <item>ans_hello</item>
+    </string-array>
 </resources>
