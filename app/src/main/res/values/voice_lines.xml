@@ -180,6 +180,7 @@
         <item>both</item>
         <!-- -->
         <item>ans_doctor_nakabachi</item>
+        <item>ans_doctor_nakabachi_2</item>
     </string-array>
     <string-array name="vl_empty">
         <item>system</item>
@@ -201,6 +202,7 @@
         <!-- -->
         <item>ans_when_did_i_become_your_assistant</item>
         <item>ans_dont_call_me_your_assistant</item>
+        <item>ans_when_did_i_become_your_assistant_2</item>
     </string-array>
     <string-array name="vl_sorry">
         <item>system</item>
@@ -237,5 +239,12 @@
         <item>both</item>
         <!-- -->
         <item>ans_use_my_real_name</item>
+    </string-array>
+    <string-array name="vl_afk">
+        <item>system</item>
+        <item>AFK</item>
+        <item>both</item>
+        <!-- -->
+        <item>ans_why_are_you_glaring_at_me</item>
     </string-array>
 </resources>

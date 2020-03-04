@@ -435,4 +435,19 @@
         <item>angry</item>
         <item>@string/line_dont_call_me_your_assistant</item>
     </array>
+    <array name="ans_when_did_i_become_your_assistant_2">
+        <item>when_did_i_become_your_assistant_2</item>
+        <item>angry</item>
+        <item>@string/line_when_did_i_become_your_assistant_2</item>
+    </array>
+    <array name="ans_why_are_you_glaring_at_me">
+        <item>why_are_you_glaring_at_me</item>
+        <item>angry</item>
+        <item>@string/line_why_are_you_glaring_at_me</item>
+    </array>
+    <array name="ans_doctor_nakabachi_2">
+        <item>doctor_nakabachi</item>
+        <item>sided_surprised</item>
+        <item>@string/line_doctor_nakabachi_2</item>
+    </array>
 </resources>

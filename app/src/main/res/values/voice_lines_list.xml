@@ -28,5 +28,6 @@
         <item>@array/vl_hello</item>
         <item>@array/vl_shaman_preparation</item>
         <item>@array/vl_christina_rage</item>
+        <item>@array/vl_afk</item>
     </array>
 </resources>

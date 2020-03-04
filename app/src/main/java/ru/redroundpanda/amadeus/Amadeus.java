@@ -25,6 +25,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
@@ -34,7 +35,7 @@ class Amadeus {
     private static final HashMap<String, HashMap<String, HashMap<Boolean, List<VoiceLine>>>> responseInputMap = new HashMap<>(); // карта <объект, субъект, вопрос, VoiceLine>
     private static final HashMap<String, String> objectMap = new HashMap<>(); // карта <слово, объект>
     private static final HashMap<String, String> subjectMap = new HashMap<>(); // карта <слово, субъект>
-    static Boolean isSpeaking = false;
+    static boolean isSpeaking = false;
     static MediaPlayer player;
     private static int shaman_girls = -1, christina_calls = 0;
     private static HashMap<String, VoiceLine> voiceLines;
@@ -322,19 +323,20 @@ class Amadeus {
             ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_CONTACTS, Manifest.permission.CALL_PHONE}, 0);
         } else {
             String number = "";
+            String nameToCall = Arrays.toString(input).toLowerCase().replace("ё", "е");
             Cursor cur = activity.getContentResolver().query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
             if ((cur != null ? cur.getCount() : 0) > 0) {
                 while (cur.moveToNext()) {
                     String id = cur.getString(cur.getColumnIndex(ContactsContract.Contacts._ID));
-                    if (cur.getString(cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)).toLowerCase().equals(input[0].toLowerCase())) {
+                    String displayName = cur.getString(cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)).toLowerCase().replace("ё", "е");
+                    if (displayName.equals(nameToCall)) {
                         if (cur.getInt(cur.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER)) > 0) {
                             Cursor pCur = activity.getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?", new String[]{id}, null);
-                            if (pCur != null) {
-                                while (pCur.moveToNext()) {
-                                    number = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                                }
-                                pCur.close();
+                            if (pCur == null) continue;
+                            while (pCur.moveToNext()) {
+                                number = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                             }
+                            pCur.close();
                         }
                     }
                 }
@@ -370,7 +372,6 @@ class Amadeus {
             }
         }
     }
-
 
     static void speakSpecific(String object, String subject, boolean question, Activity activity) {
         speakSpecific(object, subject, question, activity, false);

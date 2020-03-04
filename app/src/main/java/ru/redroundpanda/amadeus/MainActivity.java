@@ -20,12 +20,16 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
     private String recogLang;
     private String[] contextLang;
     private SpeechRecognizer sr;
+    private Timer timer;
+    private boolean isListening = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
+
+        setAfkTimer();
     }
 
     @Override
@@ -93,6 +99,23 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, recogLang);
 
         sr.startListening(intent);
+        isListening = true;
+    }
+
+    private void setAfkTimer() {
+        if (timer != null) timer.cancel();
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(() -> {
+                    if (!Amadeus.isSpeaking && !isListening) {
+                        Amadeus.speakSpecific("system", "AFK", false, MainActivity.this);
+                        setAfkTimer();
+                    }
+                });
+            }
+        }, getResources().getInteger(R.integer.afk));
     }
 
     private class Listener implements RecognitionListener {
@@ -114,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
 
         public void onError(int error) {
             sr.cancel();
+            isListening = false;
+            setAfkTimer();
             Amadeus.speakSpecific("system", "ERROR", false, MainActivity.this);
         }
 
@@ -153,6 +178,9 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 Amadeus.responseToInput(input, context, MainActivity.this);
             }
+
+            isListening = false;
+            setAfkTimer();
         }
 
         public void onPartialResults(Bundle partialResults) {

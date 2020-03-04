@@ -106,4 +106,7 @@
     <string name="line_uh_what">Uh, what?</string>
     <string name="line_when_did_i_become_your_assistant">When did I become your assistant?</string>
     <string name="line_dont_call_me_your_assistant">Don\'t call me your assistant!</string>
+    <string name="line_when_did_i_become_your_assistant_2">Hey. When did I become your assistant?</string>
+    <string name="line_why_are_you_glaring_at_me">Why are you glaring at me?</string>
+    <string name="line_doctor_nakabachi_2">Doctor Nakabachi?</string>
 </resources>

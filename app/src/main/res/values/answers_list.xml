@@ -88,5 +88,8 @@
         <item>@array/ans_uh_what</item>
         <item>@array/ans_when_did_i_become_your_assistant</item>
         <item>@array/ans_dont_call_me_your_assistant</item>
+        <item>@array/ans_when_did_i_become_your_assistant_2</item>
+        <item>@array/ans_why_are_you_glaring_at_me</item>
+        <item>@array/ans_doctor_nakabachi_2</item>
     </array>
 </resources>
