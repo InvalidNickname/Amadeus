@@ -94,4 +94,8 @@
     <string-array name="subj_assistant">
         <item>ассистент</item>
     </string-array>
+    <string-array name="subj_wrong">
+        <item>не так</item>
+        <item>неправильно</item>
+    </string-array>
 </resources>

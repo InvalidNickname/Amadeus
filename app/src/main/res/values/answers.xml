@@ -450,4 +450,14 @@
         <item>sided_surprised</item>
         <item>@string/line_doctor_nakabachi_2</item>
     </array>
+    <array name="ans_organization_whats_that">
+        <item>organization_whats_that</item>
+        <item>sided_worried</item>
+        <item>@string/line_organization_whats_that</item>
+    </array>
+    <array name="ans_all_is_daijoubu">
+        <item>all_is_daijoubu</item>
+        <item>sided_blush</item>
+        <item>@string/line_all_is_daijoubu</item>
+    </array>
 </resources>

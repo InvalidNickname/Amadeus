@@ -78,4 +78,7 @@
     <string-array name="subj_assistant">
         <item>assistant</item>
     </string-array>
+    <string-array name="subj_wrong">
+        <item>wrong</item>
+    </string-array>
 </resources>

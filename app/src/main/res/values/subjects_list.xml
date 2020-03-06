@@ -21,5 +21,6 @@
         <item>@array/subj_perv</item>
         <item>@array/subj_nakabachi</item>
         <item>@array/subj_assistant</item>
+        <item>@array/subj_wrong</item>
     </array>
 </resources>

@@ -29,5 +29,6 @@
         <item>@array/vl_shaman_preparation</item>
         <item>@array/vl_christina_rage</item>
         <item>@array/vl_afk</item>
+        <item>@array/vl_whats_wrong</item>
     </array>
 </resources>

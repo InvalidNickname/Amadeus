@@ -12,5 +12,6 @@
         <item>календарь</item>
         <item>часы будильник</item>
         <item>камеру</item>
+        <item>почту</item>
     </string-array>
 </resources>

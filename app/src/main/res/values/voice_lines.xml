@@ -73,6 +73,7 @@
         <!-- -->
         <item>ans_hhuh</item>
         <item>ans_what_are_you_talking_about</item>
+        <item>ans_organization_whats_that</item>
     </string-array>
     <string-array name="vl_know_me">
         <item>obj_me</item>
@@ -246,5 +247,12 @@
         <item>both</item>
         <!-- -->
         <item>ans_why_are_you_glaring_at_me</item>
+    </string-array>
+    <string-array name="vl_whats_wrong">
+        <item>obj_christina</item>
+        <item>subj_wrong</item>
+        <item>true</item>
+        <!-- -->
+        <item>ans_all_is_daijoubu</item>
     </string-array>
 </resources>

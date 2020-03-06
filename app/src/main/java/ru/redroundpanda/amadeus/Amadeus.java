@@ -25,7 +25,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
@@ -287,31 +286,34 @@ class Amadeus {
 
         for (ApplicationInfo packageInfo : packages) {
             for (String word : input) {
-                if (packageInfo.packageName.contains(word)) {
-                    Intent app;
-                    speakSpecific("system", "OK", false, activity);
-                    switch (packageInfo.packageName) {
-                        case "com.android.phone": {
-                            app = new Intent(Intent.ACTION_DIAL, null);
-                            activity.startActivity(app);
-                            break;
-                        }
-                        case "com.android.chrome": {
-                            app = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
-                            app.setPackage(packageInfo.packageName);
-                            activity.startActivity(app);
-                            break;
-                        }
-                        default: {
-                            app = activity.getPackageManager().getLaunchIntentForPackage(packageInfo.packageName);
-                            if (app != null) {
-                                app.addCategory(Intent.CATEGORY_LAUNCHER);
+                String[] split = word.split(" ");
+                for (String variants : split) {
+                    if (packageInfo.packageName.contains(variants)) {
+                        Intent app;
+                        speakSpecific("system", "OK", false, activity);
+                        switch (packageInfo.packageName) {
+                            case "com.android.phone": {
+                                app = new Intent(Intent.ACTION_DIAL, null);
                                 activity.startActivity(app);
+                                break;
                             }
-                            break;
+                            case "com.android.chrome": {
+                                app = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"));
+                                app.setPackage(packageInfo.packageName);
+                                activity.startActivity(app);
+                                break;
+                            }
+                            default: {
+                                app = activity.getPackageManager().getLaunchIntentForPackage(packageInfo.packageName);
+                                if (app != null) {
+                                    app.addCategory(Intent.CATEGORY_LAUNCHER);
+                                    activity.startActivity(app);
+                                }
+                                break;
+                            }
                         }
+                        break;
                     }
-                    break;
                 }
             }
         }
@@ -323,7 +325,11 @@ class Amadeus {
             ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.READ_CONTACTS, Manifest.permission.CALL_PHONE}, 0);
         } else {
             String number = "";
-            String nameToCall = Arrays.toString(input).toLowerCase().replace("ё", "е");
+            String nameToCall = "";
+            for (String i : input) {
+                nameToCall += i + " ";
+            }
+            nameToCall = nameToCall.trim().replace("ё", "е");
             Cursor cur = activity.getContentResolver().query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
             if ((cur != null ? cur.getCount() : 0) > 0) {
                 while (cur.moveToNext()) {

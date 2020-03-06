@@ -5,5 +5,6 @@
         <item>calendar</item>
         <item>clock</item>
         <item>camera</item>
+        <item>mail gm</item>
     </string-array>
 </resources>

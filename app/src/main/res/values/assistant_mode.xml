@@ -12,5 +12,6 @@
         <item>calendar</item>
         <item>clock</item>
         <item>camera</item>
+        <item>mail</item>
     </string-array>
 </resources>

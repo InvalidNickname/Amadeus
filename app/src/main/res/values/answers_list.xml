@@ -91,5 +91,7 @@
         <item>@array/ans_when_did_i_become_your_assistant_2</item>
         <item>@array/ans_why_are_you_glaring_at_me</item>
         <item>@array/ans_doctor_nakabachi_2</item>
+        <item>@array/ans_organization_whats_that</item>
+        <item>@array/ans_all_is_daijoubu</item>
     </array>
 </resources>

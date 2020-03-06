@@ -93,6 +93,12 @@ public class MainActivity extends AppCompatActivity {
         if (Amadeus.player != null) Amadeus.player.release();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (timer != null) timer.cancel();
+    }
+
     private void promptSpeechInput() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
@@ -116,6 +122,12 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         }, getResources().getInteger(R.integer.afk));
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setAfkTimer();
     }
 
     private class Listener implements RecognitionListener {
@@ -190,5 +202,4 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
 }
