@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         kurisu.setOnLongClickListener(view -> {
             if (!Amadeus.isSpeaking) {
                 Amadeus.speakRandom(MainActivity.this);
+                setAfkTimer();
             }
             return true;
         });

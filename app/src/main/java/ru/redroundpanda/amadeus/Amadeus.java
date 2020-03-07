@@ -107,6 +107,7 @@ class Amadeus {
         final TextView subtitles = activity.findViewById(R.id.subtitles_text);
         final ImageView kurisu = activity.findViewById(R.id.kurisu);
         final ImageView mouth = activity.findViewById(R.id.mouth);
+        final ImageView eyes = activity.findViewById(R.id.eyes);
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(activity);
 
         Log.i("Amadeus", activity.getString(line.getSubtitle()));
@@ -120,9 +121,15 @@ class Amadeus {
             }
 
             kurisu.setImageResource(line.getMood());
+            eyes.setImageResource(line.getEyes());
 
             Resources res = activity.getResources();
-            animation = (AnimationDrawable) Drawable.createFromXml(res, res.getXml(line.getExpression()));
+            if (line.getExpression() != 0) {
+                animation = (AnimationDrawable) Drawable.createFromXml(res, res.getXml(line.getExpression()));
+            } else {
+                mouth.setImageResource(0);
+                animation = null;
+            }
 
             if (player.isPlaying()) {
                 player.stop();
@@ -145,35 +152,39 @@ class Amadeus {
                 // christina's rage
                 if (christina_calls > 5) activity.finish();
 
-                activity.runOnUiThread(() -> mouth.setImageDrawable(animation.getFrame(0)));
+                if (animation != null) {
+                    activity.runOnUiThread(() -> mouth.setImageDrawable(animation.getFrame(0)));
+                }
             });
 
-            visualizer.setEnabled(false);
-            visualizer.setCaptureSize(Visualizer.getCaptureSizeRange()[1]);
-            visualizer.setDataCaptureListener(
-                    new Visualizer.OnDataCaptureListener() {
-                        public void onWaveFormDataCapture(Visualizer visualizer, byte[] bytes, int samplingRate) {
-                            int sum = 0;
-                            for (int i = 1; i < bytes.length; i++) {
-                                sum += bytes[i] + 128;
-                            }
-                            // the normalized volume
-                            final float normalized = sum / (float) bytes.length;
-
-                            activity.runOnUiThread(() -> {
-                                if (normalized > 120) {
-                                    mouth.setImageDrawable(animation.getFrame(2));
-                                } else if (normalized > 60) {
-                                    mouth.setImageDrawable(animation.getFrame(1));
-                                } else {
-                                    mouth.setImageDrawable(animation.getFrame(0));
+            if (animation != null) {
+                visualizer.setEnabled(false);
+                visualizer.setCaptureSize(Visualizer.getCaptureSizeRange()[1]);
+                visualizer.setDataCaptureListener(
+                        new Visualizer.OnDataCaptureListener() {
+                            public void onWaveFormDataCapture(Visualizer visualizer, byte[] bytes, int samplingRate) {
+                                int sum = 0;
+                                for (int i = 1; i < bytes.length; i++) {
+                                    sum += bytes[i] + 128;
                                 }
-                            });
-                        }
+                                // the normalized volume
+                                final float normalized = sum / (float) bytes.length;
 
-                        public void onFftDataCapture(Visualizer visualizer, byte[] bytes, int samplingRate) {
-                        }
-                    }, Visualizer.getMaxCaptureRate() / 2, true, false);
+                                activity.runOnUiThread(() -> {
+                                    if (normalized > 120) {
+                                        mouth.setImageDrawable(animation.getFrame(2));
+                                    } else if (normalized > 60) {
+                                        mouth.setImageDrawable(animation.getFrame(1));
+                                    } else {
+                                        mouth.setImageDrawable(animation.getFrame(0));
+                                    }
+                                });
+                            }
+
+                            public void onFftDataCapture(Visualizer visualizer, byte[] bytes, int samplingRate) {
+                            }
+                        }, Visualizer.getMaxCaptureRate() / 2, true, false);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
