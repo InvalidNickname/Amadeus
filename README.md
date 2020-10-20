@@ -1,6 +1,6 @@
 # Amadeus
 
-Inspired by [Yink/Amadeus](https://github.com/Yink/Amadeus), which seems to be abandoned now, I decided to continue his work on recreating something similar to Amadeus from Steins;Gate 0
+Inspired by [Yink/Amadeus](https://github.com/Yink/Amadeus), which seems to be abandoned now, I decided to continue his work on recreating something similar to Amadeus from Steins;Gate 0. The last version can be downloaded [here](https://github.com/InvalidNickname/Amadeus/releases/download/v0.0.8-alpha/app-release.apk), or click on releases->assets->.apk
 
 # Features:
 
